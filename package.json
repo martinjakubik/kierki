@@ -1,0 +1,22 @@
+{
+  "name": "kierki",
+  "version": "1.0.0",
+  "description": "card platform",
+  "main": "kierki.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinjakubik/kierki.git"
+  },
+  "keywords": [
+    "cards"
+  ],
+  "author": "martin jakubik",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/martinjakubik/kierki/issues"
+  },
+  "homepage": "https://github.com/martinjakubik/kierki#readme"
+}
