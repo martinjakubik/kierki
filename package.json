@@ -1,6 +1,6 @@
 {
   "name": "kierki",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "card platform",
   "main": "kierki.js",
   "scripts": {
@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/martinjakubik/kierki/issues"
   },
-  "homepage": "https://github.com/martinjakubik/kierki#readme"
+  "homepage": "https://github.com/martinjakubik/kierki#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-release": "^0.14.0"
+  }
 }
