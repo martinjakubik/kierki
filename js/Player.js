@@ -190,6 +190,9 @@ define('Player', ['Tools'], function (Tools) {
             Tools.addStyle(oCardView, 'left', nLeftPosition + 'px');
         } else if (nCardPosition < 1) {
             Tools.setClass(oCardView, 'card');
+            Tools.addClass(oCardView, 'stackedCard');
+            Tools.addStyle(oCardView, 'z-index', nZedIndex);
+            Tools.addStyle(oCardView, 'left', nLeftPosition + 'px');
         } else if (bLastCard) {
             Tools.setClass(oCardView, 'stackedCard');
             Tools.addStyle(oCardView, 'z-index', nZedIndex);
@@ -220,11 +223,6 @@ define('Player', ['Tools'], function (Tools) {
 
         // sets the card's id as suit+value
         oCardView.setAttribute('id', 'card' + oCard.value + '-' + oCard.suit);
-
-        var oCardFaceView = document.createElement('div');
-        Tools.setClass(oCardFaceView, 'content');
-
-        oCardView.insertBefore(oCardFaceView, null);
 
         oView.insertBefore(oCardView, null);
     };
