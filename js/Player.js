@@ -132,7 +132,7 @@ define('Player', ['Tools'], function (Tools) {
             bStackCard = (i < nNumStackedCards && i !== this.table.length - 1);
             bShowCardFace = i % 2 === 0;
             bMoving = i === (this.table.length - 1);
-            this.addCardToView(oPlayerTableView, this.table[i], 0, this.table.length, bStackCard, bShowCardFace, bMoving);
+            this.addCardToView(oPlayerTableView, this.table[i], 0, this.hand.length + this.table.length, bStackCard, bShowCardFace, bMoving);
         }
     };
 
@@ -214,7 +214,11 @@ define('Player', ['Tools'], function (Tools) {
         // uses a class to flag that the card should be animated
         // (ie. moving to the table)
         if (bMoving) {
-            Tools.addClass(oCardView, 'movingToTable');
+            if (bShowCardFace) {
+                Tools.addClass(oCardView, 'movingToTableFlip');
+            } else {
+                Tools.addClass(oCardView, 'movingToTable');
+            }
 
             oCardView.addEventListener('animationend', this.finishedMovingToTableListener, false);
         }
@@ -234,7 +238,7 @@ define('Player', ['Tools'], function (Tools) {
               var oElement = oEvent.target;
 
               // removes moving to table flag
-              Tools.removeClass(oElement, 'movingToTable');
+              Tools.removeClass(oElement, 'movingToTableFlip');
               break;
           default:
 

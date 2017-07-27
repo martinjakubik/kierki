@@ -67,14 +67,24 @@ body {
     color: white;
 }
 
-@keyframes moveToTable {
-    from {
-        transform: translateX(198pt) rotateY(0);
+@keyframes moveToTableFlip {
+    0% {
+        transform: translateX(198pt) rotateY(-180deg);
         background-image: url('../../../../resources/card-back.png');
     }
 
-    to {
-        transform: translateX(0pt) rotateY(-180deg);
+    100% {
+        transform: translateX(0pt) rotateY(0deg);
+    }
+}
+
+@keyframes moveToTable {
+    0% {
+        transform: translateX(198pt);
+    }
+
+    100% {
+        transform: translateX(0pt);
     }
 }
 
@@ -102,6 +112,12 @@ body {
     100% {
         transform: translateX(0);
     }
+}
+
+.table>.card.movingToTableFlip {
+    animation-duration: 200ms;
+    animation-timing-function: cubic-bezier(.17,.03,.95,.3);
+    animation-name: moveToTableFlip;
 }
 
 .table>.card.movingToTable {
