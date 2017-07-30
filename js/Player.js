@@ -5,13 +5,13 @@ define('Player', ['Tools'], function (Tools) {
     var cardFlipSound = new Audio('../resources/cardflip.wav');
     var cardShwipSound = new Audio('../js/lib/kierki/resources/cardshwip.wav');
 
-    var Player = function (nPlayerNum, oRemoteReference, nCardWidth, sSessionId, bIsRemote) {
+    var Player = function (nPlayerNum, oRemoteReference, nCardWidth, sSessionId, bIsLocal) {
 
         this.playerNum = nPlayerNum;
         this.remoteReference = oRemoteReference || null;
         this.cardWidth = nCardWidth;
         this.sessionId = sSessionId;
-        this.isRemote = bIsRemote;
+        this.isLocal = bIsLocal;
 
         this.name = '';
         this.hand = [];
@@ -56,12 +56,12 @@ define('Player', ['Tools'], function (Tools) {
         this.sessionId = sSessionId;
     };
 
-    Player.prototype.isRemote = function () {
-        return this.isRemote;
+    Player.prototype.isLocal = function () {
+        return this.isLocal;
     };
 
-    Player.prototype.setIsRemote = function (bIsRemote) {
-        this.isRemote = bIsRemote;
+    Player.prototype.setIsRemote = function (bIsLocal) {
+        this.isLocal = bIsLocal;
     };
 
     Player.prototype.getNumberCards = function () {
