@@ -1,6 +1,6 @@
 {
   "name": "kierki",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "card platform",
   "main": "kierki.js",
   "scripts": {
