@@ -66,6 +66,8 @@ define('GameSession', ['Tools'], function (Tools) {
                      sPlayer0SessionId = oGameSlot.player0.sessionId;
                      if (sSessionId === sPlayer0SessionId) {
                          oIsLocal.player0 = true;
+                     } else {
+                         oIsLocal.player0 = false;
                      }
                  }
 
