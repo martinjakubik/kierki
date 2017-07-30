@@ -1,5 +1,5 @@
 /*global define */
-define('GameSession', [], function () {
+define('GameSession', ['Tools'], function (Tools) {
 
     'use strict';
 
