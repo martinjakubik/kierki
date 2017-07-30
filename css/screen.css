@@ -1,6 +1,6 @@
 body {
     margin: 0 0 0 0;
-    background-image: radial-gradient(transparent, transparent, rgb(232,232,230)),
+    background-image: radial-gradient(transparent 80%, rgb(232,232,230) 150%),
         url('../../../../resources/background.png');
     background-size: cover;
 }
