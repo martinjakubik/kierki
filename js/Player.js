@@ -127,12 +127,12 @@ define('Player', ['Tools'], function (Tools) {
 
         // redraws the whole table
         var bShowCardFace = false,
-            bMoving = false;
+            bIsMoving = false;
         for (i = 0; i < this.table.length; i++) {
             bStackCard = (i < nNumStackedCards && i !== this.table.length - 1);
             bShowCardFace = i % 2 === 0;
-            bMoving = i === (this.table.length - 1);
-            this.addCardToView(oPlayerTableView, this.table[i], 0, this.hand.length + this.table.length, bStackCard, bShowCardFace, bMoving);
+            bIsMoving = i === (this.table.length - 1);
+            this.addCardToView(oPlayerTableView, this.table[i], 0, this.hand.length + this.table.length, bStackCard, bShowCardFace, bIsMoving);
         }
     };
 
@@ -145,7 +145,7 @@ define('Player', ['Tools'], function (Tools) {
             oPlayerHandView = document.getElementById('hand' + this.playerNum),
             bStackCard = null,
             bShowCardFace = false,
-            bMoving = false,
+            bIsMoving = false,
             fnOnTapUpdateGame = null;
 
         var fnOnPlayerNameChanged = function (oEvent) {
@@ -156,6 +156,11 @@ define('Player', ['Tools'], function (Tools) {
             }
             this.players[nRefId].setName(sValue);
         }.bind(this);
+
+        // stops drawing the hand if this is not a local player
+        if (!this.isLocal) {
+            return;
+        }
 
         if (!oPlayerHandView) {
             this.makePlayerView(oPlayAreaView, fnOnPlayerNameChanged);
@@ -169,14 +174,14 @@ define('Player', ['Tools'], function (Tools) {
 
         // redraws the whole hand
         for (i = 0; i < this.hand.length; i++) {
-            this.addCardToView(oPlayerHandView, this.hand[i], i, this.hand.length, bStackCard, bShowCardFace, bMoving);
+            this.addCardToView(oPlayerHandView, this.hand[i], i, this.hand.length, bStackCard, bShowCardFace, bIsMoving);
         }
     };
 
     /**
     * adds the given card to the given view
     */
-    Player.prototype.addCardToView = function (oView, oCard, nCardPosition, nNumCards, bStackCard, bShowCardFace, bMoving, fnOnTapUpdateGame) {
+    Player.prototype.addCardToView = function (oView, oCard, nCardPosition, nNumCards, bStackCard, bShowCardFace, bIsMoving, fnOnTapUpdateGame) {
 
         var oCardView = document.createElement('div'),
             bLastCard = (nCardPosition == (nNumCards - 1)),
@@ -213,11 +218,19 @@ define('Player', ['Tools'], function (Tools) {
 
         // uses a class to flag that the card should be animated
         // (ie. moving to the table)
-        if (bMoving) {
-            if (bShowCardFace) {
-                Tools.addClass(oCardView, 'movingToTableFlip');
+        if (bIsMoving) {
+            if (this.isLocal) {
+                if (bShowCardFace) {
+                    Tools.addClass(oCardView, 'movingToTableFromLocalFlip');
+                } else {
+                    Tools.addClass(oCardView, 'movingToTableFromLocal');
+                }
             } else {
-                Tools.addClass(oCardView, 'movingToTable');
+                if (bShowCardFace) {
+                    Tools.addClass(oCardView, 'movingToTableFromRemoteFlip');
+                } else {
+                    Tools.addClass(oCardView, 'movingToTableFromRemote');
+                }
             }
 
             oCardView.addEventListener('animationend', this.finishedMovingToTableListener, false);
@@ -238,7 +251,10 @@ define('Player', ['Tools'], function (Tools) {
               var oElement = oEvent.target;
 
               // removes moving to table flag
-              Tools.removeClass(oElement, 'movingToTableFlip');
+              Tools.removeClass(oElement, 'movingToTableFromLocal');
+              Tools.removeClass(oElement, 'movingToTableFromLocalFlip');
+              Tools.removeClass(oElement, 'movingToTableFromRemote');
+              Tools.removeClass(oElement, 'movingToTableFromRemoteFlip');
               break;
           default:
 
@@ -337,8 +353,10 @@ define('Player', ['Tools'], function (Tools) {
 
             var oCardView = findCardViewForId(sCardId);
 
-            Tools.addClass(oCardView, 'wiggling');
-            oCardView.addEventListener('animationend', this.finishedWigglingListener, false);
+            if (oCardView) {
+                Tools.addClass(oCardView, 'wiggling');
+                oCardView.addEventListener('animationend', this.finishedWigglingListener, false);
+            }
         }
     };
 

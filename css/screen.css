@@ -67,7 +67,7 @@ body {
     color: white;
 }
 
-@keyframes moveToTableFlip {
+@keyframes moveToTableFromLocalFlip {
     0% {
         transform: translateX(198pt) rotateY(-180deg);
         background-image: url('../../../../resources/card-back.png');
@@ -78,9 +78,30 @@ body {
     }
 }
 
-@keyframes moveToTable {
+@keyframes moveToTableFromLocal {
     0% {
         transform: translateX(198pt);
+    }
+
+    100% {
+        transform: translateX(0pt);
+    }
+}
+
+@keyframes moveToTableFromRemoteFlip {
+    0% {
+        transform: translateX(-198pt) rotateY(180deg);
+        background-image: url('../../../../resources/card-back.png');
+    }
+
+    100% {
+        transform: translateX(0pt) rotateY(0deg);
+    }
+}
+
+@keyframes moveToTableFromRemote {
+    0% {
+        transform: translateX(-198pt);
     }
 
     100% {
@@ -114,16 +135,28 @@ body {
     }
 }
 
-.table>.card.movingToTableFlip {
+.table>.card.movingToTableFromLocalFlip {
     animation-duration: 200ms;
     animation-timing-function: cubic-bezier(.17,.03,.95,.3);
-    animation-name: moveToTableFlip;
+    animation-name: moveToTableFromLocalFlip;
 }
 
-.table>.card.movingToTable {
+.table>.card.movingToTableFromLocal {
     animation-duration: 200ms;
     animation-timing-function: cubic-bezier(.17,.03,.95,.3);
-    animation-name: moveToTable;
+    animation-name: moveToTableFromLocal;
+}
+
+.table>.card.movingToTableFromRemoteFlip {
+    animation-duration: 200ms;
+    animation-timing-function: cubic-bezier(.17,.03,.95,.3);
+    animation-name: moveToTableFromRemoteFlip;
+}
+
+.table>.card.movingToTableFromRemote {
+    animation-duration: 200ms;
+    animation-timing-function: cubic-bezier(.17,.03,.95,.3);
+    animation-name: moveToTableFromRemote;
 }
 
 .hand>.card.wiggling {
