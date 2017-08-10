@@ -8,6 +8,22 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     var WAITING_FOR_FACE_DOWN_WAR_CARD = 2;
     var GAME_OVER = 3;
 
+    /**
+     * constructs a GamePlay object
+     *
+     * @param nNumPlayers the number of players
+     * @param aCards a deck of cards
+     * @param aSounds an array of sounds used during a war
+     * @param aPlayerNames possible names to choose from upon startup
+     * @param nMaxNumberOfSlots maximum number of game slots to use on the
+     *          remote database
+     * @param nCardWidth the width of the cards
+     * @param oCallbacks functions used for customized actions {
+     *              renderResult: function used to render the winning message
+     *              getRandomPlayerName: function used to get a random
+                        player name from a given list
+     *          }
+     */
     var GamePlay = function (nNumPlayers, aCards, aSounds, aPlayerNames, nMaxNumberOfSlots, nCardWidth, oCallbacks) {
 
         this.numPlayers = nNumPlayers;
@@ -28,18 +44,30 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         this.numMoves = 0;
     };
 
+    /**
+    * gets the slot currently being used for the game on the remote database
+    */
     GamePlay.prototype.getCurrentSlot = function () {
         return this.currentSlot;
     };
 
+    /**
+    * sets the slot to use for the game on the remote database
+    */
     GamePlay.prototype.setCurrentSlot = function (nCurrentSlot) {
         this.currentSlot = nCurrentSlot;
     };
 
+    /**
+    * gets the list of players
+    */
     GamePlay.prototype.getPlayers = function () {
         return this.playerControllers;
     };
 
+    /**
+    * sets the list of players
+    */
     GamePlay.prototype.setPlayers = function (aPlayers) {
         this.playerControllers = aPlayers;
     };
@@ -111,7 +139,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
 
             } else if (GamePlay.doesPlayerHaveCardOnTableFaceDown(this.playerControllers[0])) {
 
-                // checks if the players both have face down cards (in war)
+                // assumes both players have face down cards (in war)
                 this.state = WAITING_TO_FILL_TABLE;
 
             } else if (GamePlay.doesPlayerHaveCardOnTableFaceUp(this.playerControllers[0])
@@ -364,6 +392,8 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
 
     /**
      * reacts to a local player tapping a card in their hand
+     *
+     * @param oEvent a browser event
      */
     GamePlay.prototype.localPlayerTappedCardInHand = function (oEvent) {
 
