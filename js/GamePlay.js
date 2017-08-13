@@ -45,6 +45,44 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     };
 
     /**
+    * hides the Don't Wait button
+    */
+    GamePlay.hideDontWaitButton = function () {
+        var oDontWaitBtn = document.getElementById('dontWait');
+        if (oDontWaitBtn) {
+            oDontWaitBtn.style.display = 'none';
+        }
+    };
+
+    /**
+     * checks if player has a face-up card on the table
+     *
+     * @param oPlayer a player
+     *
+     * @return true if the player has a face-up card on the table
+     */
+    GamePlay.doesPlayerHaveCardOnTableFaceUp = function (oPlayer) {
+        if (oPlayer.getTable() && oPlayer.getTable().length % 2 === 1) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * checks if player has a face-down card on the table
+     *
+     * @param oPlayer a player
+     *
+     * @return true if the player has a face-down card on the table
+     */
+    GamePlay.doesPlayerHaveCardOnTableFaceDown = function (oPlayer) {
+        if (oPlayer.getTable() && oPlayer.getTable().length % 2 === 0) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
     * gets the slot currently being used for the game on the remote database
     */
     GamePlay.prototype.getCurrentSlot = function () {
@@ -87,16 +125,6 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     };
 
     /**
-    * hides the Don't Wait button
-    */
-    GamePlay.hideDontWaitButton = function () {
-        var oDontWaitBtn = document.getElementById('dontWait');
-        if (oDontWaitBtn) {
-            oDontWaitBtn.style.display = 'none';
-        }
-    };
-
-    /**
      * finds a player given the Id of a player view
      */
     GamePlay.prototype.findPlayerForPlayerViewId = function (sPlayerViewId) {
@@ -112,6 +140,45 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         }
 
         return oPlayer;
+    };
+
+    /**
+     * checks if one player has won
+     */
+    GamePlay.prototype.isGameFinished = function () {
+
+        var i,
+            nOtherPlayer,
+            nWinningPlayer;
+
+        if (this.playerControllers[0].getTable().length > 0
+            && this.playerControllers[1].getTable().length > 0) {
+
+            nWinningPlayer = this.whoseCardWins(this.playerControllers);
+
+            for (i = 0; i < this.playerControllers.length; i++) {
+                // checks if the player's hand is empty
+                if (this.playerControllers[i].hand.length === 0) {
+
+                    if (i === 0) {
+                        nOtherPlayer = 1;
+                    } else if (i === 1) {
+                        nOtherPlayer = 0;
+                    }
+
+                    // checks if the same player's table loses to the other player
+                    if (nWinningPlayer === nOtherPlayer) {
+
+                        this.result = this.playerControllers[nOtherPlayer].getName() + ' wins';
+                        this.callbacks.renderResult(this.result);
+                        this.state = GAME_OVER;
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     };
 
     /**
@@ -216,34 +283,6 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     };
 
     /**
-     * checks if player has a face-up card on the table
-     *
-     * @param oPlayer a player
-     *
-     * @return true if the player has a face-up card on the table
-     */
-    GamePlay.doesPlayerHaveCardOnTableFaceUp = function (oPlayer) {
-        if (oPlayer.getTable() && oPlayer.getTable().length % 2 === 1) {
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * checks if player has a face-down card on the table
-     *
-     * @param oPlayer a player
-     *
-     * @return true if the player has a face-down card on the table
-     */
-    GamePlay.doesPlayerHaveCardOnTableFaceDown = function (oPlayer) {
-        if (oPlayer.getTable() && oPlayer.getTable().length % 2 === 0) {
-            return true;
-        }
-        return false;
-    }
-
-    /**
      * updates the game when player wants to play a card, based on current state
      *
      * @param oPlayer a player controller on whom the event happened
@@ -310,7 +349,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         // decides what to do if all players have played
         if (this.doAllPlayersHaveSameNumberOfCardsOnTable() && this.state === WAITING_TO_GATHER_CARDS) {
 
-            nWinningPlayer = this.whoWonTheHand(this.playerControllers);
+            nWinningPlayer = this.whoseCardWins(this.playerControllers);
 
             // checks if player 0 won the hand
             if (nWinningPlayer === 0) {
