@@ -15,6 +15,7 @@ define('Player', ['Tools'], function (Tools) {
 
         this.name = '';
         this.hand = [];
+        this.handBefore = [];
         this.table = [];
 
         this.fannedCards = false;
@@ -168,14 +169,25 @@ define('Player', ['Tools'], function (Tools) {
         }
 
         // clears view of all cards
-        while (oPlayerHandView.firstChild) {
-            oPlayerHandView.removeChild(oPlayerHandView.firstChild);
+        // while (oPlayerHandView.firstChild) {
+        //     oPlayerHandView.removeChild(oPlayerHandView.firstChild);
+        // }
+
+        // clears any cards that moved to the table
+        for (i = 0; i < this.handBefore.length; i++) {
+            if (!Tools.includesCard(this.hand, this.handBefore[i])) {
+                oPlayerHandView.removeChild(oPlayerHandView.childNodes[i]);
+            }
         }
 
-        // redraws the whole hand
+        // adds any cards that moved from the table
         for (i = 0; i < this.hand.length; i++) {
-            this.addCardToView(oPlayerHandView, this.hand[i], i, this.hand.length, bStackCard, bShowCardFace, bIsMoving);
+            if (!Tools.includesCard(this.handBefore, this.hand[i])) {
+                this.addCardToView(oPlayerHandView, this.hand[i], i, this.hand.length, bStackCard, bShowCardFace, bIsMoving);
+            }
         }
+
+        Tools.copyCards(this.hand, this.handBefore);
     };
 
     /**
@@ -191,21 +203,26 @@ define('Player', ['Tools'], function (Tools) {
         // decides if card should be shown as stacked to save space
         if (bStackCard) {
             Tools.setClass(oCardView, 'stackedCard');
-            Tools.addStyle(oCardView, 'z-index', nZedIndex);
+
+            Tools.setStyle(oCardView, 'z-index', nZedIndex);
             Tools.addStyle(oCardView, 'left', nLeftPosition + 'px');
         } else if (nCardPosition < 1) {
             Tools.setClass(oCardView, 'card');
             Tools.addClass(oCardView, 'stackedCard');
-            Tools.addStyle(oCardView, 'z-index', nZedIndex);
+
+            Tools.setStyle(oCardView, 'z-index', nZedIndex);
             Tools.addStyle(oCardView, 'left', nLeftPosition + 'px');
         } else if (bLastCard) {
-            Tools.setClass(oCardView, 'stackedCard');
-            Tools.addStyle(oCardView, 'z-index', nZedIndex);
+            Tools.setClass(oCardView, 'card');
+            Tools.addClass(oCardView, 'stackedCard');
+
+            Tools.setStyle(oCardView, 'z-index', nZedIndex);
             Tools.addStyle(oCardView, 'left', nLeftPosition + 'px');
         } else {
             Tools.setClass(oCardView, 'card');
             Tools.addClass(oCardView, 'stackedCard');
-            Tools.addStyle(oCardView, 'z-index', nZedIndex);
+
+            Tools.setStyle(oCardView, 'z-index', nZedIndex);
             Tools.addStyle(oCardView, 'left', nLeftPosition + 'px');
         }
 

@@ -91,5 +91,38 @@ define('Tools', function () {
         return aShuffledThings;
     };
 
+    /**
+    * checks if a list of cards includes a card
+    */
+    Tools.includesCard = function (aCards, oCard) {
+        var bIncludesCard = false,
+            i;
+
+        for (i = 0; i < aCards.length; i++) {
+            if (aCards[i].suit === oCard.suit && aCards[i].value === oCard.value) {
+                bIncludesCard = true;
+                break;
+            }
+        }
+
+        return bIncludesCard;
+    };
+
+    /**
+    * copies cards from one set to another
+    */
+    Tools.copyCards = function (aCardsToCopy, aCards) {
+
+        var i;
+
+        // clears the array
+        aCards.splice(0, aCards.length);
+
+        // copies the cards
+        for (i = 0; i < aCardsToCopy.length; i++) {
+            aCards.push(aCardsToCopy[i]);
+        }
+    };
+
     return Tools;
 });
