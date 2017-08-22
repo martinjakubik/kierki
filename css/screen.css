@@ -166,6 +166,8 @@ body {
 
 .card {
     display: inline-block;
+    position: absolute;
+
     vertical-align: middle;
     margin: 2pt 2pt 2pt 2pt;
     height: 120pt;
@@ -182,10 +184,6 @@ body {
 
 .showBack {
     background-image: url('../../../../resources/card-back.png');
-}
-
-.stackedCard {
-    position: absolute;
 }
 
 .fannedCard {

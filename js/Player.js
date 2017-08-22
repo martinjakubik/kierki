@@ -119,7 +119,7 @@ define('Player', ['Tools'], function (Tools) {
         }
 
         // counts how many cards to stack depending on how wide the screen is
-        var nNumStackedCards = 0, bStackCard = false;
+        var nNumStackedCards = 0;
         while (nTableWidth >= 0.105 * nWidth) {
             nNumStackedCards++;
             nTableWidth = (this.table.length - nNumStackedCards) * this.cardWidth;
@@ -129,10 +129,9 @@ define('Player', ['Tools'], function (Tools) {
         var bShowCardFace = false,
             bIsMoving = false;
         for (i = 0; i < this.table.length; i++) {
-            bStackCard = (i < nNumStackedCards && i !== this.table.length - 1);
             bShowCardFace = i % 2 === 0;
             bIsMoving = i === (this.table.length - 1);
-            this.addCardToView(oPlayerTableView, this.table[i], 0, this.hand.length + this.table.length, bStackCard, bShowCardFace, bIsMoving);
+            this.addCardToView(oPlayerTableView, this.table[i], 0, this.hand.length + this.table.length, bShowCardFace, bIsMoving);
         }
     };
 
@@ -143,7 +142,6 @@ define('Player', ['Tools'], function (Tools) {
 
         var i, oPlayAreaView = document.getElementById('playArea'),
             oPlayerHandView = document.getElementById('hand' + this.playerNum),
-            bStackCard = null,
             bShowCardFace = false,
             bIsMoving = false,
             fnOnTapUpdateGame = null;
@@ -174,40 +172,28 @@ define('Player', ['Tools'], function (Tools) {
 
         // redraws the whole hand
         for (i = 0; i < this.hand.length; i++) {
-            this.addCardToView(oPlayerHandView, this.hand[i], i, this.hand.length, bStackCard, bShowCardFace, bIsMoving);
+            this.addCardToView(oPlayerHandView, this.hand[i], i, this.hand.length, bShowCardFace, bIsMoving);
         }
     };
 
     /**
     * adds the given card to the given view
     */
-    Player.prototype.addCardToView = function (oView, oCard, nCardPosition, nNumCards, bStackCard, bShowCardFace, bIsMoving, fnOnTapUpdateGame) {
+    Player.prototype.addCardToView = function (oView, oCard, nCardPosition, nNumCards, bShowCardFace, bIsMoving, fnOnTapUpdateGame) {
 
-        var oCardView = document.createElement('div'),
-            bLastCard = (nCardPosition == (nNumCards - 1)),
-            nZedIndex = nNumCards - nCardPosition + 1,
-            nLeftPosition = 90 + nCardPosition * 12;
+        // creates a card view
+        var oCardView = document.createElement('div');
 
-        // decides if card should be shown as stacked to save space
-        if (bStackCard) {
-            Tools.setClass(oCardView, 'stackedCard');
-            Tools.addStyle(oCardView, 'z-index', nZedIndex);
-            Tools.addStyle(oCardView, 'left', nLeftPosition + 'px');
-        } else if (nCardPosition < 1) {
-            Tools.setClass(oCardView, 'card');
-            Tools.addClass(oCardView, 'stackedCard');
-            Tools.addStyle(oCardView, 'z-index', nZedIndex);
-            Tools.addStyle(oCardView, 'left', nLeftPosition + 'px');
-        } else if (bLastCard) {
-            Tools.setClass(oCardView, 'stackedCard');
-            Tools.addStyle(oCardView, 'z-index', nZedIndex);
-            Tools.addStyle(oCardView, 'left', nLeftPosition + 'px');
-        } else {
-            Tools.setClass(oCardView, 'card');
-            Tools.addClass(oCardView, 'stackedCard');
-            Tools.addStyle(oCardView, 'z-index', nZedIndex);
-            Tools.addStyle(oCardView, 'left', nLeftPosition + 'px');
-        }
+        // calculates the z-index based on the position in the card set
+        var nZedIndex = nNumCards - nCardPosition + 1;
+
+        // calculates the position
+        var nLeftPosition = 90 + nCardPosition * 12;
+
+        // sets card styles, including z-index
+        Tools.setClass(oCardView, 'card');
+        Tools.addStyle(oCardView, 'z-index', nZedIndex);
+        Tools.addStyle(oCardView, 'left', nLeftPosition + 'px');
 
         // sets the card to show back or face
         if (bShowCardFace === false) {
