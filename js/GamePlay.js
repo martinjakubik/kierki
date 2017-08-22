@@ -892,9 +892,14 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     /**
      * starts a game
      */
-    GamePlay.prototype.start = function () {
+    GamePlay.prototype.start = function (bShuffleCards) {
 
-        this.shuffledCards = Tools.shuffle(this.cards);
+        if (bShuffleCards === true) {
+            this.shuffledCards = Tools.shuffle(this.cards);
+        } else {
+            this.shuffledCards = this.cards;
+        }
+
         this.renderCards();
 
         var oDatabase = firebase.database();
