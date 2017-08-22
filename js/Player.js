@@ -109,20 +109,11 @@ define('Player', ['Tools'], function (Tools) {
     Player.prototype.renderTable = function () {
 
         var i, oPlayerTableView = document.getElementById('table' + this.playerNum);
-        var nWidth = window.innerWidth;
-        var nTableWidth = this.table.length * this.cardWidth,
-            fnOnTapUpdateGame = null;
+        var fnOnTapUpdateGame = null;
 
         // clears view of all cards
         while (oPlayerTableView.firstChild) {
             oPlayerTableView.removeChild(oPlayerTableView.firstChild);
-        }
-
-        // counts how many cards to stack depending on how wide the screen is
-        var nNumStackedCards = 0;
-        while (nTableWidth >= 0.105 * nWidth) {
-            nNumStackedCards++;
-            nTableWidth = (this.table.length - nNumStackedCards) * this.cardWidth;
         }
 
         // redraws the whole table
@@ -177,8 +168,8 @@ define('Player', ['Tools'], function (Tools) {
     };
 
     /**
-    * adds the given card to the given view
-    */
+     * adds the given card to the given view
+     */
     Player.prototype.addCardToView = function (oView, oCard, nCardPosition, nNumCards, bShowCardFace, bIsMoving, fnOnTapUpdateGame) {
 
         // creates a card view
@@ -421,7 +412,6 @@ define('Player', ['Tools'], function (Tools) {
         var oCardView = findCardViewForId(sCardId);
 
         Tools.removeClass(oCardView, 'showFace');
-        Tools.removeClass(oCardView, 'stackedCard');
         Tools.removeClass(oCardView, 'fannedCard');
         Tools.addClass(oCardView, 'showBack');
 
@@ -431,7 +421,6 @@ define('Player', ['Tools'], function (Tools) {
         oCardView = findCardViewForId(sCardId);
 
         Tools.removeClass(oCardView, 'showFace');
-        Tools.removeClass(oCardView, 'stackedCard');
         Tools.removeClass(oCardView, 'fannedCard');
         Tools.addClass(oCardView, 'showBack');
 
@@ -447,7 +436,6 @@ define('Player', ['Tools'], function (Tools) {
 
                 Tools.removeClass(oCardView, 'showFace');
                 Tools.removeClass(oCardView, 'fannedCard');
-                Tools.addClass(oCardView, 'stackedCard');
                 Tools.addClass(oCardView, 'showBack');
             }
         }
@@ -494,7 +482,6 @@ define('Player', ['Tools'], function (Tools) {
                 var oCardView = findCardViewForId(sCardId);
 
                 Tools.toggleClass(oCardView, 'fannedCard');
-                Tools.toggleClass(oCardView, 'stackedCard');
                 Tools.toggleClass(oCardView, 'showFace');
                 Tools.toggleClass(oCardView, 'showBack');
             }
