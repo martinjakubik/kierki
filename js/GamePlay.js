@@ -151,6 +151,11 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             nOtherPlayer,
             nWinningPlayer;
 
+        if (this.playerControllers.length < 2) {
+            // checks if there are less than two players
+            return;
+        }
+
         if (this.playerControllers[0].getTable().length > 0
             && this.playerControllers[1].getTable().length > 0) {
 
@@ -186,25 +191,9 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      */
     GamePlay.prototype.updateGameStateBasedOnTable = function () {
 
-
-        if (this.playerControllers.length > 1
-            && this.playerControllers[0].getHand()
-            && this.playerControllers[1].getHand()) {
-
-            if (this.isGameFinished()) {
-                return;
-            }
-        }
-
         if (this.doAllPlayersHaveSameNumberOfCardsOnTable()) {
 
-            if (!this.playerControllers[0].getTableCard()
-                || !this.playerControllers[1].getTableCard()) {
-
-                // checks if the players have no cards on the table
-                this.state = WAITING_TO_FILL_TABLE;
-
-            } else if (GamePlay.doesPlayerHaveCardOnTableFaceDown(this.playerControllers[0])) {
+            if (GamePlay.doesPlayerHaveCardOnTableFaceDown(this.playerControllers[0])) {
 
                 // assumes both players have face down cards (in war)
                 this.state = WAITING_TO_FILL_TABLE;
@@ -225,7 +214,18 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
 
                 // assumes one player has a winning card on the table
                 this.state = WAITING_TO_GATHER_CARDS;
+
+                // checks if the game is over
+                this.isGameFinished();
+
             }
+
+        } else if (!this.playerControllers[0].getTableCard()
+            || !this.playerControllers[1].getTableCard()) {
+
+            // checks if the players have no cards on the table
+            this.state = WAITING_TO_FILL_TABLE;
+
         }
     };
 
@@ -319,9 +319,6 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
                     }
                 }
 
-                // checks if any player ran out of cards and lost
-                this.isGameFinished();
-
                 break;
             case WAITING_TO_GATHER_CARDS:
                 if (bIsLocalEvent) {
@@ -386,8 +383,6 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
                 this.playerControllers[0].updateRemoteReference();
             }
 
-            this.isGameFinished();
-
             this.state = WAITING_TO_FILL_TABLE;
 
             this.renderCards();
@@ -411,7 +406,6 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
 
                 // war is happening; checks if any player ran out of cards and
                 // lost
-                this.isGameFinished();
 
                 break;
             case WAITING_TO_GATHER_CARDS:
@@ -699,7 +693,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
                 var bIsLocalEvent = false;
 
                 if (oPlayerValue) {
-                    var oPlayerHandValue = oPlayerValue.hand;
+                    var oPlayerHandValue = oPlayerValue.hand ||  [];
                     var oPlayerTableValue = oPlayerValue.table || [];
 
                     // recreates a remote player controller to pass to the
@@ -707,7 +701,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
                     var oRemotePlayer = new Player(nPlayerNumberFromEvent, null, -1);
 
                     // sets player's hand
-                    if (oPlayerHandValue && oGamePlay.playerControllers[nPlayerNumberFromEvent]) {
+                    if (oGamePlay.playerControllers[nPlayerNumberFromEvent]) {
                         oGamePlay.playerControllers[nPlayerNumberFromEvent].setHand(
                             oPlayerHandValue
                         );
