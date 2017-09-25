@@ -672,55 +672,67 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     };
 
     /**
-     * sets up the handlers for events from the remote players;
-     * gets hand and table from remote database and updates player controllers
-     *
-     * @param oGamePlay an instance of a game
-     * @param oDatabase reference to the remote database
-     */
+    * handler for events from the remote players;
+    * gets hand and table from remote database and updates player controllers
+    *
+    * @param oSnapshot an instance of a game
+    */
+    GamePlay.prototype.handlerForRemotePlayerEvents = function (oSnapshot) {
+
+        // gets the GamePlay object from the bound "this"
+        var oGamePlay = this;
+
+        // gets the player number from the snapshot key, which is
+        // something like "player1"
+        var nPlayerNumberFromEvent = oSnapshot.key.substring(6);
+
+        var oPlayerValue = oSnapshot.val();
+        var bIsLocalEvent = false;
+
+        if (oPlayerValue) {
+            var oPlayerHandValue = oPlayerValue.hand ||  [];
+            var oPlayerTableValue = oPlayerValue.table || [];
+
+            // recreates a remote player controller to pass to the
+            // playerWantsToPlayACard method
+            var oRemotePlayer = new Player(nPlayerNumberFromEvent, null, -1);
+
+            // sets player's hand
+            if (oGamePlay.playerControllers[nPlayerNumberFromEvent]) {
+                oGamePlay.playerControllers[nPlayerNumberFromEvent].setHand(
+                    oPlayerHandValue
+                );
+                oGamePlay.playerControllers[nPlayerNumberFromEvent].renderHand();
+                oRemotePlayer.setHand(oPlayerHandValue);
+            }
+
+            // sets player's table
+            if (oPlayerTableValue && oGamePlay.playerControllers[nPlayerNumberFromEvent]) {
+                oGamePlay.playerControllers[nPlayerNumberFromEvent].setTable(
+                    oPlayerTableValue
+                );
+                oGamePlay.playerControllers[nPlayerNumberFromEvent].renderTable();
+                oRemotePlayer.setTable(oPlayerTableValue);
+            }
+
+            oGamePlay.playerWantsToPlayACard.call(oGamePlay, oRemotePlayer, bIsLocalEvent);
+        }
+    };
+
+    /**
+    * sets up the handlers for events from the remote players;
+    * gets hand and table from remote database and updates player controllers
+    *
+    * @param oGamePlay an instance of a game
+    * @param oDatabase reference to the remote database
+    */
     GamePlay.prototype.setUpHandlerForRemotePlayerEvents = function (oGamePlay, oDatabase) {
         var nPlayerNumber = 0;
         for (nPlayerNumber = 0; nPlayerNumber < 2; nPlayerNumber++) {
 
             oGamePlay.playerReference[nPlayerNumber] = oDatabase.ref('/game/slots/list/' + oGamePlay.slotNumber + '/player' + nPlayerNumber);
-            oGamePlay.playerReference[nPlayerNumber].on('value', function (snapshot) {
+            oGamePlay.playerReference[nPlayerNumber].on('value', oGamePlay.handlerForRemotePlayerEvents.bind(this));
 
-                // gets the player number from the snapshot key, which is
-                // something like "player1"
-                var nPlayerNumberFromEvent = snapshot.key.substring(6);
-
-                var oPlayerValue = snapshot.val();
-                var bIsLocalEvent = false;
-
-                if (oPlayerValue) {
-                    var oPlayerHandValue = oPlayerValue.hand ||  [];
-                    var oPlayerTableValue = oPlayerValue.table || [];
-
-                    // recreates a remote player controller to pass to the
-                    // playerWantsToPlayACard method
-                    var oRemotePlayer = new Player(nPlayerNumberFromEvent, null, -1);
-
-                    // sets player's hand
-                    if (oGamePlay.playerControllers[nPlayerNumberFromEvent]) {
-                        oGamePlay.playerControllers[nPlayerNumberFromEvent].setHand(
-                            oPlayerHandValue
-                        );
-                        oGamePlay.playerControllers[nPlayerNumberFromEvent].renderHand();
-                        oRemotePlayer.setHand(oPlayerHandValue);
-                    }
-
-                    // sets player's table
-                    if (oPlayerTableValue && oGamePlay.playerControllers[nPlayerNumberFromEvent]) {
-                        oGamePlay.playerControllers[nPlayerNumberFromEvent].setTable(
-                            oPlayerTableValue
-                        );
-                        oGamePlay.playerControllers[nPlayerNumberFromEvent].renderTable();
-                        oRemotePlayer.setTable(oPlayerTableValue);
-                    }
-
-                    oGamePlay.playerWantsToPlayACard.call(oGamePlay, oRemotePlayer, bIsLocalEvent);
-                }
-            });
         }
     };
 
