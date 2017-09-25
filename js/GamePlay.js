@@ -534,9 +534,11 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         // makes player 1 controller
         oGamePlay.makePlayerController(1, oGamePlay.playerControllers, oGamePlay.playerReference[1], oGamePlay.localPlayerTappedCardInHand.bind(oGamePlay), sSessionId, bIsLocal);
 
-        // chooses a player name
-        var sNotThisName = oGamePlay.playerControllers[0] ? oGamePlay.playerControllers[0].getName() : '';
-        oGamePlay.playerControllers[1].setName(oGamePlay.callbacks.getRandomPlayerName(1, oGamePlay.playerNames, sNotThisName));
+        if (bIsLocal) {
+            // chooses a player name
+            var sNotThisName = oGamePlay.playerControllers[0] ? oGamePlay.playerControllers[0].getName() : '';
+            oGamePlay.playerControllers[1].setName(oGamePlay.callbacks.getRandomPlayerName(1, oGamePlay.playerNames, sNotThisName));
+        }
 
         // sets player 1's cards
         this.setPlayerCards(1, this.restOfCards);
@@ -672,46 +674,56 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     };
 
     /**
-    * handler for events from the remote players;
+    * handler when a remote player changes;
     * gets hand and table from remote database and updates player controllers
     *
     * @param oSnapshot an instance of a game
     */
     GamePlay.prototype.handlerForRemotePlayerEvents = function (oSnapshot) {
 
-        // gets the GamePlay object from the bound "this"
+        // gets the GamePlay object from the bound 'this'
         var oGamePlay = this;
 
         // gets the player number from the snapshot key, which is
         // something like "player1"
-        var nPlayerNumberFromEvent = oSnapshot.key.substring(6);
+        var nPlayerNumber = oSnapshot.key.substring(6);
 
         var oPlayerValue = oSnapshot.val();
         var bIsLocalEvent = false;
 
         if (oPlayerValue) {
-            var oPlayerHandValue = oPlayerValue.hand ||  [];
+            var sName = oPlayerValue.name || '';
+            var oPlayerHandValue = oPlayerValue.hand || [];
             var oPlayerTableValue = oPlayerValue.table || [];
 
             // recreates a remote player controller to pass to the
             // playerWantsToPlayACard method
-            var oRemotePlayer = new Player(nPlayerNumberFromEvent, null, -1);
+            var oRemotePlayer = new Player(nPlayerNumber, null, -1);
+
+            // sets player's name
+            if (oGamePlay.playerControllers[nPlayerNumber]) {
+                oGamePlay.playerControllers[nPlayerNumber].setName(
+                    sName
+                );
+                oGamePlay.playerControllers[nPlayerNumber].renderName();
+                oRemotePlayer.setName(sName);
+            }
 
             // sets player's hand
-            if (oGamePlay.playerControllers[nPlayerNumberFromEvent]) {
-                oGamePlay.playerControllers[nPlayerNumberFromEvent].setHand(
+            if (oGamePlay.playerControllers[nPlayerNumber]) {
+                oGamePlay.playerControllers[nPlayerNumber].setHand(
                     oPlayerHandValue
                 );
-                oGamePlay.playerControllers[nPlayerNumberFromEvent].renderHand();
+                oGamePlay.playerControllers[nPlayerNumber].renderHand();
                 oRemotePlayer.setHand(oPlayerHandValue);
             }
 
             // sets player's table
-            if (oPlayerTableValue && oGamePlay.playerControllers[nPlayerNumberFromEvent]) {
-                oGamePlay.playerControllers[nPlayerNumberFromEvent].setTable(
+            if (oPlayerTableValue && oGamePlay.playerControllers[nPlayerNumber]) {
+                oGamePlay.playerControllers[nPlayerNumber].setTable(
                     oPlayerTableValue
                 );
-                oGamePlay.playerControllers[nPlayerNumberFromEvent].renderTable();
+                oGamePlay.playerControllers[nPlayerNumber].renderTable();
                 oRemotePlayer.setTable(oPlayerTableValue);
             }
 
@@ -858,7 +870,6 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             value: oGamePlay.slotNumber
         });
 
-        oGamePlay.setUpHandlerForRemotePlayerEvents(oGamePlay, oDatabase);
         oGamePlay.setUpHandlerForRemotePlayerEvents(oGamePlay, oDatabase);
 
         return true;
