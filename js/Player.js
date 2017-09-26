@@ -104,6 +104,17 @@ define('Player', ['Tools'], function (Tools) {
     };
 
     /**
+    * renders player's name
+    */
+    Player.prototype.renderName = function () {
+
+        var oPlayerNameView = document.getElementById('name' + this.playerNum);
+
+        // redraws the name
+        oPlayerNameView.value = this.getName();
+    };
+
+    /**
     * renders the cards in a player's table
     */
     Player.prototype.renderTable = function () {
@@ -145,11 +156,6 @@ define('Player', ['Tools'], function (Tools) {
             }
             this.players[nRefId].setName(sValue);
         }.bind(this);
-
-        // stops drawing the hand if this is not a local player
-        if (!this.isLocal) {
-            return;
-        }
 
         if (!oPlayerHandView) {
             this.makePlayerView(oPlayAreaView, fnOnPlayerNameChanged);
