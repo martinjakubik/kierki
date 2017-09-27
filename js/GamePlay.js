@@ -534,11 +534,9 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         // makes player 1 controller
         oGamePlay.makePlayerController(1, oGamePlay.playerControllers, oGamePlay.playerReference[1], oGamePlay.localPlayerTappedCardInHand.bind(oGamePlay), sSessionId, bIsLocal);
 
-        if (bIsLocal) {
-            // chooses a player name
-            var sNotThisName = oGamePlay.playerControllers[0] ? oGamePlay.playerControllers[0].getName() : '';
-            oGamePlay.playerControllers[1].setName(oGamePlay.callbacks.getRandomPlayerName(1, oGamePlay.playerNames, sNotThisName));
-        }
+        // chooses player 1's name
+        var sNotThisName = oGamePlay.playerControllers[0] ? oGamePlay.playerControllers[0].getName() : '';
+        oGamePlay.playerControllers[1].setName(oGamePlay.callbacks.getRandomPlayerName(1, oGamePlay.playerNames, sNotThisName));
 
         // sets player 1's cards
         this.setPlayerCards(1, this.restOfCards);
