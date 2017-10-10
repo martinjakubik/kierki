@@ -749,126 +749,129 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      * the remote players;
      *
      * @param oGamePlay an instance of a game
-     * @param oDatabase reference to the remote database
-     * @param oGameSlots the object containing all the game slots
      *
      * @return false if could not set up the game slot; true otherwise
      */
-    GamePlay.prototype.setUpRemoteGameSlot = function (oGamePlay, oDatabase, oGameSlots) {
+    GamePlay.prototype.setUpRemoteGameSlot = function (oGamePlay) {
 
-        // gets a reference to the game slots
+        var oDatabase = firebase.database();
         var oReferenceGameAllSlots = oDatabase.ref('game/slots');
+        var bIsSetUpGameSlotOk = false;
 
-        if (!oGameSlots) {
-            oGameSlots = {
-                lastSlot: 0,
-                list: {}
-            };
-        }
+        oReferenceGameAllSlots.once('value', function (snapshot) {
 
-        // gets list of game slots
-        var aGameSlots = oGameSlots ? oGameSlots.list : null ;
+            // gets game slot object from remote database
+            var oGameSlots = snapshot.val();
 
-        // gets index of last game slot
-        var oGameSlotNumber = oGameSlots.lastSlot || {
-            value: 0
-        };
+            // gets a reference to the game slots
+            var oReferenceGameAllSlots = oDatabase.ref('game/slots');
 
-        // finds the next available game slot, but starts over at 0
-        // if the max number is reached
-        oGamePlay.slotNumber = oGameSlotNumber ? oGameSlotNumber.value : 0;
-
-        var oGameSlot = null;
-        if (aGameSlots && aGameSlots.length > oGamePlay.slotNumber && aGameSlots[oGamePlay.slotNumber]) {
-            oGameSlot = aGameSlots[oGamePlay.slotNumber];
-        }
-
-        if (!oGameSlot) {
-            return false;
-        }
-
-        // stores remote references to players and to the rest of the cards
-        oGamePlay.playerReference = [];
-        oGamePlay.playerReference.push(oDatabase.ref('game/slots/list/' + oGamePlay.slotNumber + '/player0'));
-        oGamePlay.playerReference.push(oDatabase.ref('game/slots/list/' + oGamePlay.slotNumber + '/player1'));
-        var oReferenceRestOfCards = oDatabase.ref('game/slots/list/' + oGamePlay.slotNumber + '/restOfCards');
-
-        // checks if player 0 or player 1 have joined
-        var bIsPlayer0SlotFull = false;
-        var bIsPlayer1SlotFull = false;
-
-        bIsPlayer0SlotFull = oGameSlot.player0 ? true : false;
-        bIsPlayer1SlotFull = oGameSlot.player1 ? true : false;
-
-        // clears the list of players
-        while (oGamePlay.playerControllers.length > 0) {
-            oGamePlay.playerControllers.pop();
-        }
-
-        if (!bIsPlayer0SlotFull && !bIsPlayer1SlotFull) {
-
-            // found a new slot; keeps local player 0 waits for player 1
-            oGamePlay.keepPlayer0AndWaitForPlayer1(oGameSlot);
-
-        } else if (bIsPlayer0SlotFull && bIsPlayer1SlotFull) {
-
-            // takes next slot, even if it is full; makes player 0 controller
-            oGamePlay.moveToNextGameSlot(oDatabase);
-
-            // keeps local player 0 waits for player 1
-            oGamePlay.keepPlayer0AndWaitForPlayer1(oGameSlot);
-
-        } else if (bIsPlayer0SlotFull && !bIsPlayer1SlotFull) {
-
-            // joins another player in the slot - there is only one player in it
-
-            // creates or gets a session Id; we don't know if this is the same
-            // session or not
-            var sSessionId = GameSession.getBrowserSessionId();
-
-            var bIsPlayer0Local = true,
-                bIsPlayer1Local = true;
-
-            // checks if the player0 already has a different session ID (this is
-            // the case if the player is from a different browser)
-            var oPlayersWhoAreLocal = GameSession.whoIsLocal(oGameSlot);
-            bIsPlayer0Local = (oPlayersWhoAreLocal.player0 === true);
-            bIsPlayer1Local = (oPlayersWhoAreLocal.player1 === true);
-
-            // makes controller for player 0
-            oGamePlay.makePlayerController(0, oGamePlay.playerControllers, oGamePlay.playerReference[0], oGamePlay.localPlayerTappedCardInHand.bind(oGamePlay), sSessionId, bIsPlayer0Local);
-
-            // keeps remote player 0
-            if (oGameSlot) {
-                oGamePlay.playerControllers[0].setName(oGameSlot.player0.name);
-                oGamePlay.playerControllers[0].setHand(oGameSlot.player0.hand);
-
-                // renders player 0
-                var oPlayAreaView = document.getElementById('playArea');
-                oGamePlay.playerControllers[0].makePlayerView(oPlayAreaView);
-                oGamePlay.playerControllers[0].renderHand();
-                oGamePlay.playerControllers[0].renderTable();
-
-                oGamePlay.okPlayer1JoinedAndPlayer0WasWaitingSoLetsGo(oGameSlot, bIsPlayer1Local);
-
-                // removes rest of cards
-                oReferenceRestOfCards.remove();
+            if (!oGameSlots) {
+                oGameSlots = {
+                    lastSlot: 0,
+                    list: {}
+                };
             }
 
-        } else if (!bIsPlayer0SlotFull && bIsPlayer1SlotFull) {
+            // gets list of game slots
+            var aGameSlots = oGameSlots ? oGameSlots.list : null ;
 
-            // TODO: implement the case when player 1 has somehow joined
-            // before player 0
+            // gets index of last game slot
+            var oGameSlotNumber = oGameSlots.lastSlot || {
+                value: 0
+            };
 
-        }
+            // finds the next available game slot, but starts over at 0
+            // if the max number is reached
+            oGamePlay.slotNumber = oGameSlotNumber ? oGameSlotNumber.value : 0;
 
-        oReferenceGameAllSlots.child('lastSlot').set({
-            value: oGamePlay.slotNumber
-        });
+            var oGameSlot = null;
+            if (aGameSlots && aGameSlots.length > oGamePlay.slotNumber && aGameSlots[oGamePlay.slotNumber]) {
+                oGameSlot = aGameSlots[oGamePlay.slotNumber];
+            }
 
-        oGamePlay.setUpHandlerForRemotePlayerEvents(oGamePlay, oDatabase);
+            // stores remote references to players and to the rest of the cards
+            oGamePlay.playerReference = [];
+            oGamePlay.playerReference.push(oDatabase.ref('game/slots/list/' + oGamePlay.slotNumber + '/player0'));
+            oGamePlay.playerReference.push(oDatabase.ref('game/slots/list/' + oGamePlay.slotNumber + '/player1'));
+            var oReferenceRestOfCards = oDatabase.ref('game/slots/list/' + oGamePlay.slotNumber + '/restOfCards');
 
-        return true;
+            // checks if player 0 or player 1 have joined
+            var bIsPlayer0SlotFull = false;
+            var bIsPlayer1SlotFull = false;
+
+            bIsPlayer0SlotFull = oGameSlot.player0 ? true : false;
+            bIsPlayer1SlotFull = oGameSlot.player1 ? true : false;
+
+            // clears the list of players
+            while (oGamePlay.playerControllers.length > 0) {
+                oGamePlay.playerControllers.pop();
+            }
+
+            if (!bIsPlayer0SlotFull && !bIsPlayer1SlotFull) {
+
+                // found a new slot; keeps local player 0 waits for player 1
+                oGamePlay.keepPlayer0AndWaitForPlayer1(oGameSlot);
+
+            } else if (bIsPlayer0SlotFull && bIsPlayer1SlotFull) {
+
+                // takes next slot, even if it is full; makes player 0 controller
+                oGamePlay.moveToNextGameSlot(oDatabase);
+
+                // keeps local player 0 waits for player 1
+                oGamePlay.keepPlayer0AndWaitForPlayer1(oGameSlot);
+
+            } else if (bIsPlayer0SlotFull && !bIsPlayer1SlotFull) {
+
+                // joins another player in the slot - there is only one player in it
+
+                // creates or gets a session Id; we don't know if this is the same
+                // session or not
+                var sSessionId = GameSession.getBrowserSessionId();
+
+                var bIsPlayer0Local = true,
+                bIsPlayer1Local = true;
+
+                // checks if the player0 already has a different session ID (this is
+                // the case if the player is from a different browser)
+                var oPlayersWhoAreLocal = GameSession.whoIsLocal(oGameSlot);
+                bIsPlayer0Local = (oPlayersWhoAreLocal.player0 === true);
+                bIsPlayer1Local = (oPlayersWhoAreLocal.player1 === true);
+
+                // makes controller for player 0
+                oGamePlay.makePlayerController(0, oGamePlay.playerControllers, oGamePlay.playerReference[0], oGamePlay.localPlayerTappedCardInHand.bind(oGamePlay), sSessionId, bIsPlayer0Local);
+
+                // keeps remote player 0
+                if (oGameSlot) {
+                    oGamePlay.playerControllers[0].setName(oGameSlot.player0.name);
+                    oGamePlay.playerControllers[0].setHand(oGameSlot.player0.hand);
+
+                    // renders player 0
+                    var oPlayAreaView = document.getElementById('playArea');
+                    oGamePlay.playerControllers[0].makePlayerView(oPlayAreaView);
+                    oGamePlay.playerControllers[0].renderHand();
+                    oGamePlay.playerControllers[0].renderTable();
+
+                    oGamePlay.okPlayer1JoinedAndPlayer0WasWaitingSoLetsGo(oGameSlot, bIsPlayer1Local);
+
+                    // removes rest of cards
+                    oReferenceRestOfCards.remove();
+                }
+
+            } else if (!bIsPlayer0SlotFull && bIsPlayer1SlotFull) {
+
+                // TODO: implement the case when player 1 has somehow joined
+                // before player 0
+
+            }
+
+            oReferenceGameAllSlots.child('lastSlot').set({
+                value: oGamePlay.slotNumber
+            });
+
+            oGamePlay.setUpHandlerForRemotePlayerEvents(oGamePlay, oDatabase);
+
+        }.bind(this));
     };
 
     /**
@@ -915,19 +918,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
 
         this.renderCards();
 
-        var oDatabase = firebase.database();
-        var oReferenceGameAllSlots = oDatabase.ref('game/slots');
-        var bIsSetUpGameSlotOk = false;
-
-        // checks remote database and stores players in a game slot
-        oReferenceGameAllSlots.once('value', function (snapshot) {
-
-            // gets game slot object from remote database
-            var oGameSlots = snapshot.val();
-
-            bIsSetUpGameSlotOk = this.setUpRemoteGameSlot(this, oDatabase, oGameSlots);
-
-        }.bind(this));
+        this.setUpRemoteGameSlot(this);
 
         this.numMoves = 0;
     };
