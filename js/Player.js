@@ -68,7 +68,7 @@ define('Player', ['Tools'], function (Tools) {
         return this.hand.length;
     };
 
-    Player.prototype.makePlayerView = function (oPlayAreaView, fnOnNameChanged) {
+    Player.prototype.makePlayerView = function (oPlayAreaView) {
 
         var oPlayerView,
             oPlayerTableView,
@@ -98,7 +98,17 @@ define('Player', ['Tools'], function (Tools) {
         oPlayerNameView.setAttribute('id', 'name' + this.playerNum);
         oPlayerNameView.setAttribute('ref-id', this.playerNum);
         oPlayerNameView.value = this.getName();
-        oPlayerNameView.onchange = fnOnNameChanged;
+
+        var fnOnPlayerNameChanged = function (oEvent) {
+            var nRefId, sValue = '';
+            if (oEvent && oEvent.target) {
+                nRefId = oEvent.target.getAttribute('ref-id');
+                sValue = oEvent.target.value;
+            }
+            this.players[nRefId].setName(sValue);
+        }.bind(this);
+
+        oPlayerNameView.onchange = fnOnPlayerNameChanged;
 
         oPlayerView.insertBefore(oPlayerNameView, null);
     };
@@ -119,8 +129,14 @@ define('Player', ['Tools'], function (Tools) {
     */
     Player.prototype.renderTable = function () {
 
-        var i, oPlayerTableView = document.getElementById('table' + this.playerNum);
-        var fnOnTapUpdateGame = null;
+        var i, oPlayAreaView = document.getElementById('playArea'),
+            oPlayerTableView = document.getElementById('table' + this.playerNum),
+            fnOnTapUpdateGame = null;
+
+        if (!oPlayerTableView) {
+            this.makePlayerView(oPlayAreaView);
+            oPlayerTableView = document.getElementById('table' + this.playerNum);
+        }
 
         // clears view of all cards
         while (oPlayerTableView.firstChild) {
@@ -148,17 +164,8 @@ define('Player', ['Tools'], function (Tools) {
             bIsMoving = false,
             fnOnTapUpdateGame = null;
 
-        var fnOnPlayerNameChanged = function (oEvent) {
-            var nRefId, sValue = '';
-            if (oEvent && oEvent.target) {
-                nRefId = oEvent.target.getAttribute('ref-id');
-                sValue = oEvent.target.value;
-            }
-            this.players[nRefId].setName(sValue);
-        }.bind(this);
-
         if (!oPlayerHandView) {
-            this.makePlayerView(oPlayAreaView, fnOnPlayerNameChanged);
+            this.makePlayerView(oPlayAreaView);
             oPlayerHandView = document.getElementById('hand' + this.playerNum);
         }
 

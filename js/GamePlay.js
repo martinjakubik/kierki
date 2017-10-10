@@ -115,8 +115,6 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     */
     GamePlay.prototype.renderCards = function () {
 
-        var oPlayersWhoAreLocal = GameSession.whoIsLocal();
-
         var i;
         for (i = 0; i < this.playerControllers.length; i++) {
             this.playerControllers[i].renderTable();

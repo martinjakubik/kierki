@@ -44,10 +44,10 @@ define('GameSession', ['Tools'], function (Tools) {
      *
      * @param oGameSlot a game slot
      *
-     * @return {
+     * @return object {
      *             player0: true if local,
      *             player1: true if local
-     *         }}
+     *         }
      */
     GameSession.whoIsLocal = function (oGameSlot) {
 
