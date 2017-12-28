@@ -708,7 +708,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             // checks if a remote player 1 just joined and if there is no
             // player 1 yet
             if (oPlayerValue && !this.playerControllers[1]) {
-                this.okPlayer1JoinedAndPlayer0WasWaitingSoLetsGo(bIsPlayer1Local);
+                this.okPlayer1JoinedAndPlayer0WasWaitingSoLetsGo(bIsPlayer1Local, oPlayerValue);
             }
         }.bind(this));
 
@@ -743,8 +743,9 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     * adds player 1 to the game
     *
     * @param bIsLocal true if player1 is a local player
+    * @param oPlayerValue {optional} a player object
     */
-    GamePlay.prototype.okPlayer1JoinedAndPlayer0WasWaitingSoLetsGo = function (bIsLocal) {
+    GamePlay.prototype.okPlayer1JoinedAndPlayer0WasWaitingSoLetsGo = function (bIsLocal, oPlayerValue) {
 
         var oGamePlay = this;
 
@@ -760,7 +761,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             oGamePlay.distributeCardsToAvailablePlayers();
         }
 
-        var sSessionId = null;
+        var sSessionId = oPlayerValue ? oPlayerValue.sessionId : null;
 
         // makes player 1 controller
         oGamePlay.makePlayerController(1, oGamePlay.playerControllers, oGamePlay.playerReference[1], oGamePlay.localPlayerTappedCardInHand.bind(oGamePlay), sSessionId, bIsLocal);
