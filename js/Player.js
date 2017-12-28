@@ -164,6 +164,11 @@ define('Player', ['Tools'], function (Tools) {
             bIsMoving = false,
             fnOnTapUpdateGame = null;
 
+        // stops drawing the hand if this is not a local player
+        if (!this.isLocal) {
+            return;
+        }
+
         if (!oPlayerHandView) {
             this.makePlayerView(oPlayAreaView);
             oPlayerHandView = document.getElementById('hand' + this.playerNum);
