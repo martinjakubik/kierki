@@ -577,7 +577,6 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         // updates remote references after the slot number changed
         this.playerReference[0] = oDatabase.ref('game/slots/list/' + this.slotNumber + '/player0');
         this.playerReference[1] = oDatabase.ref('game/slots/list/' + this.slotNumber + '/player1');
-
     };
 
     /**
@@ -756,15 +755,11 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
 
         var oDatabase = firebase.database();
         var oReferenceGameAllSlots = oDatabase.ref('game/slots');
-        var bIsSetUpGameSlotOk = false;
 
         oReferenceGameAllSlots.once('value', function (snapshot) {
 
             // gets game slot object from remote database
             var oGameSlots = snapshot.val();
-
-            // gets a reference to the game slots
-            var oReferenceGameAllSlots = oDatabase.ref('game/slots');
 
             if (!oGameSlots) {
                 oGameSlots = {
@@ -816,6 +811,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             } else if (bIsPlayer0SlotFull && bIsPlayer1SlotFull) {
 
                 // takes next slot, even if it is full; makes player 0 controller
+                // TODO: get updated oGameSlot
                 oGamePlay.moveToNextGameSlot(oDatabase);
 
                 // keeps local player 0 waits for player 1
@@ -864,6 +860,9 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
                 // before player 0
 
             }
+
+            // updates the last slot number on the remote database
+            var oReferenceGameAllSlots = oDatabase.ref('game/slots');
 
             oReferenceGameAllSlots.child('lastSlot').set({
                 value: oGamePlay.slotNumber
