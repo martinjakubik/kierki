@@ -42,28 +42,28 @@ define('GameSession', ['Tools'], function (Tools) {
      * checks which players in the given game slot are local (player 0, player 1
      * or both)
      *
-     * @param oGameSlot a game slot
+     * @param aPlayerControllers a list of player controllers
      *
      * @return object {
      *             player0: true if local,
      *             player1: true if local
      *         }
      */
-    GameSession.whoIsLocal = function (oGameSlot) {
+    GameSession.whoIsLocal = function (aPlayerControllers) {
 
         var sSessionId = GameSession.getBrowserSessionId(),
             sPlayer0SessionId = -1,
             sPlayer1SessionId = -1;
 
         var oIsLocal = {
-            player0: true,
-            player1: true
+            player0: null,
+            player1: null
         };
 
-        if (oGameSlot) {
+        if (aPlayerControllers) {
 
-            if (oGameSlot.player0 && oGameSlot.player0.sessionId) {
-                     sPlayer0SessionId = oGameSlot.player0.sessionId;
+            if (aPlayerControllers[0] && aPlayerControllers[0].sessionId) {
+                     sPlayer0SessionId = aPlayerControllers[0].sessionId;
                      if (sSessionId === sPlayer0SessionId) {
                          oIsLocal.player0 = true;
                      } else {
@@ -71,8 +71,8 @@ define('GameSession', ['Tools'], function (Tools) {
                      }
                  }
 
-            if (oGameSlot.player1 && oGameSlot.player1.sessionId) {
-                     sPlayer1SessionId = oGameSlot.player1.sessionId;
+            if (aPlayerControllers[1] && aPlayerControllers[1].sessionId) {
+                     sPlayer1SessionId = aPlayerControllers[1].sessionId;
                      if (sSessionId === sPlayer1SessionId) {
                          oIsLocal.player1 = true;
                      }
