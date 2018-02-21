@@ -81,7 +81,7 @@ define('Tools', function () {
     * shuffles a set of things
     */
     Tools.shuffle = function (aThings) {
-        var i, n, aShuffledThings = [];
+        var n, aShuffledThings = [];
 
         while (aThings.length > 0) {
             n = Math.floor(Math.random() * aThings.length);
