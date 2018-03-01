@@ -506,6 +506,91 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     };
 
     /**
+     * gets the game slot list from a game slots snapshot
+     *
+     * @param oGameSlots a snapshot of game slots
+     *
+     * @return a game slots list
+     */
+    GamePlay.getGameSlotsListFromSnapshot = function (oGameSlots) {
+
+        if (!oGameSlots) {
+            oGameSlots = {
+                lastSlot: 0,
+                list: {}
+            };
+        }
+
+        // gets list of game slots
+        return oGameSlots ? oGameSlots.list : null ;
+
+    };
+
+    /**
+     * gets the number of the last-used game slot from a game slots object
+     *
+     * @param oGameSlots a snapshot of game slots
+     *
+     * @return the number of the last-used game slot
+     */
+    GamePlay.getLastGameSlotNumber = function (oGameSlots) {
+
+        // gets index of last game slot
+        var oGameSlotNumber = oGameSlots.lastSlot || {
+            value: 0
+        };
+
+        var nLastGameSlotNumber = oGameSlotNumber ? oGameSlotNumber.value : 0;
+
+        return nLastGameSlotNumber;
+    };
+
+    /**
+     * gets the last-used game slot from a game slots object
+     *
+     * @param oGameSlots a snapshot of game slots
+     *
+     * @return the snapshot of the last-used game slot
+     */
+    GamePlay.getLastGameSlot = function (oGameSlots) {
+
+        var aGameSlots = GamePlay.getGameSlotsListFromSnapshot(oGameSlots);
+
+        // gets the current game slot number
+        var nLastGameSlotNumber = GamePlay.getLastGameSlotNumber(oGameSlots);
+
+        // gets the current game slot
+        var oLastGameSlot = null;
+        if (aGameSlots && aGameSlots.length > nLastGameSlotNumber && aGameSlots[nLastGameSlotNumber]) {
+            oLastGameSlot = aGameSlots[nLastGameSlotNumber];
+        }
+
+        return oLastGameSlot;
+    };
+
+    /**
+     * moves to the next game slot and updates player references to the ones
+     * that are in that slot;
+     * finds the next available game slot, but starts over at 0
+     * if the max number is reached
+     *
+     * @param oDatabase reference to the remote database
+     * @param oGameSlots a snapshot of a game slots object
+     */
+    GamePlay.prototype.moveToNextGameSlot = function(oDatabase, oGameSlots) {
+
+        var aGameSlots = GamePlay.getGameSlotsListFromSnapshot(oGameSlots);
+
+        // moves to next slot
+        this.slotNumber = (this.slotNumber + 1) % this.maxNumberOfSlots;
+        this.gameSlot = aGameSlots[this.slotNumber];
+
+        // updates remote references after the slot number changed
+        this.playerReference[0] = oDatabase.ref('game/slots/list/' + this.slotNumber + '/player0');
+        this.playerReference[1] = oDatabase.ref('game/slots/list/' + this.slotNumber + '/player1');
+    };
+
+    /**
      * checks remote database and stores players in a game slot, then sets up
      * the remote players;
      *
@@ -523,29 +608,9 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             // gets game slot object from remote database
             var oGameSlots = snapshot.val();
 
-            if (!oGameSlots) {
-                oGameSlots = {
-                    lastSlot: 0,
-                    list: {}
-                };
-            }
-
-            // gets list of game slots
-            var aGameSlots = oGameSlots ? oGameSlots.list : null ;
-
-            // gets index of last game slot
-            var oGameSlotNumber = oGameSlots.lastSlot || {
-                value: 0
-            };
-
-            // finds the next available game slot, but starts over at 0
-            // if the max number is reached
-            oGamePlay.slotNumber = oGameSlotNumber ? oGameSlotNumber.value : 0;
-
-            oGamePlay.gameSlot = null;
-            if (aGameSlots && aGameSlots.length > oGamePlay.slotNumber && aGameSlots[oGamePlay.slotNumber]) {
-                oGamePlay.gameSlot = aGameSlots[oGamePlay.slotNumber];
-            }
+            // gets the last-used game slot
+            oGamePlay.slotNumber = GamePlay.getLastGameSlotNumber(oGameSlots);
+            oGamePlay.gameSlot = GamePlay.getLastGameSlot(oGameSlots);
 
             // stores remote references to players and to the rest of the cards
             oGamePlay.playerReference = [];
@@ -568,7 +633,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             } else if (bIsPlayer0SlotFull && bIsPlayer1SlotFull) {
 
                 // takes next slot, even if it is full; makes player 0 controller
-                oGamePlay.moveToNextGameSlot(oDatabase, aGameSlots);
+                oGamePlay.moveToNextGameSlot(oDatabase, oGameSlots);
 
                 // keeps local player 0 waits for player 1
                 oGamePlay.keepPlayer0AndWaitForPlayer1();
@@ -598,24 +663,6 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             oGamePlay.setUpHandlerForRemotePlayerEvents(oGamePlay, oDatabase);
 
         }.bind(this));
-    };
-
-    /**
-     * moves to the next game slot and updates player references to the ones
-     * that are in that slot
-     *
-     * @param oDatabase reference to the remote database
-     * @param aGameSlots a list of game slots
-     */
-    GamePlay.prototype.moveToNextGameSlot = function(oDatabase, aGameSlots) {
-
-        // moves to next slot
-        this.slotNumber = (this.slotNumber + 1) % this.maxNumberOfSlots;
-        this.gameSlot = aGameSlots[this.slotNumber];
-
-        // updates remote references after the slot number changed
-        this.playerReference[0] = oDatabase.ref('game/slots/list/' + this.slotNumber + '/player0');
-        this.playerReference[1] = oDatabase.ref('game/slots/list/' + this.slotNumber + '/player1');
     };
 
     /**
