@@ -619,11 +619,8 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             var oReferenceRestOfCards = oDatabase.ref('game/slots/list/' + oGamePlay.slotNumber + '/restOfCards');
 
             // checks if player 0 or player 1 have joined
-            var bIsPlayer0SlotFull = false;
-            var bIsPlayer1SlotFull = false;
-
-            bIsPlayer0SlotFull = oGamePlay.gameSlot.player0 ? true : false;
-            bIsPlayer1SlotFull = oGamePlay.gameSlot.player1 ? true : false;
+            var bIsPlayer0SlotFull = oGamePlay.gameSlot.player0 ? true : false;
+            var bIsPlayer1SlotFull = oGamePlay.gameSlot.player1 ? true : false;
 
             if (!bIsPlayer0SlotFull && !bIsPlayer1SlotFull) {
 
