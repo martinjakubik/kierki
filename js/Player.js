@@ -323,7 +323,7 @@ define('Player', ['Tools'], function (Tools) {
     /**
      * finds a card view for a given card Id
      */
-     var findCardViewForId = function (sCardId) {
+    var findCardViewForId = function (sCardId) {
 
         var i;
         var oCardView = null;
