@@ -533,16 +533,13 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      *
      * @return the number of the last-used game slot
      */
-    GamePlay.getLastGameSlotNumber = function (oGameSlots) {
+    GamePlay.getLastGameSlotKey = function (oGameSlots) {
 
         // gets index of last game slot
-        var oGameSlotNumber = oGameSlots.lastSlot || {
-            value: 0
-        };
+        var aGameSlots = GamePlay.getGameSlotsListFromSnapshot(oGameSlots);
+        var sLastGameSlotKey = Tools.getKeyOfLastItemInObject(aGameSlots);
 
-        var nLastGameSlotNumber = oGameSlotNumber ? oGameSlotNumber.value : 0;
-
-        return nLastGameSlotNumber;
+        return sLastGameSlotKey;
     };
 
     /**
@@ -557,12 +554,12 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         var aGameSlots = GamePlay.getGameSlotsListFromSnapshot(oGameSlots);
 
         // gets the current game slot number
-        var nLastGameSlotNumber = GamePlay.getLastGameSlotNumber(oGameSlots);
+        var sLastGameSlotKey = GamePlay.getLastGameSlotKey(oGameSlots);
 
         // gets the current game slot
         var oLastGameSlot = null;
-        if (aGameSlots && aGameSlots.length > nLastGameSlotNumber && aGameSlots[nLastGameSlotNumber]) {
-            oLastGameSlot = aGameSlots[nLastGameSlotNumber];
+        if (aGameSlots) {
+            oLastGameSlot = Tools.getLastItemInObject(aGameSlots);
         }
 
         return oLastGameSlot;
@@ -582,12 +579,15 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         var aGameSlots = GamePlay.getGameSlotsListFromSnapshot(oGameSlots);
 
         // moves to next slot
-        this.slotNumber = (this.slotNumber + 1) % this.maxNumberOfSlots;
-        this.gameSlot = aGameSlots[this.slotNumber];
+        var oReferenceGameSlotList = oDatabase.ref('game/slots/list');
+        var oReferenceGameSlot = oReferenceGameSlotList.push({
+            player0: '_null_'
+        });
+        this.slotKey = oReferenceGameSlot.key;
 
         // updates remote references after the slot number changed
-        this.playerReference[0] = oDatabase.ref('game/slots/list/' + this.slotNumber + '/player0');
-        this.playerReference[1] = oDatabase.ref('game/slots/list/' + this.slotNumber + '/player1');
+        this.playerReference[0] = oReferenceGameSlot.child('player0');
+        this.playerReference[1] = oReferenceGameSlot.child('player1');
     };
 
     /**
@@ -609,14 +609,14 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             var oGameSlots = snapshot.val();
 
             // gets the last-used game slot
-            oGamePlay.slotNumber = GamePlay.getLastGameSlotNumber(oGameSlots);
+            oGamePlay.slotKey = GamePlay.getLastGameSlotKey(oGameSlots);
             oGamePlay.gameSlot = GamePlay.getLastGameSlot(oGameSlots);
 
             // stores remote references to players and to the rest of the cards
             oGamePlay.playerReference = [];
-            oGamePlay.playerReference.push(oDatabase.ref('game/slots/list/' + oGamePlay.slotNumber + '/player0'));
-            oGamePlay.playerReference.push(oDatabase.ref('game/slots/list/' + oGamePlay.slotNumber + '/player1'));
-            var oReferenceRestOfCards = oDatabase.ref('game/slots/list/' + oGamePlay.slotNumber + '/restOfCards');
+            oGamePlay.playerReference.push(oDatabase.ref('game/slots/list/' + oGamePlay.slotKey + '/player0'));
+            oGamePlay.playerReference.push(oDatabase.ref('game/slots/list/' + oGamePlay.slotKey + '/player1'));
+            var oReferenceRestOfCards = oDatabase.ref('game/slots/list/' + oGamePlay.slotKey + '/restOfCards');
 
             // checks if player 0 or player 1 have joined
             var bIsPlayer0SlotFull = oGamePlay.gameSlot.player0 ? true : false;
@@ -654,7 +654,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             var oReferenceGameAllSlots = oDatabase.ref('game/slots');
 
             oReferenceGameAllSlots.child('lastSlot').set({
-                value: oGamePlay.slotNumber
+                value: oGamePlay.slotKey
             });
 
             oGamePlay.setUpHandlerForRemotePlayerEvents(oGamePlay, oDatabase);
@@ -670,7 +670,8 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         var oGamePlay = this;
 
         var oDatabase = firebase.database();
-        var oReferenceGameSlot = oDatabase.ref('game/slots/list/' + oGamePlay.slotNumber);
+        var oReferenceGameSlotList = oDatabase.ref('game/slots/list');
+        var oReferenceGameSlot = oReferenceGameSlotList.child(oGamePlay.slotKey);
 
         // makes a session Id for player 0
         var sPlayer0SessionId = GameSession.makeNewBrowserSessionId();
@@ -685,7 +686,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         oGamePlay.distributeCardsToAvailablePlayers();
 
         // stores remote player 0, clears player 1 and waits for new player 1
-        oReferenceGameSlot.set({
+        oGamePlay.gameSlot = {
             player0: {
                 name: oGamePlay.playerControllers[0].getName(),
                 hand: oGamePlay.playerControllers[0].getHand(),
@@ -693,7 +694,9 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             },
             player1: null,
             restOfCards: oGamePlay.restOfCards
-        });
+        };
+
+        oReferenceGameSlot.set(oGamePlay.gameSlot);
 
         // renders player 0
         var oPlayAreaView = document.getElementById('playArea');
@@ -704,8 +707,8 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         oGamePlay.callbacks.renderResult(this.result);
 
         // stores a reference to the remote player 1
-        oGamePlay.playerReference[1] = oDatabase.ref('game/slots/list/' + oGamePlay.slotNumber + '/player1');
-        var oReferenceRestOfCards = oDatabase.ref('game/slots/list/' + oGamePlay.slotNumber + '/restOfCards');
+        oGamePlay.playerReference[1] = oReferenceGameSlot.child('/player1');
+        var oReferenceRestOfCards = oReferenceGameSlot.child('/restOfCards');
 
         // listens for arrival of player 1
         oGamePlay.playerReference[1].on('value', function (snapshot) {
@@ -779,12 +782,6 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             sPlayer0SessionId = GameSession.getBrowserSessionId();
             oGamePlay.playerControllers[0].setSessionId(sPlayer0SessionId);
 
-            // renders player 0
-            var oPlayAreaView = document.getElementById('playArea');
-            oGamePlay.playerControllers[0].makePlayerView(oPlayAreaView);
-            oGamePlay.playerControllers[0].renderHand();
-            oGamePlay.playerControllers[0].renderTable();
-
         } else {
 
             // keeps the session Id from the remote player object
@@ -792,6 +789,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
                 sPlayer0SessionId = oGamePlay.gameSlot.player0.sessionId;
                 oGamePlay.playerControllers[0].setSessionId(sPlayer0SessionId);
             }
+
         }
 
         // gets the rest of the cards to give to player 1
@@ -807,7 +805,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         }
 
         var sPlayer1SessionId = oPlayer1Value ? oPlayer1Value.sessionId : null;
-        var bIsPlayer1Local = (sPlayer1SessionId === null) || (!oGamePlay.gameSlot.player1 || oGamePlay.gameSlot.player1 === null);
+        var bIsPlayer1Local = (sPlayer1SessionId === null);
 
         // makes player 1 controller
         oGamePlay.makePlayerController(1, oGamePlay.playerControllers, oGamePlay.playerReference[1], oGamePlay.localPlayerTappedCardInHand.bind(oGamePlay), sPlayer1SessionId, bIsPlayer1Local);
@@ -859,7 +857,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         var nPlayerNumber = 0;
         for (nPlayerNumber = 0; nPlayerNumber < 2; nPlayerNumber++) {
 
-            oGamePlay.playerReference[nPlayerNumber] = oDatabase.ref('/game/slots/list/' + oGamePlay.slotNumber + '/player' + nPlayerNumber);
+            oGamePlay.playerReference[nPlayerNumber] = oDatabase.ref('/game/slots/list/' + oGamePlay.slotKey + '/player' + nPlayerNumber);
             oGamePlay.playerReference[nPlayerNumber].on('value', oGamePlay.handlerForRemotePlayerEvents.bind(this));
 
         }

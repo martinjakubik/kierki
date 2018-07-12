@@ -91,5 +91,29 @@ define('Tools', function () {
         return aShuffledThings;
     };
 
+    /**
+    * gets the last sub-object from an object
+    */
+    Tools.getLastItemInObject = function (oThings) {
+
+        var aThingKeys = Object.keys(oThings);
+        var aLastThingKey = aThingKeys[aThingKeys.length - 1];
+
+        return oThings[aLastThingKey];
+
+    };
+
+    /**
+    * gets the number of last sub-object from an object
+    */
+    Tools.getKeyOfLastItemInObject = function (oThings) {
+
+        var aThingKeys = Object.keys(oThings);
+        var aLastThingKey = aThingKeys[aThingKeys.length - 1];
+
+        return aLastThingKey;
+
+    };
+
     return Tools;
 });

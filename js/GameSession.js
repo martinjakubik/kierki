@@ -49,7 +49,7 @@ define('GameSession', ['Tools'], function (Tools) {
 
         var sSessionId = GameSession.getBrowserSessionId();
 
-        if (sSessionId === oPlayerValue.sessionId) {
+        if (oPlayerValue && sSessionId === oPlayerValue.sessionId) {
             return true;
         }
 
