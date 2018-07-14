@@ -578,7 +578,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
 
         // moves to next slot
         var oReferenceGameSlot = oReferenceGameSlotList.push({
-            player0: '_null_'
+            player0: '_new_'
         });
         this.slotKey = oReferenceGameSlot.key;
 
