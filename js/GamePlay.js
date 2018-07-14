@@ -571,15 +571,12 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      * finds the next available game slot, but starts over at 0
      * if the max number is reached
      *
-     * @param oDatabase reference to the remote database
-     * @param oGameSlots a snapshot of a game slots object
+     * @param oReferenceGameSlotList reference to the game slot list on the
+     *                                  remote database
      */
-    GamePlay.prototype.moveToNextGameSlot = function(oDatabase, oGameSlots) {
-
-        var aGameSlots = GamePlay.getGameSlotsListFromSnapshot(oGameSlots);
+    GamePlay.prototype.moveToNextGameSlot = function(oReferenceGameSlotList) {
 
         // moves to next slot
-        var oReferenceGameSlotList = oDatabase.ref('game/slots/list');
         var oReferenceGameSlot = oReferenceGameSlotList.push({
             player0: '_null_'
         });
@@ -602,6 +599,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
 
         var oDatabase = firebase.database();
         var oReferenceGameAllSlots = oDatabase.ref('game/slots');
+        var oReferenceGameSlotList = oDatabase.ref('game/slots/list');
 
         oReferenceGameAllSlots.once('value', function (snapshot) {
 
@@ -630,7 +628,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             } else if (bIsPlayer0SlotFull && bIsPlayer1SlotFull) {
 
                 // takes next slot, even if it is full; makes player 0 controller
-                oGamePlay.moveToNextGameSlot(oDatabase, oGameSlots);
+                oGamePlay.moveToNextGameSlot(oReferenceGameSlotList);
 
                 // keeps local player 0 waits for player 1
                 oGamePlay.keepPlayer0AndWaitForPlayer1();
