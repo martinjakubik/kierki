@@ -34,7 +34,6 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         this.cardWidth = nCardWidth;
         this.callbacks = oCallbacks;
 
-        this.currentSlot;
         this.playerControllers = [];
 
         this.allPlayersJoined = false;
@@ -81,20 +80,6 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         }
         return false;
     }
-
-    /**
-    * gets the slot currently being used for the game on the remote database
-    */
-    GamePlay.prototype.getCurrentSlot = function () {
-        return this.currentSlot;
-    };
-
-    /**
-    * sets the slot to use for the game on the remote database
-    */
-    GamePlay.prototype.setCurrentSlot = function (nCurrentSlot) {
-        this.currentSlot = nCurrentSlot;
-    };
 
     /**
     * gets the list of players
