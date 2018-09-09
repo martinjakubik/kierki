@@ -82,20 +82,6 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     }
 
     /**
-    * gets the list of players
-    */
-    GamePlay.prototype.getPlayers = function () {
-        return this.playerControllers;
-    };
-
-    /**
-    * sets the list of players
-    */
-    GamePlay.prototype.setPlayers = function (aPlayers) {
-        this.playerControllers = aPlayers;
-    };
-
-    /**
     * renders all the cards
     */
     GamePlay.prototype.renderCards = function () {
