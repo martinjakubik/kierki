@@ -464,19 +464,6 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     };
 
     /**
-     * adds players to a game
-     *
-     * @param nPlayer the player number
-     * @param aCards the cards for the player's hand
-     */
-    GamePlay.prototype.setPlayerCards = function (nPlayer, aCards) {
-
-        if (nPlayer < this.playerControllers.length) {
-            this.playerControllers[nPlayer].setHand(aCards);
-        }
-    };
-
-    /**
      * gets the game slot list from a game slots snapshot
      *
      * @param oGameSlots a snapshot of game slots
@@ -784,7 +771,9 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         oGamePlay.playerControllers[1].setName(oGamePlay.callbacks.getRandomPlayerName(1, oGamePlay.playerNames, sNotThisName));
 
         // sets player 1's cards
-        oGamePlay.setPlayerCards(1, oGamePlay.restOfCards);
+        if (oGamePlay.playerControllers.length > 1) {
+            oGamePlay.playerControllers[1].setHand(oGamePlay.restOfCards);
+        }
 
         // removes rest of cards
         oReferenceRestOfCards.remove();
