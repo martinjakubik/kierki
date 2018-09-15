@@ -34,8 +34,19 @@ body {
     padding: 4pt 14pt;
     margin: 4pt 14pt;
     background-color: white;
-
+    
     font-size: 14pt;
+}
+
+.iconbutton {
+    height: 3em;
+    width: 3em;
+    border-radius: 8pt;
+    margin: 14pt 14pt 14pt 14pt;
+    background-color: white;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hand {
@@ -271,6 +282,14 @@ body {
     font-family: fantasy;
     font-size: 18pt;
     font-weight: bold;
+}
+
+#togglesound {
+    background-image: url('../../../../resources/soundbutton.png');
+}
+
+#togglesound.soundon {
+    background-color: #333;   
 }
 
 #card1-a.showFace {

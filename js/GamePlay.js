@@ -21,7 +21,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      * @param oCallbacks functions used for customized actions {
      *              renderResult: function used to render the winning message
      *              getRandomPlayerName: function used to get a random
-                        player name from a given list
+     *                  player name from a given list
      *          }
      */
     var GamePlay = function (nNumPlayers, aCards, aSounds, aPlayerNames, nMaxNumberOfSlots, nCardWidth, oCallbacks) {
@@ -41,6 +41,8 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         this.state = WAITING_TO_FILL_TABLE;
 
         this.numMoves = 0;
+        this.soundOn = true;
+
     };
 
     /**
@@ -202,6 +204,11 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      * plays a sound if there's a war
      */
     GamePlay.prototype.playWarSound = function (nCardValue) {
+
+        if (this.soundOn === false) {
+            return;
+        }
+
         switch (nCardValue) {
             case 1:
             this.sounds.hamsterSound.play();
@@ -581,7 +588,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             if (!bIsPlayer0SlotFull && !bIsPlayer1SlotFull) {
 
                 // found a new slot; keeps local player 0 waits for player 1
-                oGamePlay.makePlayer0();
+                oGamePlay.keepPlayer0AndWaitForPlayer1();
 
             } else if (bIsPlayer0SlotFull && bIsPlayer1SlotFull) {
 
@@ -589,7 +596,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
                 oGamePlay.moveToNextGameSlot(oReferenceGameSlotList);
 
                 // keeps local player 0 waits for player 1
-                oGamePlay.makePlayer0();
+                oGamePlay.keepPlayer0AndWaitForPlayer1();
 
             } else if (bIsPlayer0SlotFull && !bIsPlayer1SlotFull) {
 
@@ -597,7 +604,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
 
                 // adds the two player controllers
                 var oPlayer1Value = null;
-                oGamePlay.makePlayer1(oPlayer1Value, oReferenceRestOfCards);
+                oGamePlay.okPlayer1JoinedAndPlayer0WasWaitingSoLetsGo(oPlayer1Value, oReferenceRestOfCards);
 
             } else if (!bIsPlayer0SlotFull && bIsPlayer1SlotFull) {
 
@@ -621,7 +628,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     /**
      * sets up a callback to wait for player 1
      */
-    GamePlay.prototype.makePlayer0 = function () {
+    GamePlay.prototype.keepPlayer0AndWaitForPlayer1 = function () {
 
         var oGamePlay = this;
 
@@ -675,7 +682,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             // checks if a remote player 1 just joined and if there is no
             // player 1 yet
             if (oPlayer1Value && !oGamePlay.playerControllers[1]) {
-                oGamePlay.makePlayer1(oPlayer1Value, oReferenceRestOfCards);
+                oGamePlay.okPlayer1JoinedAndPlayer0WasWaitingSoLetsGo(oPlayer1Value, oReferenceRestOfCards);
             }
         }.bind(oGamePlay));
 
@@ -689,7 +696,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             oGamePlay.playerReference[1].off();
 
             var oPlayer1Value = null;
-            oGamePlay.makePlayer1(oPlayer1Value, oReferenceRestOfCards);
+            oGamePlay.okPlayer1JoinedAndPlayer0WasWaitingSoLetsGo(oPlayer1Value, oReferenceRestOfCards);
         };
 
         // makes don't wait button
@@ -709,7 +716,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     * @param oPlayer1Value {optional} a player object
     * @param oReferenceRestOfCards {optional} reference to rest of cards on remote database
     */
-    GamePlay.prototype.makePlayer1 = function (oPlayer1Value, oReferenceRestOfCards) {
+    GamePlay.prototype.okPlayer1JoinedAndPlayer0WasWaitingSoLetsGo = function (oPlayer1Value, oReferenceRestOfCards) {
 
         var oGamePlay = this;
 
@@ -778,13 +785,11 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         // removes rest of cards
         oReferenceRestOfCards.remove();
 
-        // renders player 1 if local
+        // renders player 1
         var oPlayAreaView = document.getElementById('playArea');
         oGamePlay.playerControllers[1].makePlayerView(oPlayAreaView);
-        if (bIsPlayer1Local) {
-            oGamePlay.playerControllers[1].renderHand();
-            oGamePlay.playerControllers[1].renderTable();
-        }
+        oGamePlay.playerControllers[1].renderHand();
+        oGamePlay.playerControllers[1].renderTable();
 
         // lets player 0 play
         oGamePlay.playerControllers[0].setOnTapCardInHand(oGamePlay.localPlayerTappedCardInHand.bind(oGamePlay));
@@ -911,6 +916,31 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     };
 
     /**
+     * toggles sounds
+     */
+    GamePlay.prototype.toggleSound = function () {
+        this.soundOn = !this.soundOn;
+        var oToggleSoundButton = document.getElementById('togglesound');
+        if (oToggleSoundButton) {
+            Tools.toggleClass(oToggleSoundButton, 'soundon');
+        }
+    };
+
+    /**
+     * toggles sounds
+     */
+    GamePlay.prototype.makeToggleSoundButton = function () {
+
+        var oSoundButton = document.createElement('div');
+        Tools.setClass(oSoundButton, 'iconbutton');
+        oSoundButton.setAttribute('id', 'togglesound');
+
+        oSoundButton.onclick = this.toggleSound.bind(this);
+
+        document.body.insertBefore(oSoundButton, null);
+    };
+
+    /**
      * starts a game
      */
     GamePlay.prototype.start = function (bShuffleCards) {
@@ -920,6 +950,8 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         } else {
             this.shuffledCards = this.cards;
         }
+
+        this.makeToggleSoundButton();
 
         this.renderCards();
 
