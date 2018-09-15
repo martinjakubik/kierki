@@ -921,8 +921,10 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     GamePlay.prototype.toggleSound = function () {
         this.soundOn = !this.soundOn;
         var oToggleSoundButton = document.getElementById('togglesound');
-        if (oToggleSoundButton) {
-            Tools.toggleClass(oToggleSoundButton, 'soundon');
+        if (oToggleSoundButton && this.soundOn === true) {
+            Tools.addClass(oToggleSoundButton, 'soundon');
+        } else {
+            Tools.removeClass(oToggleSoundButton, 'soundon');
         }
     };
 

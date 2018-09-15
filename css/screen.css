@@ -285,11 +285,11 @@ body {
 }
 
 #togglesound {
-    background-image: url('../../../../resources/soundbutton.png');
+    background-image: url('../../../../resources/soundoff.png');
 }
 
 #togglesound.soundon {
-    background-color: #333;   
+    background-image: url('../../../../resources/soundon.png');
 }
 
 #card1-a.showFace {
