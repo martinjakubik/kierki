@@ -588,7 +588,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             if (!bIsPlayer0SlotFull && !bIsPlayer1SlotFull) {
 
                 // found a new slot; keeps local player 0 waits for player 1
-                oGamePlay.keepPlayer0AndWaitForPlayer1();
+                oGamePlay.makePlayer0();
 
             } else if (bIsPlayer0SlotFull && bIsPlayer1SlotFull) {
 
@@ -596,7 +596,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
                 oGamePlay.moveToNextGameSlot(oReferenceGameSlotList);
 
                 // keeps local player 0 waits for player 1
-                oGamePlay.keepPlayer0AndWaitForPlayer1();
+                oGamePlay.makePlayer0();
 
             } else if (bIsPlayer0SlotFull && !bIsPlayer1SlotFull) {
 
@@ -604,7 +604,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
 
                 // adds the two player controllers
                 var oPlayer1Value = null;
-                oGamePlay.okPlayer1JoinedAndPlayer0WasWaitingSoLetsGo(oPlayer1Value, oReferenceRestOfCards);
+                oGamePlay.makePlayer1(oPlayer1Value, oReferenceRestOfCards);
 
             } else if (!bIsPlayer0SlotFull && bIsPlayer1SlotFull) {
 
@@ -628,7 +628,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     /**
      * sets up a callback to wait for player 1
      */
-    GamePlay.prototype.keepPlayer0AndWaitForPlayer1 = function () {
+    GamePlay.prototype.makePlayer0 = function () {
 
         var oGamePlay = this;
 
@@ -682,7 +682,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             // checks if a remote player 1 just joined and if there is no
             // player 1 yet
             if (oPlayer1Value && !oGamePlay.playerControllers[1]) {
-                oGamePlay.okPlayer1JoinedAndPlayer0WasWaitingSoLetsGo(oPlayer1Value, oReferenceRestOfCards);
+                oGamePlay.makePlayer1(oPlayer1Value, oReferenceRestOfCards);
             }
         }.bind(oGamePlay));
 
@@ -696,7 +696,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
             oGamePlay.playerReference[1].off();
 
             var oPlayer1Value = null;
-            oGamePlay.okPlayer1JoinedAndPlayer0WasWaitingSoLetsGo(oPlayer1Value, oReferenceRestOfCards);
+            oGamePlay.makePlayer1(oPlayer1Value, oReferenceRestOfCards);
         };
 
         // makes don't wait button
@@ -716,7 +716,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     * @param oPlayer1Value {optional} a player object
     * @param oReferenceRestOfCards {optional} reference to rest of cards on remote database
     */
-    GamePlay.prototype.okPlayer1JoinedAndPlayer0WasWaitingSoLetsGo = function (oPlayer1Value, oReferenceRestOfCards) {
+    GamePlay.prototype.makePlayer1 = function (oPlayer1Value, oReferenceRestOfCards) {
 
         var oGamePlay = this;
 
