@@ -175,8 +175,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
                 && this.playerControllers[0].getTableCard().value
                 === this.playerControllers[1].getTableCard().value) {
 
-                // checks if both players have the same face-up card (starts
-                // war)
+                // assumes both players have the same face-up card (starts war)
                 this.playWarSound(this.playerControllers[0].getTableCard().value);
 
                 this.state = WAITING_FOR_FACE_DOWN_WAR_CARD;
@@ -194,7 +193,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         } else if (!this.playerControllers[0].getTableCard()
             || !this.playerControllers[1].getTableCard()) {
 
-            // checks if the players have no cards on the table
+            // assumes the players have no cards on the table
             this.state = WAITING_TO_FILL_TABLE;
 
         }
