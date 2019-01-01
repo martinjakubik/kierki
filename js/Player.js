@@ -364,7 +364,7 @@ define('Player', ['Tools'], function (Tools) {
           case 'animationend':
               var oElement = oEvent.target;
 
-              // removes moving to table flag
+              // removes wiggling flag
               Tools.removeClass(oElement, 'wiggling');
               break;
           default:
