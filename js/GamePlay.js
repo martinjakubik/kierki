@@ -366,39 +366,6 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     };
 
     /**
-     * updates the game when player wants to gather cards, based on current
-     * state
-     *
-     * @param oPlayer a player controller on whom the event happened
-     * @param bIsLocalEvent true if the event happened in the local UI
-     */
-    GamePlay.prototype.playerWantsToGatherCards = function (oPlayer, bIsLocalEvent) {
-        switch (this.state) {
-            case WAITING_TO_FILL_TABLE:
-                // table not full; can't gather cards
-                break;
-            case WAITING_FOR_FACE_DOWN_WAR_CARD:
-
-                // war is happening; checks if any player ran out of cards and
-                // lost
-
-                break;
-            case WAITING_TO_GATHER_CARDS:
-                // if table is full, lets the winning player gather the cards
-                if (bIsLocalEvent) {
-                    this.gatherCards();
-                    this.numMoves++;
-                }
-                break;
-            default:
-                break;
-        }
-
-        // updates the game state based on the table
-        this.updateGameStateBasedOnTable();
-    };
-
-    /**
      * reacts to a local player tapping a card in their hand
      *
      * @param oEvent a browser event
