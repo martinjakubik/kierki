@@ -161,8 +161,7 @@ define('Player', ['Tools'], function (Tools) {
         var i, oPlayAreaView = document.getElementById('playArea'),
             oPlayerHandView = document.getElementById('hand' + this.playerNum),
             bShowCardFace = false,
-            bIsMoving = false,
-            fnOnTapUpdateGame = null;
+            bIsMoving = false;
 
         // stops drawing the hand if this is not a local player
         if (!this.isLocal) {
@@ -188,7 +187,7 @@ define('Player', ['Tools'], function (Tools) {
     /**
      * adds the given card to the given view
      */
-    Player.prototype.addCardToView = function (oView, oCard, nCardPosition, nNumCards, bShowCardFace, bIsMoving, fnOnTapUpdateGame) {
+    Player.prototype.addCardToView = function (oView, oCard, nCardPosition, nNumCards, bShowCardFace, bIsMoving) {
 
         // creates a card view
         var oCardView = document.createElement('div');
@@ -233,8 +232,13 @@ define('Player', ['Tools'], function (Tools) {
 
         oCardView.onclick = this.onTapCardInHand;
 
-        // sets the card's id as suit+value
-        oCardView.setAttribute('id', 'card' + oCard.value + '-' + oCard.suit);
+        // sets the card's id as value
+        oCardView.setAttribute('id', 'card' + oCard.value);
+
+        // renders the card's word
+        var oCardWord = document.createElement('div');
+        oCardWord.innerText = oCard.value;
+        oCardView.insertBefore(oCardWord, null);
 
         oView.insertBefore(oCardView, null);
     };
@@ -344,7 +348,7 @@ define('Player', ['Tools'], function (Tools) {
 
         var oCard = this.getHand() ? this.getHand()[0] : null;
         if (oCard) {
-            var sCardId = oCard.value + '-' + oCard.suit;
+            var sCardId = oCard.value;
 
             var oCardView = findCardViewForId(sCardId);
 
@@ -412,7 +416,7 @@ define('Player', ['Tools'], function (Tools) {
             sCardInCardsId;
 
         for (i = 0; i < aCards.length; i++) {
-            sCardInCardsId = 'card' + aCards[i].value + '-' + aCards[i].suit;
+            sCardInCardsId = 'card' + aCards[i].value;
             if (sCardId === sCardInCardsId) {
                 return i;
             }
@@ -426,7 +430,7 @@ define('Player', ['Tools'], function (Tools) {
 
         // puts back first card
         var oCard = this.getHand() ? this.getHand()[0] : null;
-        var sCardId = oCard.value + '-' + oCard.suit;
+        var sCardId = oCard.value;
         var oCardView = findCardViewForId(sCardId);
 
         Tools.removeClass(oCardView, 'showFace');
@@ -435,7 +439,7 @@ define('Player', ['Tools'], function (Tools) {
 
         // puts back first card
         oCard = this.getHand() ? this.getHand()[this.getHand().length - 1] : null;
-        sCardId = oCard.value + '-' + oCard.suit;
+        sCardId = oCard.value;
         oCardView = findCardViewForId(sCardId);
 
         Tools.removeClass(oCardView, 'showFace');
@@ -447,7 +451,7 @@ define('Player', ['Tools'], function (Tools) {
         // puts back rest of cards except last (they are stacked)
         for (i = 1; i < this.getHand().length - 1; i++) {
             oCard = this.getHand() ? this.getHand()[i] : null;
-            sCardId = oCard.value + '-' + oCard.suit;
+            sCardId = oCard.value;
 
             if (oCard) {
                 oCardView = findCardViewForId(sCardId);
@@ -494,7 +498,7 @@ define('Player', ['Tools'], function (Tools) {
         for (i = 0; i < aCardIndexes.length; i++) {
             j = aCardIndexes[i];
             oCard = this.getHand() ? this.getHand()[j] : null;
-            sCardId = oCard.value + '-' + oCard.suit;
+            sCardId = oCard.value;
 
             if (oCard) {
                 var oCardView = findCardViewForId(sCardId);
