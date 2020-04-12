@@ -495,13 +495,13 @@ define('GamePlay', ['Stack', 'Tools', 'GameSession'], function (Stack, Tools, Ga
         };
 
         // makes don't wait button
-        var oDontWaitBtn = document.createElement('button');
-        var oContent = document.createTextNode('Don\'t wait');
-        Tools.setClass(oDontWaitBtn, 'button');
-        oDontWaitBtn.setAttribute('id', 'dontWait');
-        oDontWaitBtn.appendChild(oContent);
-        oDontWaitBtn.onclick = dontWaitPressed.bind(this);
-        document.body.insertBefore(oDontWaitBtn, null);
+        var oBodyView = document.body;
+        Tools.makeButton({
+            id: 'dontWait',
+            label: 'Don\'t wait',
+            parentView: oBodyView,
+            handler: dontWaitPressed.bind(this)
+        });
 
     };
 
@@ -530,7 +530,7 @@ define('GamePlay', ['Stack', 'Tools', 'GameSession'], function (Stack, Tools, Ga
             oGamePlay.makeStackController(oStackReference, oGamePlay.localHomebaseTappedCardInHand.bind(oGamePlay));
         }
 
-        // keeps name and hand from remote homebase object
+        // keeps hand from remote homebase object
         if (oGamePlay.gameSlot) {
             oGamePlay.stackController.setHand(oGamePlay.gameSlot.stack.hand);
         }

@@ -5,6 +5,61 @@ body {
     background-size: cover;
 }
 
+.master {
+    height: 16em;
+    width: 2em;
+}
+
+.menuButton {
+    background-image: url('../../../../resources/hamburger-menu.png');
+    background-repeat: no-repeat;
+}
+
+.menu {
+    display: none;
+}
+
+.menu.visible {
+    display: block;
+    background-color: rgba(0.6, 0.6, 0.5, 0.3);
+    width: 16em;
+    padding: 1em;
+}
+
+input.addWord {
+    font-size: 12pt;
+    height: 3em;
+    width: 12em;
+    margin: 1em 1em 1em 2em;
+    padding: 1em 1em 1em 1em;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-width: 0.2em;
+    border-style: solid;
+    border-color: white;
+}
+
+.addedDictionaryWordStatus {
+    display: none;
+}
+
+.addedDictionaryWordStatus.visible {
+    display: block;
+    width: 12em;
+    color: white;
+    font-family: sans-serif;
+    margin: 1em 2em 1em 2em;
+    border: 2pt dashed white;
+    padding: 1em;
+    padding: 1em 1em 2em 1em;
+    box-sizing: border-box;
+    border-radius: 0.4em;
+}
+
+.addedDictionaryWordStatus.visible::before {
+    content: 'added word: '
+}
+
 .game {
     height: 80%;
     width: 100%;
@@ -27,27 +82,24 @@ body {
     min-width: 18%;
 }
 
-.button {
+.textButton {
     height: 3em;
-    border: 3pt solid #488;
-    border-radius: 4pt;
-    padding: 4pt 14pt;
-    margin: 4pt 14pt;
-    background-color: white;
-    
-    font-size: 14pt;
+    border-radius: 0.4em;
+    margin: 2em;
+    background-color: transparent;
+    font-size: 1em;
+    width: 12em;
+    color: white;
+    border-width: 0.2em;
+    border-color: white;
 }
 
 .iconbutton {
-    height: 3em;
-    width: 3em;
-    border-radius: 8pt;
-    margin: 14pt 14pt 14pt 14pt;
-    background-color: white;
-    background-size: 80%;
-    background-position: center;
+    height: 6em;
+    width: 6em;
+    border: none;
     background-repeat: no-repeat;
-}
+    background-color: transparent;}
 
 .hand {
     position: relative;
@@ -220,6 +272,14 @@ body {
         font-size: 38pt;
     }
 
+    input.addWord {
+        font-size: 14pt;
+        height: 80px;
+        width: 200px;
+        margin: 6pt 6pt 6pt 18pt;
+        padding: 12pt 6pt 12pt 6pt;
+    }
+        
     .playArea {
         width: 100%;
     }

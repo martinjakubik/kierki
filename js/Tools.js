@@ -115,5 +115,52 @@ define('Tools', function () {
 
     };
 
+    Tools.makeButton = function (oParameters) {
+        var sId = oParameters.id;
+        var sClass = oParameters.class ? oParameters.class : sId;
+        var sLabel = oParameters.label ? oParameters.label : null;
+        var oParentView = oParameters.parentView;
+        var oHandler = oParameters.handler;
+
+        var oButton = document.createElement('button');
+        oButton.setAttribute('id', sId);
+        if (sLabel) {
+            var oContent = document.createTextNode(sLabel);
+            oButton.appendChild(oContent);
+            Tools.setClass(oButton, 'textButton');
+        } else {
+            Tools.setClass(oButton, 'iconButton');
+        }
+        Tools.addClass(oButton, sClass);
+        oButton.onclick = oHandler;
+        oParentView.insertBefore(oButton, null);
+
+        return oButton;
+    }
+
+    Tools.makeTextInput = function (oParameters) {
+
+        var sId = oParameters.id;
+
+        if (!sId) {
+            return;
+        }
+
+        var sRefId = oParameters.refId ? oParameters.refId : sId;
+        var sClass = oParameters.class ? oParameters.class : sId;
+        var oParentView = oParameters.parentView;
+        var oChangeHandler = oParameters.handler;
+
+        var oTextInputView = document.createElement('input');
+        Tools.setClass(oTextInputView, sClass);
+        oTextInputView.setAttribute('id', sId);
+        oTextInputView.setAttribute('ref-id', sRefId);
+
+        oTextInputView.onchange = oChangeHandler;
+
+        oParentView.insertBefore(oTextInputView, null);
+
+    }
+
     return Tools;
 });
