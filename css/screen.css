@@ -325,7 +325,7 @@ input.addWord.visible {
     and (orientation: landscape) {
 
     .game {
-        height: 64%;
+        height: 0em;
     }
 
     .button {
