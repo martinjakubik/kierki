@@ -104,8 +104,8 @@ define('GamePlay', ['Stack', 'Tools', 'GameSession'], function (Stack, Tools, Ga
         if (this.stackController.hand.length === 0) {
 
             this.callbacks.renderResult(this.result);
-            this.state = this.moveToNextRound();
-            return true;
+            this.moveToNextRound.call(this);
+
         }
 
         return false;
@@ -116,7 +116,11 @@ define('GamePlay', ['Stack', 'Tools', 'GameSession'], function (Stack, Tools, Ga
      */
     GamePlay.prototype.updateGameStateBasedOnTable = function () {
 
-        if (this.stackController.getTableCard()) {
+        if (this.stackController.getHand().length === 0) {
+
+            this.state = WAITING_TO_GATHER_CARDS;
+
+        } else if (this.stackController.getTableCard()) {
 
                 // assumes both homebases have face down cards (in war)
                 this.state = WAITING_TO_FILL_TABLE;
@@ -171,6 +175,7 @@ define('GamePlay', ['Stack', 'Tools', 'GameSession'], function (Stack, Tools, Ga
         if (this.state === WAITING_TO_GATHER_CARDS) {
 
             // moves table cards to the hand
+            this.stackController.shuffleTable();
             this.stackController.moveTableToHand();
 
             this.state = WAITING_TO_FILL_TABLE;
@@ -219,7 +224,7 @@ define('GamePlay', ['Stack', 'Tools', 'GameSession'], function (Stack, Tools, Ga
 
         // checks if the tap is a legitimate move in the game
         if (oStack && bIsLocalEvent && this.allPlayersJoined && this.state !== GAME_OVER) {
-            this.homebaseWantsToPlayACard.call(this, oStack, bIsLocalEvent);
+            this.homebaseWantsToPlayACard(oStack, bIsLocalEvent);
         } else {
             // does nothing
             oStack.wiggleCardInHand();
