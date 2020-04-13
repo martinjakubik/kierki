@@ -281,7 +281,7 @@ input.addWord.visible {
 
 @media only screen
     and (min-device-width: 320px)
-    and (max-device-width: 568px) {
+    and (max-device-width: 812px) {
 
     .button {
         width: 300pt;
@@ -312,16 +312,16 @@ input.addWord.visible {
     }
 
     .card {
-        height: 240pt;
-        width: 148pt;
-
-        font-size: 18pt;
+        height: 6em;
+        width: 10em;
+        font-size: 2em;
+        border-radius: 0.3em;
     }
 }
 
 @media only screen
     and (min-device-width: 320px)
-    and (max-device-width: 568px)
+    and (max-device-width: 812px)
     and (orientation: landscape) {
 
     .game {
