@@ -194,6 +194,12 @@ define('Stack', ['Tools'], function (Tools) {
         cardFlipSound.play();
     };
 
+    Stack.prototype.shuffleTable = function () {
+        var aTable = Tools.shuffle(this.table);
+        this.clearTable();
+        this.setTable(aTable);
+    };
+
     Stack.prototype.moveTableToHand = function () {
 
         // copies table to hand
