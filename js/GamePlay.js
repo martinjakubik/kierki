@@ -441,8 +441,12 @@ define('GamePlay', ['Stack', 'Tools', 'GameSession'], function (Stack, Tools, Ga
         // distributes cards to homebase 0
         oGamePlay.distributeCardsToAvailablePlayers();
 
+        // gets the current time
+        var iTimestamp = new Date().getTime();
+
         // stores remote homebase 0, clears homebase 1 and waits for new homebase 1
         oGamePlay.gameSlot = {
+            timestamp: iTimestamp,
             homebase0: {
                 name: oGamePlay.homebaseControllers[0].getName(),
                 sessionId: sHomebase0SessionId
