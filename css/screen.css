@@ -348,9 +348,14 @@ input.addWord.visible {
         vertical-align: middle;
     }
 
-    .card {
-        height: 120pt;
-        width: 74pt;
+    .hand>.card {
+        height: 3em;
+        width: 5em;
+    }
+    
+    .table>.card {
+        height: 6em;
+        width: 10em;
 
         font-size: 18pt;
     }

@@ -127,7 +127,7 @@ define('Stack', ['Tools'], function (Tools) {
         var nZedIndex = nNumCards - nCardPosition + 1;
 
         // calculates the position
-        var nLeftPosition = 90 + nCardPosition * 12;
+        var nLeftPosition = 270 + nCardPosition * 3;
 
         // sets card styles, including z-index
         Tools.setClass(oCardView, 'card');
