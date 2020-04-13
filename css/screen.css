@@ -343,21 +343,27 @@ input.addWord.visible {
         display: inline-block;
 
         height: 112pt;
-
+        
         margin-left: 224pt;
         vertical-align: middle;
     }
 
+    .table {
+        position: relative;
+    }
+    
     .hand>.card {
         height: 3em;
         width: 5em;
     }
     
     .table>.card {
-        height: 6em;
-        width: 10em;
+        height: 9em;
+        width: 16em;
+    }
 
-        font-size: 18pt;
+    .table>.card>div {
+        font-size: 2em;
     }
 }
 
