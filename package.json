@@ -22,5 +22,8 @@
   "devDependencies": {
     "grunt": "^1.0.4",
     "grunt-release": "^0.14.0"
+  },
+  "dependencies": {
+    "npm-check-updates": "^7.0.2"
   }
 }
