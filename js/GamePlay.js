@@ -1,12 +1,13 @@
-/*global define */
-define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, GameSession) {
+import { Player } from './Player.js';
+import { Tools } from './Tools.js';
+import { GameSession } from './GameSession.js';
 
-    'use strict';
+var WAITING_TO_GATHER_CARDS = 0;
+var WAITING_TO_FILL_TABLE = 1;
+var WAITING_FOR_FACE_DOWN_WAR_CARD = 2;
+var GAME_OVER = 3;
 
-    var WAITING_TO_GATHER_CARDS = 0;
-    var WAITING_TO_FILL_TABLE = 1;
-    var WAITING_FOR_FACE_DOWN_WAR_CARD = 2;
-    var GAME_OVER = 3;
+class GamePlay {
 
     /**
      * constructs a GamePlay object
@@ -24,7 +25,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      *                  player name from a given list
      *          }
      */
-    var GamePlay = function (nNumPlayers, aCards, aSounds, aPlayerNames, nMaxNumberOfSlots, nCardWidth, oCallbacks) {
+    constructor(nNumPlayers, aCards, aSounds, aPlayerNames, nMaxNumberOfSlots, nCardWidth, oCallbacks) {
 
         this.numPlayers = nNumPlayers;
         this.cards = aCards;
@@ -48,7 +49,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     /**
     * hides the Don't Wait button
     */
-    GamePlay.hideDontWaitButton = function () {
+    static hideDontWaitButton() {
         var oDontWaitBtn = document.getElementById('dontWait');
         if (oDontWaitBtn) {
             oDontWaitBtn.style.display = 'none';
@@ -62,7 +63,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      *
      * @return true if the player has a face-up card on the table
      */
-    GamePlay.doesPlayerHaveCardOnTableFaceUp = function (oPlayer) {
+    static doesPlayerHaveCardOnTableFaceUp(oPlayer) {
         if (oPlayer.getTable() && oPlayer.getTable().length % 2 === 1) {
             return true;
         }
@@ -76,7 +77,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      *
      * @return true if the player has a face-down card on the table
      */
-    GamePlay.doesPlayerHaveCardOnTableFaceDown = function (oPlayer) {
+    static doesPlayerHaveCardOnTableFaceDown(oPlayer) {
         if (oPlayer.getTable() && oPlayer.getTable().length % 2 === 0) {
             return true;
         }
@@ -86,7 +87,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     /**
     * renders all the cards
     */
-    GamePlay.prototype.renderCards = function () {
+    renderCards() {
 
         var i;
         for (i = 0; i < this.playerControllers.length; i++) {
@@ -98,12 +99,12 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     /**
      * finds a player given the Id of a player view
      */
-    GamePlay.prototype.findPlayerForPlayerViewId = function (sPlayerViewId) {
+    findPlayerForPlayerViewId(sPlayerViewId) {
         var oPlayer = null;
 
         var i;
 
-        for (i = 0; i < this.playerControllers.length ; i++) {
+        for (i = 0; i < this.playerControllers.length; i++) {
             if ('player' + this.playerControllers[i].getPlayerNum() === sPlayerViewId) {
                 oPlayer = this.playerControllers[i];
                 break;
@@ -116,7 +117,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     /**
      * checks if one player has won
      */
-    GamePlay.prototype.isGameFinished = function () {
+    isGameFinished() {
 
         var i,
             nOtherPlayer,
@@ -160,7 +161,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     /**
      * Checks table to see if it's a war, or if it's time to gather cards.
      */
-    GamePlay.prototype.updateGameStateBasedOnTable = function () {
+    updateGameStateBasedOnTable() {
 
         if (this.doAllPlayersHaveSameNumberOfCardsOnTable()) {
 
@@ -202,7 +203,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     /**
      * plays a sound if there's a war
      */
-    GamePlay.prototype.playWarSound = function (nCardValue) {
+    playWarSound(nCardValue) {
 
         if (this.soundOn === false) {
             return;
@@ -210,33 +211,33 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
 
         switch (nCardValue) {
             case 1:
-            this.sounds.hamsterSound.play();
-            break;
+                this.sounds.hamsterSound.play();
+                break;
             case 2:
-            this.sounds.rabbitSound.play();
-            break;
+                this.sounds.rabbitSound.play();
+                break;
             case 3:
-            this.sounds.meowSound.play();
-            break;
+                this.sounds.meowSound.play();
+                break;
             case 4:
-            this.sounds.barkSound.play();
-            break;
+                this.sounds.barkSound.play();
+                break;
             case 5:
-            this.sounds.tigerSound.play();
-            break;
+                this.sounds.tigerSound.play();
+                break;
             case 6:
-            this.sounds.elephantSound.play();
-            break;
+                this.sounds.elephantSound.play();
+                break;
             default:
-            this.sounds.barkSound.play();
-            break;
+                this.sounds.barkSound.play();
+                break;
         }
     };
 
     /**
      * checks if all players have a card on the table
      */
-    GamePlay.prototype.doAllPlayersHaveSameNumberOfCardsOnTable = function () {
+    doAllPlayersHaveSameNumberOfCardsOnTable() {
 
         var i;
         var nNumCards = (this.playerControllers &&
@@ -263,7 +264,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      * @param oPlayer a player controller on whom the event happened
      * @param bIsLocalEvent true if the event happened in the local UI
      */
-    GamePlay.prototype.playerWantsToPlayACard = function (oPlayer, bIsLocalEvent) {
+    playerWantsToPlayACard(oPlayer, bIsLocalEvent) {
         switch (this.state) {
             case WAITING_TO_FILL_TABLE:
                 // checks if the player already has a face-up card on the table
@@ -314,7 +315,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      * player that won the turn.
      * Or waits for more cards on the table in case of a tie.
      */
-    GamePlay.prototype.gatherCards = function () {
+    gatherCards() {
 
         var nWinningPlayer = -1;
 
@@ -370,7 +371,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      *
      * @param oEvent a browser event
      */
-    GamePlay.prototype.localPlayerTappedCardInHand = function (oEvent) {
+    localPlayerTappedCardInHand(oEvent) {
 
         // gets the player and the player view
         var oTarget = oEvent.currentTarget;
@@ -397,7 +398,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      * @param oPlayer a player on whom the event happened
      * @param bIsLocalEvent true if the event happened in the local UI
      */
-    GamePlay.prototype.playerTappedCardInHand = function (oPlayer, bIsLocalEvent) {
+    playerTappedCardInHand(oPlayer, bIsLocalEvent) {
 
         var i;
 
@@ -414,7 +415,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      * distributes the current cards to the player controllers that are
      * available
      */
-    GamePlay.prototype.distributeCardsToAvailablePlayers = function () {
+    distributeCardsToAvailablePlayers() {
 
         // distributes the cards to the local players
         var nNumPlayersAmongWhomToDistributeCards = this.numPlayers > 1 ? this.numPlayers : 2;
@@ -443,7 +444,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      *
      * @return a game slots list
      */
-    GamePlay.getGameSlotsListFromSnapshot = function (oGameSlots) {
+    static getGameSlotsListFromSnapshot(oGameSlots) {
 
         if (!oGameSlots) {
             oGameSlots = {
@@ -453,7 +454,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
         }
 
         // gets list of game slots
-        return oGameSlots ? oGameSlots.list : null ;
+        return oGameSlots ? oGameSlots.list : null;
 
     };
 
@@ -464,7 +465,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      *
      * @return the number of the last-used game slot
      */
-    GamePlay.getLastGameSlotKey = function (oGameSlots) {
+    static getLastGameSlotKey(oGameSlots) {
 
         // gets index of last game slot
         var aGameSlots = GamePlay.getGameSlotsListFromSnapshot(oGameSlots);
@@ -480,7 +481,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      *
      * @return the snapshot of the last-used game slot
      */
-    GamePlay.getLastGameSlot = function (oGameSlots) {
+    static getLastGameSlot(oGameSlots) {
 
         var aGameSlots = GamePlay.getGameSlotsListFromSnapshot(oGameSlots);
 
@@ -505,7 +506,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      * @param oReferenceGameSlotList reference to the game slot list on the
      *                                  remote database
      */
-    GamePlay.prototype.moveToNextGameSlot = function(oReferenceGameSlotList) {
+    moveToNextGameSlot(oReferenceGameSlotList) {
 
         // moves to next slot
         var oReferenceGameSlot = oReferenceGameSlotList.push({
@@ -526,7 +527,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      *
      * @return false if could not set up the game slot; true otherwise
      */
-    GamePlay.prototype.setUpRemoteGameSlot = function (oGamePlay) {
+    setUpRemoteGameSlot(oGamePlay) {
 
         var oDatabase = firebase.database();
         var oReferenceGameAllSlots = oDatabase.ref('game/slots');
@@ -594,7 +595,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     /**
      * sets up a callback to wait for player 1
      */
-    GamePlay.prototype.makePlayer0 = function () {
+    makePlayer0() {
 
         var oGamePlay = this;
 
@@ -682,7 +683,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     * @param oPlayer1Value {optional} a player object
     * @param oReferenceRestOfCards {optional} reference to rest of cards on remote database
     */
-    GamePlay.prototype.makePlayer1 = function (oPlayer1Value, oReferenceRestOfCards) {
+    makePlayer1(oPlayer1Value, oReferenceRestOfCards) {
 
         var oGamePlay = this;
 
@@ -782,7 +783,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     * @param oGamePlay an instance of a game
     * @param oDatabase reference to the remote database
     */
-    GamePlay.prototype.setUpHandlerForRemotePlayerEvents = function (oGamePlay, oDatabase) {
+    setUpHandlerForRemotePlayerEvents(oGamePlay, oDatabase) {
         var nPlayerNumber = 0;
         for (nPlayerNumber = 0; nPlayerNumber < 2; nPlayerNumber++) {
 
@@ -798,7 +799,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     *
     * @param oSnapshot an instance of a game
     */
-    GamePlay.prototype.handlerForRemotePlayerEvents = function (oSnapshot) {
+    handlerForRemotePlayerEvents(oSnapshot) {
 
         // gets the GamePlay object from the bound 'this'
         var oGamePlay = this;
@@ -859,7 +860,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
      *      form of an array of player arrays, each player
      *      array containing cards
      */
-    GamePlay.prototype.distribute = function (aCards) {
+    distribute(aCards) {
 
         var i, j, oCard;
         var aDistributedCards = [];
@@ -884,7 +885,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     /**
      * toggles sounds
      */
-    GamePlay.prototype.toggleSound = function () {
+    toggleSound() {
         this.soundOn = !this.soundOn;
         var oToggleSoundButton = document.getElementById('togglesound');
         if (oToggleSoundButton && this.soundOn === true) {
@@ -897,7 +898,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     /**
      * toggles sounds
      */
-    GamePlay.prototype.makeToggleSoundButton = function () {
+    makeToggleSoundButton() {
 
         var oSoundButton = document.createElement('div');
         Tools.setClass(oSoundButton, 'iconbutton');
@@ -911,7 +912,7 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
     /**
      * starts a game
      */
-    GamePlay.prototype.start = function (bShuffleCards) {
+    start(bShuffleCards) {
 
         if (bShuffleCards === true) {
             this.shuffledCards = Tools.shuffle(this.cards);
@@ -927,6 +928,6 @@ define('GamePlay', ['Player', 'Tools', 'GameSession'], function (Player, Tools, 
 
         this.numMoves = 0;
     };
+}
 
-    return GamePlay;
-});
+export { GamePlay };

@@ -1,11 +1,6 @@
-/*global define */
-define('Tools', function () {
-    'use strict';
+class Tools {
 
-    var Tools = function () {
-    };
-
-    Tools.generateID = function () {
+    static generateID() {
         var sUuid;
 
         var fnS4 = function () {
@@ -18,7 +13,7 @@ define('Tools', function () {
         return sUuid;
     };
 
-    Tools.addClass = function (oView, sClass) {
+    static addClass(oView, sClass) {
         var sClasses = oView.getAttribute('class');
 
         if (sClasses.indexOf(sClass) < 0) {
@@ -26,11 +21,11 @@ define('Tools', function () {
         }
     };
 
-    Tools.setClass = function (oView, sClass) {
+    static setClass(oView, sClass) {
         oView.setAttribute('class', sClass);
     };
 
-    Tools.removeClass = function (oView, sClass) {
+    static removeClass(oView, sClass) {
         var sCurrentClasses = oView.getAttribute('class');
         var nStartIndex = sCurrentClasses.indexOf(sClass);
         var nEndIndex = nStartIndex + sClass.length;
@@ -43,7 +38,7 @@ define('Tools', function () {
         }
     };
 
-    Tools.toggleClass = function (oView, sClass) {
+    static toggleClass(oView, sClass) {
         var sClasses = oView.getAttribute('class');
 
         if (sClasses.indexOf(sClass) < 0) {
@@ -53,21 +48,21 @@ define('Tools', function () {
         }
     };
 
-    Tools.addStyle = function (oView, sStyleName, sStyleValue) {
+    static addStyle(oView, sStyleName, sStyleValue) {
         var sStyles = oView.style ? oView.style.cssText : null;
 
         oView.style[sStyleName] = sStyleValue;
     };
 
-    Tools.setStyle = function (oView, sStyleName, sStyleValue) {
+    static setStyle(oView, sStyleName, sStyleValue) {
         oView.style[sStyleName] = sStyleValue;
     };
 
-    Tools.removeStyle = function (oView, sStyleName) {
+    static removeStyle(oView, sStyleName) {
         oView.style[sStyleName] = '';
     };
 
-    Tools.toggleStyle = function (oView, sStyleName, sStyleValue) {
+    static toggleStyle(oView, sStyleName, sStyleValue) {
         var sStyles = oView.style ? oView.style.cssText : null;
 
         if (sStyles && sStyles.indexOf(sStyleName) < 0) {
@@ -80,7 +75,7 @@ define('Tools', function () {
     /**
     * shuffles a set of things
     */
-    Tools.shuffle = function (aThings) {
+    static shuffle(aThings) {
         var n, aShuffledThings = [];
 
         while (aThings.length > 0) {
@@ -94,7 +89,7 @@ define('Tools', function () {
     /**
     * gets the last sub-object from an object
     */
-    Tools.getLastItemInObject = function (oThings) {
+    static getLastItemInObject(oThings) {
 
         var aThingKeys = Object.keys(oThings);
         var aLastThingKey = aThingKeys[aThingKeys.length - 1];
@@ -106,7 +101,7 @@ define('Tools', function () {
     /**
     * gets the number of last sub-object from an object
     */
-    Tools.getKeyOfLastItemInObject = function (oThings) {
+    static getKeyOfLastItemInObject(oThings) {
 
         var aThingKeys = Object.keys(oThings);
         var aLastThingKey = aThingKeys[aThingKeys.length - 1];
@@ -114,6 +109,6 @@ define('Tools', function () {
         return aLastThingKey;
 
     };
+};
 
-    return Tools;
-});
+export { Tools };

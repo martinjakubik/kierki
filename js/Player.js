@@ -1,11 +1,46 @@
-/*global define */
-define('Player', ['Tools'], function (Tools) {
-    'use strict';
+import { Tools } from './Tools.js';
 
-    var cardFlipSound = new Audio('../resources/cardflip.wav');
-    var cardShwipSound = new Audio('../js/lib/kierki/resources/cardshwip.wav');
+var cardFlipSound = new Audio('../resources/cardflip.wav');
+var cardShwipSound = new Audio('../js/lib/kierki/resources/cardshwip.wav');
 
-    var Player = function (nPlayerNum, oRemoteReference, nCardWidth, sSessionId, bIsLocal) {
+/**
+ * finds a card view for a given card Id
+ */
+var findCardViewForId = function (sCardId) {
+
+    var i;
+    var oCardView = null;
+
+    var oCardView = document.getElementById('card' + sCardId);
+
+    if (oCardView) {
+        return oCardView;
+    }
+
+    return oCardView;
+};
+
+/**
+ * decides what to do when a card is tapped depending on position of tap
+ */
+var fnTapCard = function (oEvent) {
+    var oTarget = oEvent ? oEvent.currentTarget : null;
+    if (!oTarget) {
+        return;
+    }
+
+    var nPositionOnCard = oEvent.offsetY;
+    if (nPositionOnCard < 80) {
+        this.onTapPlayCard(oEvent);
+    } else {
+        this.fanCards.call(this, oEvent);
+    }
+};
+
+
+class Player {
+
+    constructor(nPlayerNum, oRemoteReference, nCardWidth, sSessionId, bIsLocal) {
 
         this.playerNum = nPlayerNum;
         this.remoteReference = oRemoteReference || null;
@@ -20,55 +55,55 @@ define('Player', ['Tools'], function (Tools) {
         this.fannedCards = false;
     };
 
-    Player.prototype.getPlayerNum = function () {
+    getPlayerNum() {
         return this.playerNum;
     };
 
-    Player.prototype.getName = function () {
+    getName() {
         return this.name;
     };
 
-    Player.prototype.setName = function (sName) {
+    setName(sName) {
         this.name = sName;
     };
 
-    Player.prototype.getHand = function () {
+    getHand() {
         return this.hand;
     };
 
-    Player.prototype.setHand = function (aCards) {
+    setHand(aCards) {
         this.hand = aCards;
     };
 
-    Player.prototype.getTable = function () {
+    getTable() {
         return this.table;
     };
 
-    Player.prototype.setTable = function (aCards) {
+    setTable(aCards) {
         this.table = aCards;
     };
 
-    Player.prototype.getSessionId = function () {
+    getSessionId() {
         return this.sessionId;
     };
 
-    Player.prototype.setSessionId = function (sSessionId) {
+    setSessionId(sSessionId) {
         this.sessionId = sSessionId;
     };
 
-    Player.prototype.isLocal = function () {
+    isLocal() {
         return this.isLocal;
     };
 
-    Player.prototype.setIsRemote = function (bIsLocal) {
+    setIsRemote(bIsLocal) {
         this.isLocal = bIsLocal;
     };
 
-    Player.prototype.getNumberCards = function () {
+    getNumberCards() {
         return this.hand.length;
     };
 
-    Player.prototype.makePlayerView = function (oPlayAreaView) {
+    makePlayerView(oPlayAreaView) {
 
         var oPlayerView,
             oPlayerTableView,
@@ -116,7 +151,7 @@ define('Player', ['Tools'], function (Tools) {
     /**
     * renders player's name
     */
-    Player.prototype.renderName = function () {
+    renderName() {
 
         var oPlayerNameView = document.getElementById('name' + this.playerNum);
 
@@ -127,7 +162,7 @@ define('Player', ['Tools'], function (Tools) {
     /**
     * renders the cards in a player's table
     */
-    Player.prototype.renderTable = function () {
+    renderTable() {
 
         var i, oPlayAreaView = document.getElementById('playArea'),
             oPlayerTableView = document.getElementById('table' + this.playerNum),
@@ -156,7 +191,7 @@ define('Player', ['Tools'], function (Tools) {
     /**
      * renders the cards in a player's hand
      */
-    Player.prototype.renderHand = function () {
+    renderHand() {
 
         var i, oPlayAreaView = document.getElementById('playArea'),
             oPlayerHandView = document.getElementById('hand' + this.playerNum),
@@ -188,7 +223,7 @@ define('Player', ['Tools'], function (Tools) {
     /**
      * adds the given card to the given view
      */
-    Player.prototype.addCardToView = function (oView, oCard, nCardPosition, nNumCards, bShowCardFace, bIsMoving, fnOnTapUpdateGame) {
+    addCardToView(oView, oCard, nCardPosition, nNumCards, bShowCardFace, bIsMoving, fnOnTapUpdateGame) {
 
         // creates a card view
         var oCardView = document.createElement('div');
@@ -239,24 +274,24 @@ define('Player', ['Tools'], function (Tools) {
         oView.insertBefore(oCardView, null);
     };
 
-    Player.prototype.finishedMovingToTableListener = function (oEvent) {
+    finishedMovingToTableListener(oEvent) {
 
         switch (oEvent.type) {
-          case 'animationend':
-              var oElement = oEvent.target;
+            case 'animationend':
+                var oElement = oEvent.target;
 
-              // removes moving to table flag
-              Tools.removeClass(oElement, 'movingToTableFromLocal');
-              Tools.removeClass(oElement, 'movingToTableFromLocalFlip');
-              Tools.removeClass(oElement, 'movingToTableFromRemote');
-              Tools.removeClass(oElement, 'movingToTableFromRemoteFlip');
-              break;
-          default:
+                // removes moving to table flag
+                Tools.removeClass(oElement, 'movingToTableFromLocal');
+                Tools.removeClass(oElement, 'movingToTableFromLocalFlip');
+                Tools.removeClass(oElement, 'movingToTableFromRemote');
+                Tools.removeClass(oElement, 'movingToTableFromRemoteFlip');
+                break;
+            default:
 
         }
     };
 
-    Player.prototype.putCardOnTable = function () {
+    putCardOnTable() {
 
         this.table.push(this.hand[0]);
         this.hand.splice(0, 1);
@@ -269,7 +304,7 @@ define('Player', ['Tools'], function (Tools) {
         cardFlipSound.play();
     };
 
-    Player.prototype.moveTableToHand = function (aTable) {
+    moveTableToHand(aTable) {
 
         // copies the given table to this player's hand
         if (aTable && aTable.length > 0) {
@@ -298,11 +333,11 @@ define('Player', ['Tools'], function (Tools) {
         this.updateRemoteReference();
     };
 
-    Player.prototype.clearTable = function () {
+    clearTable() {
         this.table.splice(0);
     };
 
-    Player.prototype.getTableCard = function () {
+    getTableCard() {
 
         if (this.table.length > 0) {
             return this.table[this.table.length - 1];
@@ -310,7 +345,7 @@ define('Player', ['Tools'], function (Tools) {
         return null;
     };
 
-    Player.prototype.updateRemoteReference = function () {
+    updateRemoteReference() {
 
         this.remoteReference.set({
             name: this.getName(),
@@ -321,26 +356,9 @@ define('Player', ['Tools'], function (Tools) {
     };
 
     /**
-     * finds a card view for a given card Id
-     */
-     var findCardViewForId = function (sCardId) {
-
-        var i;
-        var oCardView = null;
-
-        var oCardView = document.getElementById('card' + sCardId);
-
-        if (oCardView) {
-            return oCardView;
-        }
-
-        return oCardView;
-    };
-
-    /**
      * wiggles a card
      */
-    Player.prototype.wiggleCardInHand = function () {
+    wiggleCardInHand() {
 
         var oCard = this.getHand() ? this.getHand()[0] : null;
         if (oCard) {
@@ -358,41 +376,24 @@ define('Player', ['Tools'], function (Tools) {
     /**
      * stops wiggling a card
      */
-    Player.prototype.finishedWigglingListener = function (oEvent) {
+    finishedWigglingListener(oEvent) {
 
         switch (oEvent.type) {
-          case 'animationend':
-              var oElement = oEvent.target;
+            case 'animationend':
+                var oElement = oEvent.target;
 
-              // removes wiggling flag
-              Tools.removeClass(oElement, 'wiggling');
-              break;
-          default:
+                // removes wiggling flag
+                Tools.removeClass(oElement, 'wiggling');
+                break;
+            default:
 
-        }
-    };
-
-    /**
-     * decides what to do when a card is tapped depending on position of tap
-     */
-    var fnTapCard = function (oEvent) {
-        var oTarget = oEvent ? oEvent.currentTarget : null;
-        if (!oTarget) {
-            return;
-        }
-
-        var nPositionOnCard = oEvent.offsetY;
-        if (nPositionOnCard < 80) {
-            this.onTapPlayCard(oEvent);
-        } else {
-            this.fanCards.call(this, oEvent);
         }
     };
 
     /**
      * sets the function for tapping a a card that player wants to play
      */
-    Player.prototype.setOnTapCardInHand = function (fnOnTapPlayCard, bIsSplitHalf=false) {
+    setOnTapCardInHand(fnOnTapPlayCard, bIsSplitHalf = false) {
         this.onTapPlayCard = fnOnTapPlayCard;
 
         if (bIsSplitHalf) {
@@ -405,7 +406,7 @@ define('Player', ['Tools'], function (Tools) {
     /**
     * gets index of the given card view
     */
-    Player.prototype.getIndexOfCardViewInHand = function (oCardView) {
+    getIndexOfCardViewInHand(oCardView) {
         var i,
             aCards = this.getHand(),
             sCardId = oCardView.id,
@@ -422,7 +423,7 @@ define('Player', ['Tools'], function (Tools) {
     /**
     * unfans all cards
     */
-    Player.prototype.unfanCards = function () {
+    unfanCards() {
 
         // puts back first card
         var oCard = this.getHand() ? this.getHand()[0] : null;
@@ -463,7 +464,7 @@ define('Player', ['Tools'], function (Tools) {
     /**
     * fans out some cards
     */
-    Player.prototype.fanCards = function (oEvent) {
+    fanCards(oEvent) {
 
         if (!oEvent) {
             return;
@@ -511,7 +512,7 @@ define('Player', ['Tools'], function (Tools) {
     *
     * @return an array of the neighbor cards, centered on the given card
     */
-    Player.prototype.getNeighborCards = function (nCardIndex, aCards) {
+    getNeighborCards(nCardIndex, aCards) {
         var nNeighborhoodSize = 5;
         var aNeighborCardIndexes = [];
         var nAddCardIndex = -1;
@@ -550,13 +551,13 @@ define('Player', ['Tools'], function (Tools) {
         var nBegin = nCardIndex - nHalfNeighborhoodSize;
         var nEnd = nCardIndex + nHalfNeighborhoodSize;
 
-        for (i = nBegin; i < nEnd ; i++) {
+        for (i = nBegin; i < nEnd; i++) {
             if (i > 0 && i < aCards.length) {
                 aNeighborCardIndexes.push(i);
             }
         }
         return aNeighborCardIndexes;
     };
+};
 
-    return Player;
-});
+export { Player };

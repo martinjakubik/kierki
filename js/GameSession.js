@@ -1,11 +1,6 @@
-/*global define */
-define('GameSession', ['Tools'], function (Tools) {
+import { Tools } from './Tools.js';
 
-    'use strict';
-
-    var GameSession = function () {
-
-    };
+class GameSession {
 
     /**
      * makes a new ID for the browser session (ie. this is the first player to
@@ -13,7 +8,7 @@ define('GameSession', ['Tools'], function (Tools) {
      *
      * @return the new session ID
      */
-    GameSession.makeNewBrowserSessionId = function (oGameRef) {
+    static makeNewBrowserSessionId(oGameRef) {
 
         var sKey = 'sessionId';
         var sValue = Tools.generateID();
@@ -27,7 +22,7 @@ define('GameSession', ['Tools'], function (Tools) {
      *
      * @return the sessionId
      */
-    GameSession.getBrowserSessionId = function () {
+    static getBrowserSessionId() {
 
         var sKey = 'sessionId';
         var sValue = sessionStorage.getItem(sKey);
@@ -45,7 +40,7 @@ define('GameSession', ['Tools'], function (Tools) {
      *
      * @return true if local
      */
-    GameSession.isLocal = function (oPlayerValue) {
+    static isLocal(oPlayerValue) {
 
         var sSessionId = GameSession.getBrowserSessionId();
 
@@ -67,7 +62,7 @@ define('GameSession', ['Tools'], function (Tools) {
      *             player1: true if local
      *         }
      */
-    GameSession.whoIsLocal = function (aPlayerControllers) {
+    static whoIsLocal(aPlayerControllers) {
 
         var sSessionId = GameSession.getBrowserSessionId(),
             sPlayer0SessionId = -1,
@@ -91,6 +86,6 @@ define('GameSession', ['Tools'], function (Tools) {
 
         return oIsLocal;
     };
+};
 
-    return GameSession;
-});
+export { GameSession };
