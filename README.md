@@ -1,2 +1,2 @@
 # kierki
-card platform
+playing card platform
