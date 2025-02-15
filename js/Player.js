@@ -1,7 +1,7 @@
 import { Tools } from './Tools.js';
 
-var cardFlipSound = new Audio('../resources/cardflip.wav');
-var cardShwipSound = new Audio('../js/lib/kierki/resources/cardshwip.wav');
+var cardFlipSound = new Audio('../../cardflip.wav');
+var cardShwipSound = new Audio('../resources/cardshwip.wav');
 
 /**
  * finds a card view for a given card Id
