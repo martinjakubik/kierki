@@ -4,9 +4,6 @@ if [[ ! -d build ]] ; then
     mkdir build
 fi
 
-inkscape resource-src/card.svg -i layer38 -j -C --export-png=build/border.png
-inkscape resource-src/card.svg -i layer39 -j -C --export-png=build/shadow.png
-
 # regular cards
 card_layer_ids=( \
     102 \
@@ -82,6 +79,11 @@ all_card_layer_ids=( \
     174 \
     176 \
 )
+
+inkscape resource-src/card.svg -i layer38 -j -C --export-png=build/border.png
+inkscape resource-src/card.svg -i layer39 -j -C --export-png=build/shadow.png
+
+
 for layerId in "${card_layer_ids[@]}"; do
     label=$(xmllint --xpath "string(/*[local-name() = 'svg']/*[local-name() = 'g'][@*[local-name() = 'id'] = 'layer${layerId}']/@*[local-name() = 'label'])"  resource-src/card.svg)
 
