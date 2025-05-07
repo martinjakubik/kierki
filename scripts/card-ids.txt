@@ -1,4 +1,5 @@
 elements=layer1
+plane=layer2
 back=layer37
 border=layer38
 shadow=layer39

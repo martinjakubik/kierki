@@ -36,10 +36,10 @@
      inkscape:window-width="1424"
      units="px"
      showgrid="true"
-     inkscape:current-layer="layer101"
+     inkscape:current-layer="layer100"
      inkscape:document-units="px"
      inkscape:cy="181.70971"
-     inkscape:cx="110.13595"
+     inkscape:cx="110.42809"
      inkscape:zoom="1.7115211"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
@@ -4555,6 +4555,13 @@
        y="-11.477006"
        ry="14.571814"
        inkscape:label="outer rectangle" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="plane"
+     sodipodi:insensitive="true"
+     style="display:inline">
     <rect
        ry="8.2310534"
        y="737.36218"
@@ -4563,7 +4570,7 @@
        width="202.5"
        id="rect21797"
        style="display:inline;fill:#eeeeee;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
-       transform="translate(-4.4135643e-7,-737.36219)"
+       transform="translate(11.401337,-725.88519)"
        inkscape:label="inner rectangle" />
   </g>
   <g
