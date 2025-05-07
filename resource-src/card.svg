@@ -36,11 +36,11 @@
      inkscape:window-width="1424"
      units="px"
      showgrid="true"
-     inkscape:current-layer="layer176"
+     inkscape:current-layer="layer101"
      inkscape:document-units="px"
-     inkscape:cy="146.25341"
-     inkscape:cx="47.511701"
-     inkscape:zoom="1.2102282"
+     inkscape:cy="181.70971"
+     inkscape:cx="110.13595"
+     inkscape:zoom="1.7115211"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -166,6 +166,16 @@
        position="42.762947,26.730837"
        orientation="0,-1"
        id="guide67"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="190.06058,292.4169"
+       orientation="0,-1"
+       id="guide1"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="34.316565,60.991048"
+       orientation="0,-1"
+       id="guide2"
        inkscape:locked="false" />
   </sodipodi:namedview>
   <defs
@@ -4560,174 +4570,288 @@
      inkscape:groupmode="layer"
      id="layer100"
      inkscape:label="ad"
-     style="enable-background:new" />
+     style="display:inline;enable-background:new" />
   <g
      inkscape:groupmode="layer"
      id="layer101"
      inkscape:label="1c"
-     inkscape:highlight-color="#36a949" />
+     inkscape:highlight-color="#36a949"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer102"
-     inkscape:label="2d" />
+     inkscape:label="2d"
+     style="display:inline">
+    <desc
+       id="desc1">2x</desc>
+    <path
+       style="fill:#c53262;fill-opacity:1;stroke:none;stroke-width:0.0850394;stroke-linecap:round;stroke-opacity:1;enable-background:new"
+       d="m 183.87308,26.625004 c 1.125,-1e-6 3.8493,-1e-6 3.8493,-1e-6 0,-2.854226 1.25493,-4.5 2.9007,-4.5 3.37501,0 3.24095,4.437821 2.25001,6.750001 -3.37501,7.875 -10.12501,18.000002 -10.12501,18.000002 h 14.62501 v -3.375 h -9.00001 c 0,0 5.07615,-6.898673 5.62501,-7.875002 2.19542,-3.905312 3.375,-5.625 3.375,-10.125001 0,-4.500001 -2.25,-6.750001 -6.75001,-6.750001 -3.375,0 -6.75,3.375001 -6.75,7.875002 z"
+       id="path29-7"
+       sodipodi:nodetypes="ccssccccsssc"
+       inkscape:label="2" />
+    <path
+       id="path6-9"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.0380611;stroke-linecap:round;enable-background:new"
+       d="m 189.55707,64.617983 c 0.2485,0.344787 0.50351,1.007033 0.50351,1.007033 0,0 0.25501,-0.662246 0.50352,-1.007033 1.0997,-1.525759 3.0211,-3.021098 3.0211,-3.021098 0,0 1.49534,-0.914359 3.0211,-2.014066 0.34478,-0.248503 1.00703,-0.503516 1.00703,-0.503516 0,0 -0.66225,-0.255008 -1.00703,-0.503517 -1.52609,-1.099943 -3.0211,-2.014065 -3.0211,-2.014065 0,0 -1.9214,-0.991823 -3.0211,-2.517582 -0.24851,-0.344786 -0.50352,-1.007033 -0.50352,-1.007033 0,0 -0.25501,0.662247 -0.50351,1.007033 -1.09995,1.526087 -3.0211,2.517582 -3.0211,2.517582 0,0 -1.49501,0.914122 -3.0211,2.014065 -0.34479,0.248509 -1.00703,0.503517 -1.00703,0.503517 0,0 0.66224,0.255013 1.00703,0.503516 1.52576,1.099707 3.0211,2.014066 3.0211,2.014066 0,0 1.92115,1.495011 3.0211,3.021098 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       id="path3"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.0380611;stroke-linecap:round;enable-background:new"
+       d="m 34.820074,272.88207 c -0.2485,-0.34479 -0.50351,-1.00704 -0.50351,-1.00704 0,0 -0.25501,0.66225 -0.50352,1.00704 -1.0997,1.52575 -3.0211,3.02109 -3.0211,3.02109 0,0 -1.49534,0.91436 -3.0211,2.01407 -0.34478,0.2485 -1.00703,0.50352 -1.00703,0.50352 0,0 0.66225,0.255 1.00703,0.50351 1.52609,1.09995 3.0211,2.01407 3.0211,2.01407 0,0 1.9214,0.99182 3.0211,2.51758 0.24851,0.34479 0.50352,1.00703 0.50352,1.00703 0,0 0.25501,-0.66224 0.50351,-1.00703 1.09995,-1.52609 3.0211,-2.51758 3.0211,-2.51758 0,0 1.49501,-0.91412 3.0211,-2.01407 0.34479,-0.24851 1.00703,-0.50351 1.00703,-0.50351 0,0 -0.66224,-0.25502 -1.00703,-0.50352 -1.52576,-1.09971 -3.0211,-2.01407 -3.0211,-2.01407 0,0 -1.92115,-1.49501 -3.0211,-3.02109 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       style="fill:#c53262;fill-opacity:1;stroke:none;stroke-width:0.0850394;stroke-linecap:round;stroke-opacity:1;enable-background:new"
+       d="m 40.504064,310.84817 c -1.125,0 -3.8493,0 -3.8493,0 0,2.85423 -1.25493,4.5 -2.9007,4.5 -3.37501,0 -3.24095,-4.43782 -2.25001,-6.75 3.37501,-7.875 10.12501,-18 10.12501,-18 h -14.62501 v 3.375 h 9.00001 c 0,0 -5.07615,6.89867 -5.62501,7.875 -2.19542,3.90531 -3.375,5.625 -3.375,10.125 0,4.5 2.25,6.75 6.75001,6.75 3.375,0 6.75,-3.375 6.75,-7.875 z"
+       id="path17"
+       sodipodi:nodetypes="ccssccccsssc"
+       inkscape:label="2" />
+    <path
+       id="path6-99"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 111.00001,121.50002 c 0.74031,1.02713 1.5,3 1.5,3 0,0 0.75968,-1.97287 1.5,-3 3.27607,-4.54532 9,-9 9,-9 0,0 4.45469,-2.72393 9,-6.00001 1.02714,-0.7403 3,-1.5 3,-1.5 0,0 -1.97286,-0.75968 -3,-1.5 -4.54629,-3.27678 -9,-6.000004 -9,-6.000004 0,0 -5.72393,-2.95469 -9,-7.5 -0.74032,-1.02713 -1.5,-3 -1.5,-3 0,0 -0.75969,1.97287 -1.5,3 -3.27678,4.54629 -9,7.5 -9,7.5 0,0 -4.45371,2.723224 -9,6.000004 -1.02714,0.74032 -3.000003,1.5 -3.000003,1.5 0,0 1.972863,0.7597 3.000003,1.5 4.54531,3.27608 9,6.00001 9,6.00001 0,0 5.72321,4.45371 9,9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       id="path19"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 114.00001,216.00003 c -0.74031,-1.02713 -1.5,-3 -1.5,-3 0,0 -0.75968,1.97287 -1.5,3 -3.27607,4.54532 -9,9 -9,9 0,0 -4.454693,2.72393 -9.000003,6.00001 -1.02714,0.7403 -3,1.5 -3,1.5 0,0 1.97286,0.75968 3,1.5 4.54629,3.27678 9.000003,6 9.000003,6 0,0 5.72393,2.95469 9,7.5 0.74032,1.02713 1.5,3 1.5,3 0,0 0.75969,-1.97287 1.5,-3 3.27678,-4.54629 9,-7.5 9,-7.5 0,0 4.45371,-2.72322 9,-6 1.02714,-0.74032 3,-1.5 3,-1.5 0,0 -1.97286,-0.7597 -3,-1.5 -4.54531,-3.27608 -9,-6.00001 -9,-6.00001 0,0 -5.72321,-4.45371 -9,-9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer103"
-     inkscape:label="3d" />
+     inkscape:label="3d"
+     style="display:inline">
+    <desc
+       id="desc2">3x</desc>
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer104"
-     inkscape:label="4d" />
+     inkscape:label="4d"
+     style="display:inline">
+    <desc
+       id="desc3">4x</desc>
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer105"
-     inkscape:label="5d" />
+     inkscape:label="5d"
+     style="display:inline">
+    <desc
+       id="desc4">5x</desc>
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer106"
-     inkscape:label="6d" />
+     inkscape:label="6d"
+     style="display:inline">
+    <desc
+       id="desc5">6x</desc>
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer107"
-     inkscape:label="7d" />
+     inkscape:label="7d"
+     style="display:inline">
+    <desc
+       id="desc6">7x</desc>
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer108"
-     inkscape:label="8d" />
+     inkscape:label="8d"
+     style="display:inline">
+    <desc
+       id="desc7">8x</desc>
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer109"
-     inkscape:label="9d" />
+     inkscape:label="9d"
+     style="display:inline">
+    <desc
+       id="desc8">9x</desc>
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer110"
-     inkscape:label="10d" />
+     inkscape:label="10d"
+     style="display:inline">
+    <desc
+       id="desc9">10x</desc>
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer111"
-     inkscape:label="jd" />
+     inkscape:label="jd"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer112"
      inkscape:label="vc"
-     inkscape:highlight-color="#36a949" />
+     inkscape:highlight-color="#36a949"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer113"
-     inkscape:label="qd" />
+     inkscape:label="qd"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer114"
      inkscape:label="dc"
-     inkscape:highlight-color="#36a949" />
+     inkscape:highlight-color="#36a949"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer115"
-     inkscape:label="kd" />
+     inkscape:label="kd"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer116"
      inkscape:label="rc"
-     inkscape:highlight-color="#36a949" />
+     inkscape:highlight-color="#36a949"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer120"
      inkscape:label="ac"
-     inkscape:highlight-color="#f3215a" />
+     inkscape:highlight-color="#f3215a"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer121"
      inkscape:label="1t"
-     inkscape:highlight-color="#f3215a" />
+     inkscape:highlight-color="#f3215a"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer122"
      inkscape:label="2c"
-     inkscape:highlight-color="#f3215a" />
+     inkscape:highlight-color="#f3215a"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer123"
-     inkscape:label="3c" />
+     inkscape:label="3c"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer124"
-     inkscape:label="4c" />
+     inkscape:label="4c"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer125"
-     inkscape:label="5c" />
+     inkscape:label="5c"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer126"
-     inkscape:label="6c" />
+     inkscape:label="6c"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer127"
-     inkscape:label="7c" />
+     inkscape:label="7c"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer128"
-     inkscape:label="8c" />
+     inkscape:label="8c"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer129"
-     inkscape:label="9c" />
+     inkscape:label="9c"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer130"
-     inkscape:label="10c" />
+     inkscape:label="10c"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer131"
-     inkscape:label="jc" />
+     inkscape:label="jc"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer132"
      inkscape:label="vt"
-     inkscape:highlight-color="#f3215a" />
+     inkscape:highlight-color="#f3215a"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer133"
-     inkscape:label="qc" />
+     inkscape:label="qc"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="134"
      inkscape:label="dt"
-     inkscape:highlight-color="#f3215a" />
+     inkscape:highlight-color="#f3215a"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer135"
-     inkscape:label="kc" />
+     inkscape:label="kc"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer136"
      inkscape:label="rt"
-     inkscape:highlight-color="#f3215a" />
+     inkscape:highlight-color="#f3215a"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer140"
-     inkscape:label="ah" />
+     inkscape:label="ah"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer141"
      inkscape:label="1c"
-     inkscape:highlight-color="#b1b5ad" />
+     inkscape:highlight-color="#b1b5ad"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer142"
-     inkscape:label="2h" />
+     inkscape:label="2h"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer143"
-     inkscape:label="3h" />
+     inkscape:label="3h"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer144"
-     inkscape:label="4h" />
+     inkscape:label="4h"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer145"
-     inkscape:label="5h" />
+     inkscape:label="5h"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer146"
@@ -4748,13 +4872,13 @@
     <path
        id="path40"
        style="display:inline;opacity:1;fill:#c53262;fill-opacity:1;stroke:none;stroke-width:0.0850796;stroke-linecap:round;stroke-opacity:1;enable-background:new"
-       d="m 21.8833,307.27303 c -3.227399,0 -6.753179,-2.40026 -6.753179,-5.62766 0,-4.50213 3.376589,-5.62766 3.376589,-5.62766 0,0 -5.627669,-2.25106 -5.627669,-7.87872 0,-4.51774 4.48652,-9.00426 9.004259,-9.00426 4.51774,0 9.00426,4.48652 9.00426,9.00426 0,5.62766 -5.62767,7.87872 -5.62767,7.87872 0,0 3.37661,1.12553 3.37661,5.62766 0,3.2274 -3.52579,5.62766 -6.7532,5.62766 z m 0,-2.25106 c 1.352741,0 2.25106,-2.02388 2.25106,-3.3766 0,-1.35272 -0.89832,-3.3766 -2.25106,-3.3766 -1.35271,0 -2.25106,2.02388 -2.25106,3.3766 0,1.35272 0.89835,3.3766 2.25106,3.3766 z m 0,-11.25532 c 2.40232,0 4.50214,-3.22536 4.50214,-5.62766 0,-2.40231 -2.09982,-5.62766 -4.50214,-5.62766 -2.40229,0 -4.502119,3.22535 -4.502119,5.62766 0,2.4023 2.099829,5.62766 4.502119,5.62766 z"
+       d="m 22.915226,307.27303 c -3.227399,0 -6.753179,-2.40026 -6.753179,-5.62766 0,-4.50213 3.376589,-5.62766 3.376589,-5.62766 0,0 -5.627669,-2.25106 -5.627669,-7.87872 0,-4.51774 4.48652,-9.00426 9.004259,-9.00426 4.51774,0 9.00426,4.48652 9.00426,9.00426 0,5.62766 -5.62767,7.87872 -5.62767,7.87872 0,0 3.37661,1.12553 3.37661,5.62766 0,3.2274 -3.52579,5.62766 -6.7532,5.62766 z m 0,-2.25106 c 1.352741,0 2.25106,-2.02388 2.25106,-3.3766 0,-1.35272 -0.89832,-3.3766 -2.25106,-3.3766 -1.35271,0 -2.25106,2.02388 -2.25106,3.3766 0,1.35272 0.89835,3.3766 2.25106,3.3766 z m 0,-11.25532 c 2.40232,0 4.50214,-3.22536 4.50214,-5.62766 0,-2.40231 -2.09982,-5.62766 -4.50214,-5.62766 -2.40229,0 -4.502119,3.22535 -4.502119,5.62766 0,2.4023 2.099829,5.62766 4.502119,5.62766 z"
        sodipodi:nodetypes="sscssscssssssssssss"
        inkscape:label="8" />
     <path
        id="path43"
        style="display:inline;fill:#c53262;fill-opacity:1;stroke:none;stroke-width:0.0850796;stroke-linecap:round;stroke-opacity:1;enable-background:new"
-       d="m 176.46941,7.2730186 c -3.2274,0 -6.75318,2.4002597 -6.75318,5.6276574 0,4.50213 3.37659,5.627662 3.37659,5.627662 0,0 -5.62767,2.251063 -5.62767,7.878724 0,4.517734 4.48652,9.004257 9.00426,9.004257 4.51774,0 9.00426,-4.486523 9.00426,-9.004257 0,-5.627661 -5.62767,-7.878724 -5.62767,-7.878724 0,0 3.37661,-1.125532 3.37661,-5.627662 0,-3.2273977 -3.52579,-5.6276574 -6.7532,-5.6276574 z m 0,2.2510616 c 1.35274,0 2.25106,2.0238748 2.25106,3.3765958 0,1.352721 -0.89832,3.376598 -2.25106,3.376598 -1.35271,0 -2.25106,-2.023876 -2.25106,-3.376598 0,-1.352721 0.89835,-3.3765958 2.25106,-3.3765958 z m 0,11.2553208 c 2.40232,0 4.50214,3.225353 4.50214,5.627661 0,2.402307 -2.09982,5.62766 -4.50214,5.62766 -2.40229,0 -4.50212,-3.225352 -4.50212,-5.62766 0,-2.402308 2.09983,-5.627661 4.50212,-5.627661 z"
+       d="m 178.65923,7.2730186 c -3.2274,0 -6.75318,2.4002597 -6.75318,5.6276574 0,4.50213 3.37659,5.627662 3.37659,5.627662 0,0 -5.62767,2.251063 -5.62767,7.878724 0,4.517734 4.48652,9.004257 9.00426,9.004257 4.51774,0 9.00426,-4.486523 9.00426,-9.004257 0,-5.627661 -5.62767,-7.878724 -5.62767,-7.878724 0,0 3.37661,-1.125532 3.37661,-5.627662 0,-3.2273977 -3.52579,-5.6276574 -6.7532,-5.6276574 z m 0,2.2510616 c 1.35274,0 2.25106,2.0238748 2.25106,3.3765958 0,1.352721 -0.89832,3.376598 -2.25106,3.376598 -1.35271,0 -2.25106,-2.023876 -2.25106,-3.376598 0,-1.352721 0.89835,-3.3765958 2.25106,-3.3765958 z m 0,11.2553208 c 2.40232,0 4.50214,3.225353 4.50214,5.627661 0,2.402307 -2.09982,5.62766 -4.50214,5.62766 -2.40229,0 -4.50212,-3.225352 -4.50212,-5.62766 0,-2.402308 2.09983,-5.627661 4.50212,-5.627661 z"
        sodipodi:nodetypes="sscssscssssssssssss"
        inkscape:label="8" />
     <path
@@ -4822,7 +4946,7 @@
        inkscape:label="heart" />
     <path
        style="display:inline;opacity:1;fill:#c53262;fill-opacity:1;stroke:none;stroke-width:0.0399935;stroke-linecap:round;enable-background:new"
-       d="m 180.70205,41.450094 c 2.64539,0 3.70355,2.645398 3.70355,4.232636 0,1.587238 -1.06494,3.127341 -3.17447,4.232634 -1.73441,0.908749 -3.0771,1.042181 -4.23264,2.645399 -0.26112,0.362289 -0.52907,1.587238 -0.52907,1.587238 0,0 -0.26796,-1.224949 -0.52908,-1.587238 -1.15579,-1.603566 -2.49698,-1.735989 -4.23264,-2.645399 -2.10832,-1.104659 -3.17448,-2.645396 -3.17448,-4.232634 0,-1.587238 1.05816,-4.232636 3.70356,-4.232636 2.64539,0 4.23263,2.116316 4.23263,2.116316 0,0 1.58724,-2.116316 4.23264,-2.116316 z"
+       d="m 182.89187,41.450102 c 2.64539,0 3.70355,2.645398 3.70355,4.232636 0,1.587238 -1.06494,3.127341 -3.17447,4.232634 -1.73441,0.908749 -3.0771,1.042181 -4.23264,2.645399 -0.26112,0.362289 -0.52907,1.587238 -0.52907,1.587238 0,0 -0.26796,-1.224949 -0.52908,-1.587238 -1.15579,-1.603566 -2.49698,-1.735989 -4.23264,-2.645399 -2.10832,-1.104659 -3.17448,-2.645396 -3.17448,-4.232634 0,-1.587238 1.05816,-4.232636 3.70356,-4.232636 2.64539,0 4.23263,2.116316 4.23263,2.116316 0,0 1.58724,-2.116316 4.23264,-2.116316 z"
        id="path53"
        sodipodi:nodetypes="zzzzczzzzcz"
        inkscape:export-filename="kierki-heart.png"
@@ -4840,7 +4964,7 @@
        inkscape:label="heart" />
     <path
        style="display:inline;opacity:1;fill:#c53262;fill-opacity:1;stroke:none;stroke-width:0.0399935;stroke-linecap:round;enable-background:new"
-       d="m 26.027576,269.77303 c 2.64539,0 3.70355,-2.6454 3.70355,-4.23264 0,-1.58724 -1.06494,-3.12734 -3.17447,-4.23263 -1.73441,-0.90875 -3.0771,-1.04218 -4.23264,-2.6454 -0.26112,-0.36229 -0.52907,-1.58724 -0.52907,-1.58724 0,0 -0.26796,1.22495 -0.52908,1.58724 -1.15579,1.60356 -2.49698,1.73599 -4.23264,2.6454 -2.10832,1.10466 -3.17448,2.64539 -3.17448,4.23263 0,1.58724 1.05816,4.23264 3.70356,4.23264 2.64539,0 4.23263,-2.11632 4.23263,-2.11632 0,0 1.58724,2.11632 4.23264,2.11632 z"
+       d="m 27.147867,269.77303 c 2.64539,0 3.70355,-2.6454 3.70355,-4.23264 0,-1.58724 -1.06494,-3.12734 -3.17447,-4.23263 -1.73441,-0.90875 -3.0771,-1.04218 -4.23264,-2.6454 -0.26112,-0.36229 -0.52907,-1.58724 -0.52907,-1.58724 0,0 -0.26796,1.22495 -0.52908,1.58724 -1.15579,1.60356 -2.49698,1.73599 -4.23264,2.6454 -2.10832,1.10466 -3.17448,2.64539 -3.17448,4.23263 0,1.58724 1.05816,4.23264 3.70356,4.23264 2.64539,0 4.23263,-2.11632 4.23263,-2.11632 0,0 1.58724,2.11632 4.23264,2.11632 z"
        id="path54"
        sodipodi:nodetypes="zzzzczzzzcz"
        inkscape:export-filename="kierki-heart.png"
@@ -4851,38 +4975,46 @@
   <g
      inkscape:groupmode="layer"
      id="layer149"
-     inkscape:label="9h" />
+     inkscape:label="9h"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer150"
-     inkscape:label="10h" />
+     inkscape:label="10h"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer151"
-     inkscape:label="jh" />
+     inkscape:label="jh"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer152"
      inkscape:label="vc"
-     inkscape:highlight-color="#b1b5ad" />
+     inkscape:highlight-color="#b1b5ad"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer153"
-     inkscape:label="qh" />
+     inkscape:label="qh"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer154"
      inkscape:label="dc"
-     inkscape:highlight-color="#b1b5ad" />
+     inkscape:highlight-color="#b1b5ad"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer155"
-     inkscape:label="kh" />
+     inkscape:label="kh"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer156"
      inkscape:label="rc"
-     inkscape:highlight-color="#b1b5ad" />
+     inkscape:highlight-color="#b1b5ad"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer160"
@@ -5396,47 +5528,56 @@
      inkscape:groupmode="layer"
      id="layer167"
      inkscape:label="7s"
-     inkscape:highlight-color="#f3b55a" />
+     inkscape:highlight-color="#f3b55a"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer168"
      inkscape:label="8s"
-     inkscape:highlight-color="#f3b55a" />
+     inkscape:highlight-color="#f3b55a"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer169"
      inkscape:label="9s"
-     inkscape:highlight-color="#f3b55a" />
+     inkscape:highlight-color="#f3b55a"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer170"
      inkscape:label="10s"
-     inkscape:highlight-color="#f3b55a" />
+     inkscape:highlight-color="#f3b55a"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer171"
      inkscape:label="js"
-     inkscape:highlight-color="#f3b55a" />
+     inkscape:highlight-color="#f3b55a"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer172"
      inkscape:label="vp"
-     inkscape:highlight-color="#f3b55a" />
+     inkscape:highlight-color="#f3b55a"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer173"
      inkscape:label="qs"
-     inkscape:highlight-color="#f3b55a" />
+     inkscape:highlight-color="#f3b55a"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer174"
      inkscape:label="dp"
-     inkscape:highlight-color="#f3b55a" />
+     inkscape:highlight-color="#f3b55a"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer175"
      inkscape:label="ks"
-     inkscape:highlight-color="#f3b55a" />
+     inkscape:highlight-color="#f3b55a"
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer176"
