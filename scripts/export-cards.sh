@@ -6,10 +6,6 @@ fi
 
 # regular cards
 card_layer_ids=( \
-    102 \
-    148 \
-)
-all_card_layer_ids=( \
     100 \
     101 \
     102 \
