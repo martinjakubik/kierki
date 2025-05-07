@@ -9,7 +9,7 @@ inkscape resource-src/card.svg -i layer39 -j -C --export-png=build/shadow.png
 
 # regular cards
 card_layer_ids=( \
-    160 \
+    102 \
     148 \
 )
 all_card_layer_ids=( \
