@@ -36,10 +36,10 @@
      inkscape:window-width="1424"
      units="px"
      showgrid="true"
-     inkscape:current-layer="layer103"
+     inkscape:current-layer="layer107"
      inkscape:document-units="px"
-     inkscape:cy="168.85565"
-     inkscape:cx="87.057063"
+     inkscape:cy="206.24928"
+     inkscape:cx="100.4954"
      inkscape:zoom="1.7115211"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
@@ -4722,7 +4722,7 @@
      inkscape:groupmode="layer"
      id="layer103"
      inkscape:label="3d"
-     style="display:inline">
+     style="display:none">
     <path
        id="path219"
        style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
@@ -4808,12 +4808,112 @@
        inkscape:export-xdpi="90.099998"
        inkscape:export-ydpi="90.099998"
        inkscape:label="diamond" />
+    <path
+       id="path222"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke:#5b4ffe;stroke-width:0.0846553;stroke-linecap:round;stroke-opacity:1;enable-background:new"
+       d="M 181.45904,7.3577165 170.25985,27.516251 v 4.479672 h 11.19919 v 3.359748 h 4.47966 v -3.359748 h 1.11992 V 27.516251 H 185.9387 V 7.3577165 Z m 0,8.9593515 v 11.199183 h -5.5996 z"
+       sodipodi:nodetypes="cccccccccccccccc"
+       inkscape:label="4"
+       transform="translate(11.401337,11.477007)" />
+    <path
+       id="path223"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke:#5b4ffe;stroke-width:0.0846553;stroke-linecap:round;stroke-opacity:1;enable-background:new"
+       d="m 20.115423,307.14598 11.19919,-20.15853 v -4.47967 h -11.19919 v -3.35975 h -4.47966 v 3.35975 h -1.11992 v 4.47967 h 1.11992 v 20.15853 z m 0,-8.95935 v -11.19918 h 5.5996 z"
+       sodipodi:nodetypes="cccccccccccccccc"
+       inkscape:label="4"
+       transform="translate(11.401337,11.477007)" />
+    <path
+       id="path219-5"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 69.750006,129.00002 c 0.74031,1.02713 1.5,3 1.5,3 0,0 0.75968,-1.97287 1.5,-3 3.27607,-4.54532 9,-9 9,-9 0,0 4.454692,-2.72394 9.000002,-6.00002 1.02714,-0.7403 3,-1.5 3,-1.5 0,0 -1.97286,-0.75968 -3,-1.5 -4.54629,-3.27678 -9.000002,-6 -9.000002,-6 0,0 -5.72393,-2.95469 -9,-7.500008 -0.74032,-1.02713 -1.5,-3 -1.5,-3 0,0 -0.75969,1.97287 -1.5,3 -3.27678,4.546298 -9,7.500008 -9,7.500008 0,0 -4.45371,2.72322 -9,6 -1.02714,0.74032 -3.000003,1.5 -3.000003,1.5 0,0 1.972863,0.7597 3.000003,1.5 4.54531,3.27608 9,6.00002 9,6.00002 0,0 5.72321,4.45371 9,9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       id="path224"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 152.25001,129.00003 c 0.74031,1.02713 1.5,3 1.5,3 0,0 0.75968,-1.97287 1.5,-3 3.27607,-4.54532 9,-9 9,-9 0,0 4.45469,-2.72393 9,-6.00001 1.02714,-0.7403 3,-1.5 3,-1.5 0,0 -1.97286,-0.75968 -3,-1.5 -4.54629,-3.27678 -9,-6 -9,-6 0,0 -5.72393,-2.95469 -9,-7.500008 -0.74032,-1.02713 -1.5,-3 -1.5,-3 0,0 -0.75969,1.97287 -1.5,3 -3.27678,4.546298 -9,7.500008 -9,7.500008 0,0 -4.45371,2.72322 -9,6 -1.02714,0.74032 -3,1.5 -3,1.5 0,0 1.97286,0.7597 3,1.5 4.54531,3.27608 9,6.00001 9,6.00001 0,0 5.72321,4.45371 9,9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       id="path225"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 69.750006,208.50003 c 0.74031,-1.02713 1.5,-3 1.5,-3 0,0 0.75968,1.97287 1.5,3 3.27607,4.54532 9,9 9,9 0,0 4.454692,2.72394 9.000002,6.00002 1.02714,0.7403 3,1.5 3,1.5 0,0 -1.97286,0.75968 -3,1.5 -4.54629,3.27678 -9.000002,6 -9.000002,6 0,0 -5.72393,2.95469 -9,7.5 -0.74032,1.02713 -1.5,3 -1.5,3 0,0 -0.75969,-1.97287 -1.5,-3 -3.27678,-4.54629 -9,-7.5 -9,-7.5 0,0 -4.45371,-2.72322 -9,-6 -1.02714,-0.74032 -3.000003,-1.5 -3.000003,-1.5 0,0 1.972863,-0.7597 3.000003,-1.5 4.54531,-3.27608 9,-6.00002 9,-6.00002 0,0 5.72321,-4.45371 9,-9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       id="path226"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 152.25001,208.50002 c 0.74031,-1.02713 1.5,-3 1.5,-3 0,0 0.75968,1.97287 1.5,3 3.27607,4.54532 9,9 9,9 0,0 4.45469,2.72393 9,6.00001 1.02714,0.7403 3,1.5 3,1.5 0,0 -1.97286,0.75968 -3,1.5 -4.54629,3.27678 -9,6.00001 -9,6.00001 0,0 -5.72393,2.95469 -9,7.5 -0.74032,1.02713 -1.5,3 -1.5,3 0,0 -0.75969,-1.97287 -1.5,-3 -3.27678,-4.54629 -9,-7.5 -9,-7.5 0,0 -4.45371,-2.72323 -9,-6.00001 -1.02714,-0.74032 -3,-1.5 -3,-1.5 0,0 1.97286,-0.7597 3,-1.5 4.54531,-3.27608 9,-6.00001 9,-6.00001 0,0 5.72321,-4.45371 9,-9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer105"
      inkscape:label="5d"
      style="display:none">
+    <path
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke:#5b4ffe;stroke-width:0.0847022;stroke-linecap:round;stroke-opacity:1;enable-background:new"
+       d="m 184.82219,7.3845714 -14.56698,-2.4e-6 v 4.482143 10.084838 l 7.84376,1.1e-5 c 0,0 4.48215,-1.1e-5 4.48215,4.482138 0,4.48215 -4.48215,4.48215 -4.48215,4.48215 h -7.84376 v 4.48215 h 7.84376 c 0,0 8.9643,0 8.9643,-8.9643 0,-8.9643 -8.9643,-8.9643 -8.9643,-8.9643 h -3.36161 v -5.602687 h 10.08483 z"
+       id="path231"
+       sodipodi:nodetypes="ccccczcccczccccc"
+       inkscape:label="5"
+       transform="translate(11.401337,11.477007)" />
+    <path
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke:#5b4ffe;stroke-width:0.0847022;stroke-linecap:round;stroke-opacity:1;enable-background:new"
+       d="m 16.752279,307.20381 h 14.566979 v -4.48214 -10.08484 l -7.84376,-10e-6 c 0,0 -4.482149,10e-6 -4.482149,-4.48214 0,-4.48215 4.482149,-4.48215 4.482149,-4.48215 h 7.84376 v -4.48215 h -7.84376 c 0,0 -8.964299,0 -8.964299,8.9643 0,8.9643 8.9643,8.9643 8.9643,8.9643 h 3.36161 v 5.60269 h -10.08483 z"
+       id="path232"
+       sodipodi:nodetypes="ccccczcccczccccc"
+       inkscape:label="5"
+       transform="translate(11.401337,11.477007)" />
+    <path
+       id="path227"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 69.750006,109.50004 c 0.74031,1.02713 1.5,3 1.5,3 0,0 0.75968,-1.97287 1.5,-3 3.27607,-4.54532 9,-9 9,-9 0,0 4.454692,-2.723936 9.000002,-6.000016 1.02714,-0.7403 3,-1.5 3,-1.5 0,0 -1.97286,-0.75968 -3,-1.5 -4.54629,-3.27678 -9.000002,-6 -9.000002,-6 0,0 -5.72393,-2.95469 -9,-7.500008 -0.74032,-1.02713 -1.5,-3 -1.5,-3 0,0 -0.75969,1.97287 -1.5,3 -3.27678,4.546298 -9,7.500008 -9,7.500008 0,0 -4.45371,2.72322 -9,6 -1.02714,0.74032 -3.000003,1.5 -3.000003,1.5 0,0 1.972863,0.7597 3.000003,1.5 4.54531,3.27608 9,6.000016 9,6.000016 0,0 5.72321,4.45371 9,9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       id="path228"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 152.25001,109.50005 c 0.74031,1.02713 1.5,3 1.5,3 0,0 0.75968,-1.97287 1.5,-3 3.27607,-4.54532 9,-9 9,-9 0,0 4.45469,-2.723926 9,-6.000006 1.02714,-0.7403 3,-1.5 3,-1.5 0,0 -1.97286,-0.75968 -3,-1.5 -4.54629,-3.27678 -9,-6 -9,-6 0,0 -5.72393,-2.95469 -9,-7.500008 -0.74032,-1.02713 -1.5,-3 -1.5,-3 0,0 -0.75969,1.97287 -1.5,3 -3.27678,4.546298 -9,7.500008 -9,7.500008 0,0 -4.45371,2.72322 -9,6 -1.02714,0.74032 -3,1.5 -3,1.5 0,0 1.97286,0.7597 3,1.5 4.54531,3.27608 9,6.000006 9,6.000006 0,0 5.72321,4.45371 9,9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       id="path229"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 69.750006,228.00001 c 0.74031,-1.02713 1.5,-3 1.5,-3 0,0 0.75968,1.97287 1.5,3 3.27607,4.54532 9,9 9,9 0,0 4.454692,2.72394 9.000002,6.00002 1.02714,0.7403 3,1.5 3,1.5 0,0 -1.97286,0.75968 -3,1.5 -4.54629,3.27678 -9.000002,6 -9.000002,6 0,0 -5.72393,2.95469 -9,7.5 -0.74032,1.02713 -1.5,3 -1.5,3 0,0 -0.75969,-1.97287 -1.5,-3 -3.27678,-4.54629 -9,-7.5 -9,-7.5 0,0 -4.45371,-2.72322 -9,-6 -1.02714,-0.74032 -3.000003,-1.5 -3.000003,-1.5 0,0 1.972863,-0.7597 3.000003,-1.5 4.54531,-3.27608 9,-6.00002 9,-6.00002 0,0 5.72321,-4.45371 9,-9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       id="path230"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 152.25001,228 c 0.74031,-1.02713 1.5,-3 1.5,-3 0,0 0.75968,1.97287 1.5,3 3.27607,4.54532 9,9 9,9 0,0 4.45469,2.72393 9,6.00001 1.02714,0.7403 3,1.5 3,1.5 0,0 -1.97286,0.75968 -3,1.5 -4.54629,3.27678 -9,6.00001 -9,6.00001 0,0 -5.72393,2.95469 -9,7.5 -0.74032,1.02713 -1.5,3 -1.5,3 0,0 -0.75969,-1.97287 -1.5,-3 -3.27678,-4.54629 -9,-7.5 -9,-7.5 0,0 -4.45371,-2.72323 -9,-6.00001 -1.02714,-0.74032 -3,-1.5 -3,-1.5 0,0 1.97286,-0.7597 3,-1.5 4.54531,-3.27608 9,-6.00001 9,-6.00001 0,0 5.72321,-4.45371 9,-9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
     <desc
        id="desc4">5x</desc>
     <path
@@ -4834,12 +4934,66 @@
        inkscape:export-xdpi="90.099998"
        inkscape:export-ydpi="90.099998"
        inkscape:label="diamond" />
+    <path
+       id="path233"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 111.00001,184.50003 c 0.74031,1.02713 1.5,3 1.5,3 0,0 0.75968,-1.97287 1.5,-3 3.27607,-4.54532 9,-9 9,-9 0,0 4.45469,-2.72393 9,-6.00001 1.02714,-0.7403 3,-1.5 3,-1.5 0,0 -1.97286,-0.75968 -3,-1.5 -4.54629,-3.27678 -9,-6 -9,-6 0,0 -5.72393,-2.95469 -9,-7.50001 -0.74032,-1.02713 -1.5,-3 -1.5,-3 0,0 -0.75969,1.97287 -1.5,3 -3.27678,4.5463 -9,7.50001 -9,7.50001 0,0 -4.45371,2.72322 -9,6 -1.02714,0.74032 -3,1.5 -3,1.5 0,0 1.97286,0.7597 3,1.5 4.54531,3.27608 9,6.00001 9,6.00001 0,0 5.72321,4.45371 9,9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer106"
      inkscape:label="6d"
      style="display:none">
+    <path
+       id="path234"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 69.750006,109.50004 c 0.74031,1.02713 1.5,3 1.5,3 0,0 0.75968,-1.97287 1.5,-3 3.27607,-4.54532 9,-9 9,-9 0,0 4.454692,-2.723936 9.000002,-6.000016 1.02714,-0.7403 3,-1.5 3,-1.5 0,0 -1.97286,-0.75968 -3,-1.5 -4.54629,-3.27678 -9.000002,-6 -9.000002,-6 0,0 -5.72393,-2.95469 -9,-7.500008 -0.74032,-1.02713 -1.5,-3 -1.5,-3 0,0 -0.75969,1.97287 -1.5,3 -3.27678,4.546298 -9,7.500008 -9,7.500008 0,0 -4.45371,2.72322 -9,6 -1.02714,0.74032 -3.000003,1.5 -3.000003,1.5 0,0 1.972863,0.7597 3.000003,1.5 4.54531,3.27608 9,6.000016 9,6.000016 0,0 5.72321,4.45371 9,9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       id="path235"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 152.25001,109.50005 c 0.74031,1.02713 1.5,3 1.5,3 0,0 0.75968,-1.97287 1.5,-3 3.27607,-4.54532 9,-9 9,-9 0,0 4.45469,-2.723926 9,-6.000006 1.02714,-0.7403 3,-1.5 3,-1.5 0,0 -1.97286,-0.75968 -3,-1.5 -4.54629,-3.27678 -9,-6 -9,-6 0,0 -5.72393,-2.95469 -9,-7.500008 -0.74032,-1.02713 -1.5,-3 -1.5,-3 0,0 -0.75969,1.97287 -1.5,3 -3.27678,4.546298 -9,7.500008 -9,7.500008 0,0 -4.45371,2.72322 -9,6 -1.02714,0.74032 -3,1.5 -3,1.5 0,0 1.97286,0.7597 3,1.5 4.54531,3.27608 9,6.000006 9,6.000006 0,0 5.72321,4.45371 9,9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       id="path236"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 69.750006,228.00001 c 0.74031,-1.02713 1.5,-3 1.5,-3 0,0 0.75968,1.97287 1.5,3 3.27607,4.54532 9,9 9,9 0,0 4.454692,2.72394 9.000002,6.00002 1.02714,0.7403 3,1.5 3,1.5 0,0 -1.97286,0.75968 -3,1.5 -4.54629,3.27678 -9.000002,6 -9.000002,6 0,0 -5.72393,2.95469 -9,7.5 -0.74032,1.02713 -1.5,3 -1.5,3 0,0 -0.75969,-1.97287 -1.5,-3 -3.27678,-4.54629 -9,-7.5 -9,-7.5 0,0 -4.45371,-2.72322 -9,-6 -1.02714,-0.74032 -3.000003,-1.5 -3.000003,-1.5 0,0 1.972863,-0.7597 3.000003,-1.5 4.54531,-3.27608 9,-6.00002 9,-6.00002 0,0 5.72321,-4.45371 9,-9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       id="path237"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 152.25001,228 c 0.74031,-1.02713 1.5,-3 1.5,-3 0,0 0.75968,1.97287 1.5,3 3.27607,4.54532 9,9 9,9 0,0 4.45469,2.72393 9,6.00001 1.02714,0.7403 3,1.5 3,1.5 0,0 -1.97286,0.75968 -3,1.5 -4.54629,3.27678 -9,6.00001 -9,6.00001 0,0 -5.72393,2.95469 -9,7.5 -0.74032,1.02713 -1.5,3 -1.5,3 0,0 -0.75969,-1.97287 -1.5,-3 -3.27678,-4.54629 -9,-7.5 -9,-7.5 0,0 -4.45371,-2.72323 -9,-6.00001 -1.02714,-0.74032 -3,-1.5 -3,-1.5 0,0 1.97286,-0.7597 3,-1.5 4.54531,-3.27608 9,-6.00001 9,-6.00001 0,0 5.72321,-4.45371 9,-9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       id="path238"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 69.750008,184.50005 c 0.74031,1.02713 1.5,3 1.5,3 0,0 0.75968,-1.97287 1.5,-3 3.27607,-4.54532 9,-9 9,-9 0,0 4.45469,-2.72393 9,-6.00001 1.02714,-0.7403 3,-1.5 3,-1.5 0,0 -1.97286,-0.75968 -3,-1.5 -4.54629,-3.27678 -9,-6 -9,-6 0,0 -5.72393,-2.95469 -9,-7.50001 -0.74032,-1.02713 -1.5,-3 -1.5,-3 0,0 -0.75969,1.97287 -1.5,3 -3.27678,4.5463 -9,7.50001 -9,7.50001 0,0 -4.45371,2.72322 -9,6 -1.02714,0.74032 -3,1.5 -3,1.5 0,0 1.97286,0.7597 3,1.5 4.54531,3.27608 9,6.00001 9,6.00001 0,0 5.72321,4.45371 9,9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
     <desc
        id="desc5">6x</desc>
     <path
@@ -4860,12 +5014,89 @@
        inkscape:export-xdpi="90.099998"
        inkscape:export-ydpi="90.099998"
        inkscape:label="diamond" />
+    <path
+       id="path239"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke:none;stroke-width:0.0847831;stroke-linecap:round;stroke-opacity:1;enable-background:new"
+       d="m 180.90246,7.3153868 c 0,0 -10.09448,5.6080432 -10.09448,17.9457402 0,4.262769 2.24322,10.094481 7.85126,10.09448 5.60805,-10e-7 7.85126,-5.83171 7.85126,-10.09448 0,-5.608043 -3.36482,-10.094482 -6.72964,-10.094479 -0.63505,0 -1.39965,0.324372 -1.39965,0.324372 0,0 0.27803,-1.445981 2.52125,-3.689198 2.24322,-2.2432178 5.60804,-4.4864352 5.60804,-4.4864352 z m -2.24322,12.3376972 c 2.24322,0 3.36483,3.364826 3.36483,5.608043 0,2.243219 -1.12161,5.608045 -3.36483,5.608045 -2.24321,0 -3.36482,-3.364826 -3.36482,-5.608045 0,-2.243217 1.12161,-5.608043 3.36482,-5.608043 z"
+       sodipodi:nodetypes="cszsscscczszsz"
+       inkscape:label="6"
+       transform="translate(11.401337,11.477007)" />
+    <path
+       id="path240"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke:none;stroke-width:0.0847831;stroke-linecap:round;stroke-opacity:1;enable-background:new"
+       d="m 20.672007,307.27303 c 0,0 10.09448,-5.60804 10.09448,-17.94574 0,-4.26277 -2.24322,-10.09448 -7.85126,-10.09448 -5.60805,0 -7.85126,5.83171 -7.85126,10.09448 0,5.60804 3.36482,10.09448 6.72964,10.09448 0.63505,0 1.39965,-0.32437 1.39965,-0.32437 0,0 -0.27803,1.44598 -2.52125,3.68919 -2.24322,2.24322 -5.60804,4.48644 -5.60804,4.48644 z m 2.24322,-12.3377 c -2.24322,0 -3.36483,-3.36482 -3.36483,-5.60804 0,-2.24322 1.12161,-5.60805 3.36483,-5.60805 2.24321,0 3.36482,3.36483 3.36482,5.60805 0,2.24322 -1.12161,5.60804 -3.36482,5.60804 z"
+       sodipodi:nodetypes="cszsscscczszsz"
+       inkscape:label="6"
+       transform="translate(11.401337,11.477007)" />
+    <path
+       id="path241"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 152.25001,184.50005 c 0.74031,1.02713 1.5,3 1.5,3 0,0 0.75968,-1.97287 1.5,-3 3.27607,-4.54532 9,-9 9,-9 0,0 4.45469,-2.72393 9,-6.00001 1.02714,-0.7403 3,-1.5 3,-1.5 0,0 -1.97286,-0.75968 -3,-1.5 -4.54629,-3.27678 -9,-6 -9,-6 0,0 -5.72393,-2.95469 -9,-7.50001 -0.74032,-1.02713 -1.5,-3 -1.5,-3 0,0 -0.75969,1.97287 -1.5,3 -3.27678,4.5463 -9,7.50001 -9,7.50001 0,0 -4.45371,2.72322 -9,6 -1.02714,0.74032 -3,1.5 -3,1.5 0,0 1.97286,0.7597 3,1.5 4.54531,3.27608 9,6.00001 9,6.00001 0,0 5.72321,4.45371 9,9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer107"
      inkscape:label="7d"
-     style="display:none">
+     style="display:inline">
+    <path
+       id="path242"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 69.750006,109.50004 c 0.74031,1.02713 1.5,3 1.5,3 0,0 0.75968,-1.97287 1.5,-3 3.27607,-4.54532 9,-9 9,-9 0,0 4.454692,-2.723936 9.000002,-6.000016 1.02714,-0.7403 3,-1.5 3,-1.5 0,0 -1.97286,-0.75968 -3,-1.5 -4.54629,-3.27678 -9.000002,-6 -9.000002,-6 0,0 -5.72393,-2.95469 -9,-7.500008 -0.74032,-1.02713 -1.5,-3 -1.5,-3 0,0 -0.75969,1.97287 -1.5,3 -3.27678,4.546298 -9,7.500008 -9,7.500008 0,0 -4.45371,2.72322 -9,6 -1.02714,0.74032 -3.000003,1.5 -3.000003,1.5 0,0 1.972863,0.7597 3.000003,1.5 4.54531,3.27608 9,6.000016 9,6.000016 0,0 5.72321,4.45371 9,9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       id="path243"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 152.25001,109.50005 c 0.74031,1.02713 1.5,3 1.5,3 0,0 0.75968,-1.97287 1.5,-3 3.27607,-4.54532 9,-9 9,-9 0,0 4.45469,-2.723926 9,-6.000006 1.02714,-0.7403 3,-1.5 3,-1.5 0,0 -1.97286,-0.75968 -3,-1.5 -4.54629,-3.27678 -9,-6 -9,-6 0,0 -5.72393,-2.95469 -9,-7.500008 -0.74032,-1.02713 -1.5,-3 -1.5,-3 0,0 -0.75969,1.97287 -1.5,3 -3.27678,4.546298 -9,7.500008 -9,7.500008 0,0 -4.45371,2.72322 -9,6 -1.02714,0.74032 -3,1.5 -3,1.5 0,0 1.97286,0.7597 3,1.5 4.54531,3.27608 9,6.000006 9,6.000006 0,0 5.72321,4.45371 9,9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       id="path244"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 69.750006,228.00001 c 0.74031,-1.02713 1.5,-3 1.5,-3 0,0 0.75968,1.97287 1.5,3 3.27607,4.54532 9,9 9,9 0,0 4.454692,2.72394 9.000002,6.00002 1.02714,0.7403 3,1.5 3,1.5 0,0 -1.97286,0.75968 -3,1.5 -4.54629,3.27678 -9.000002,6 -9.000002,6 0,0 -5.72393,2.95469 -9,7.5 -0.74032,1.02713 -1.5,3 -1.5,3 0,0 -0.75969,-1.97287 -1.5,-3 -3.27678,-4.54629 -9,-7.5 -9,-7.5 0,0 -4.45371,-2.72322 -9,-6 -1.02714,-0.74032 -3.000003,-1.5 -3.000003,-1.5 0,0 1.972863,-0.7597 3.000003,-1.5 4.54531,-3.27608 9,-6.00002 9,-6.00002 0,0 5.72321,-4.45371 9,-9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       id="path245"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 152.25001,228 c 0.74031,-1.02713 1.5,-3 1.5,-3 0,0 0.75968,1.97287 1.5,3 3.27607,4.54532 9,9 9,9 0,0 4.45469,2.72393 9,6.00001 1.02714,0.7403 3,1.5 3,1.5 0,0 -1.97286,0.75968 -3,1.5 -4.54629,3.27678 -9,6.00001 -9,6.00001 0,0 -5.72393,2.95469 -9,7.5 -0.74032,1.02713 -1.5,3 -1.5,3 0,0 -0.75969,-1.97287 -1.5,-3 -3.27678,-4.54629 -9,-7.5 -9,-7.5 0,0 -4.45371,-2.72323 -9,-6.00001 -1.02714,-0.74032 -3,-1.5 -3,-1.5 0,0 1.97286,-0.7597 3,-1.5 4.54531,-3.27608 9,-6.00001 9,-6.00001 0,0 5.72321,-4.45371 9,-9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       id="path246"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 69.750008,184.50005 c 0.74031,1.02713 1.5,3 1.5,3 0,0 0.75968,-1.97287 1.5,-3 3.27607,-4.54532 9,-9 9,-9 0,0 4.45469,-2.72393 9,-6.00001 1.02714,-0.7403 3,-1.5 3,-1.5 0,0 -1.97286,-0.75968 -3,-1.5 -4.54629,-3.27678 -9,-6 -9,-6 0,0 -5.72393,-2.95469 -9,-7.50001 -0.74032,-1.02713 -1.5,-3 -1.5,-3 0,0 -0.75969,1.97287 -1.5,3 -3.27678,4.5463 -9,7.50001 -9,7.50001 0,0 -4.45371,2.72322 -9,6 -1.02714,0.74032 -3,1.5 -3,1.5 0,0 1.97286,0.7597 3,1.5 4.54531,3.27608 9,6.00001 9,6.00001 0,0 5.72321,4.45371 9,9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       id="path247"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 152.25001,184.50005 c 0.74031,1.02713 1.5,3 1.5,3 0,0 0.75968,-1.97287 1.5,-3 3.27607,-4.54532 9,-9 9,-9 0,0 4.45469,-2.72393 9,-6.00001 1.02714,-0.7403 3,-1.5 3,-1.5 0,0 -1.97286,-0.75968 -3,-1.5 -4.54629,-3.27678 -9,-6 -9,-6 0,0 -5.72393,-2.95469 -9,-7.50001 -0.74032,-1.02713 -1.5,-3 -1.5,-3 0,0 -0.75969,1.97287 -1.5,3 -3.27678,4.5463 -9,7.50001 -9,7.50001 0,0 -4.45371,2.72322 -9,6 -1.02714,0.74032 -3,1.5 -3,1.5 0,0 1.97286,0.7597 3,1.5 4.54531,3.27608 9,6.00001 9,6.00001 0,0 5.72321,4.45371 9,9 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
     <desc
        id="desc6">7x</desc>
     <path
@@ -4881,6 +5112,25 @@
        id="path63"
        style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.0380611;stroke-linecap:round;enable-background:new"
        d="m 34.820074,272.88207 c -0.2485,-0.34479 -0.50351,-1.00704 -0.50351,-1.00704 0,0 -0.25501,0.66225 -0.50352,1.00704 -1.0997,1.52575 -3.0211,3.02109 -3.0211,3.02109 0,0 -1.49534,0.91436 -3.0211,2.01407 -0.34478,0.2485 -1.00703,0.50352 -1.00703,0.50352 0,0 0.66225,0.255 1.00703,0.50351 1.52609,1.09995 3.0211,2.01407 3.0211,2.01407 0,0 1.9214,0.99182 3.0211,2.51758 0.24851,0.34479 0.50352,1.00703 0.50352,1.00703 0,0 0.25501,-0.66224 0.50351,-1.00703 1.09995,-1.52609 3.0211,-2.51758 3.0211,-2.51758 0,0 1.49501,-0.91412 3.0211,-2.01407 0.34479,-0.24851 1.00703,-0.50351 1.00703,-0.50351 0,0 -0.66224,-0.25502 -1.00703,-0.50352 -1.52576,-1.09971 -3.0211,-2.01407 -3.0211,-2.01407 0,0 -1.92115,-1.49501 -3.0211,-3.02109 z"
+       sodipodi:nodetypes="scscscscscscscccs"
+       inkscape:export-filename="kierki-diamond.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="diamond" />
+    <path
+       style="fill:#c53262;fill-opacity:1;stroke:#5b4ffe;stroke-width:0.0846553;stroke-linecap:round;stroke-opacity:1;enable-background:new"
+       d="m 180.54139,18.834724 v 4.479672 h 12.3191 l -12.3191,23.518282 h 4.47967 l 14.55895,-27.997954 z"
+       id="path38-3"
+       inkscape:label="7" />
+    <path
+       style="fill:#c53262;fill-opacity:1;stroke:#5b4ffe;stroke-width:0.0846553;stroke-linecap:round;stroke-opacity:1;enable-background:new"
+       d="m 43.835751,318.72317 v -4.47967 h -12.3191 l 12.3191,-23.51829 h -4.47967 l -14.55895,27.99796 z"
+       id="path248"
+       inkscape:label="7" />
+    <path
+       id="path249"
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 111.00001,147.00004 c 0.74031,1.02713 1.5,3 1.5,3 0,0 0.75968,-1.97287 1.5,-3 3.27607,-4.54532 9,-9 9,-9 0,0 4.45469,-2.72393 9,-6.00001 1.02714,-0.7403 3,-1.5 3,-1.5 0,0 -1.97286,-0.75968 -3,-1.5 -4.54629,-3.27678 -9,-6 -9,-6 0,0 -5.72393,-2.95469 -9,-7.50001 -0.74032,-1.02713 -1.5,-3 -1.5,-3 0,0 -0.75969,1.97287 -1.5,3 -3.27678,4.5463 -9,7.50001 -9,7.50001 0,0 -4.45371,2.72322 -9,6 -1.02714,0.74032 -3,1.5 -3,1.5 0,0 1.97286,0.7597 3,1.5 4.54531,3.27608 9,6.00001 9,6.00001 0,0 5.72321,4.45371 9,9 z"
        sodipodi:nodetypes="scscscscscscscccs"
        inkscape:export-filename="kierki-diamond.png"
        inkscape:export-xdpi="90.099998"
