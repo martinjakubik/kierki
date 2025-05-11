@@ -80,9 +80,11 @@ inkscape resource-src/card.svg -i layer2 -j -C --export-png=build/plane.png
 inkscape resource-src/card.svg -i layer38 -j -C --export-png=build/border.png
 inkscape resource-src/card.svg -i layer39 -j -C --export-png=build/shadow.png
 
-
+app_card__for_html_filenames=()
 for layerId in "${card_layer_ids[@]}"; do
     label=$(xmllint --xpath "string(/*[local-name() = 'svg']/*[local-name() = 'g'][@*[local-name() = 'id'] = 'layer${layerId}']/@*[local-name() = 'label'])"  resource-src/card.svg)
+
+    app_card__for_html_filenames+=(card-kierki-${label}.png)
 
     # exports the card for the html version
     inkscape resource-src/card.svg -i layer${layerId} -j -C --export-png=build/card-${label}.scene.forhtml.png --export-area=11:20:228:358
@@ -110,4 +112,8 @@ for layerId in "${card_back_layer_ids[@]}" ; do
 
     # adds border and shadow to swift version
     convert -background none -page +0+0 build/shadow.png -page +0+0 build/border.png -page +0+0 build/${label}.scene.forswift.png -layers merge +repage build/${label}-bo-sh.png
+done
+
+for appCardForHtmlFilename in "${app_card__for_html_filenames[@]}" ; do
+    mv build/$appCardForHtmlFilename app/
 done
