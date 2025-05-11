@@ -4,3 +4,5 @@ node_modules/
 lib
 build
 app/card-kierki-*.png
+
+package.sh
