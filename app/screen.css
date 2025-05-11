@@ -1,0 +1,81 @@
+body {
+    margin: 0 0 0 0;
+    background-image: radial-gradient(transparent 80%, rgb(232,232,230) 150%),
+        url('../../background.png');
+    background-size: cover;
+}
+
+@keyframes wiggling {
+    0% {
+        transform: translateX(0);
+    }
+
+    15% {
+        transform: translateX(10px);
+    }
+
+    37% {
+        transform: translateX(-20px);
+    }
+
+    59% {
+        transform: translateX(20px);
+    }
+
+    81% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.hand>.card.wiggling {
+    animation-duration: 200ms;
+    animation-name: wiggling;
+}
+
+.card {
+    margin: 2pt 2pt 2pt 2pt;
+    height: 140pt;
+    width: 86pt;
+
+    border: 6pt solid #fff;
+    border-radius: 12pt;
+
+    background-color: white;
+    box-shadow: 1px 1px 3px #333;
+}
+
+.showBack {
+    background-image: url('../../card-back.png');
+}
+
+.fannedCard {
+    margin: 0 0 0 2pt;
+    width: 74pt;
+
+    transition: width .5s;
+}
+
+@media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px) {
+
+    .card {
+        height: 240pt;
+        width: 148pt;
+    }
+}
+
+@media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (orientation: landscape) {
+
+    .card {
+        height: 120pt;
+        width: 74pt;
+    }
+}
