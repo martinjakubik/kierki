@@ -19,9 +19,5 @@
   "bugs": {
     "url": "https://github.com/martinjakubik/kierki/issues"
   },
-  "homepage": "https://github.com/martinjakubik/kierki#readme",
-  "devDependencies": {
-    "grunt": "^1.6.1",
-    "grunt-release": "^0.14.0"
-  }
+  "homepage": "https://github.com/martinjakubik/kierki#readme"
 }
