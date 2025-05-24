@@ -36,10 +36,10 @@
      inkscape:window-width="1424"
      units="px"
      showgrid="true"
-     inkscape:current-layer="layer124"
+     inkscape:current-layer="layer125"
      inkscape:document-units="px"
-     inkscape:cy="123.79762"
-     inkscape:cx="127.46027"
+     inkscape:cy="64.828932"
+     inkscape:cx="145.041"
      inkscape:zoom="2.7302625"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
@@ -7353,7 +7353,7 @@
      inkscape:groupmode="layer"
      id="layer124"
      inkscape:label="4c"
-     style="display:inline">
+     style="display:none">
     <path
        id="path422"
        style="display:inline;fill:#313262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
@@ -7425,7 +7425,25 @@
      inkscape:groupmode="layer"
      id="layer125"
      inkscape:label="5c"
-     style="display:none">
+     style="display:inline">
+    <path
+       id="path427"
+       style="display:inline;fill:#313262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 150.00001,75.000016 c -4.60978,0 -10.5,3.00001 -10.5,7.500009 0,4.5 3.22345,7.70115 4.5,9.00001 -1.64386,-1.00844 -4.5,-3 -9.00001,-3 -4.5,0 -7.5,4.75735 -7.5,9 0,4.242635 3,8.999995 7.5,8.999995 4.50001,0 8.22878,-1.62824 10.50001,-3 1.10723,1.53858 2.54696,6.04741 1.5,7.5 -1.04697,1.45258 -4.5,1.5 -4.5,1.5 h 7.5 7.5 c 0,0 -3.45303,-0.0474 -4.5,-1.5 -1.04697,-1.45259 0.38937,-5.94658 1.5,-7.5 2.26457,1.36508 6,3 10.5,3 4.50001,0 7.5,-4.75736 7.5,-8.999995 0,-4.24265 -3,-9 -7.5,-9 -4.5,0 -7.35614,1.99156 -9,3 1.27655,-1.29886 4.5,-4.50001 4.5,-9.00001 0,-4.499999 -5.89023,-7.500009 -10.5,-7.500009 z"
+       sodipodi:nodetypes="szczszcscccsczszczs"
+       inkscape:export-filename="kierki-club.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="club" />
+    <path
+       id="path428"
+       style="display:inline;fill:#313262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 150.00001,262.50003 c 4.60978,0 10.5,-3.00001 10.5,-7.50001 0,-4.5 -3.22345,-7.70114 -4.5,-9 1.64386,1.00844 4.5,3 9.00001,3 4.5,0 7.5,-4.75735 7.5,-9 0,-4.24264 -3,-9 -7.5,-9 -4.50001,0 -8.22878,1.62824 -10.50001,3 -1.10723,-1.53858 -2.54696,-6.04741 -1.5,-7.5 1.04697,-1.45258 4.5,-1.5 4.5,-1.5 h -7.5 -7.5 c 0,0 3.45303,0.0474 4.5,1.5 1.04697,1.45259 -0.38937,5.94658 -1.5,7.5 -2.26457,-1.36508 -6,-3 -10.5,-3 -4.50001,0 -7.5,4.75736 -7.5,9 0,4.24265 3,9 7.5,9 4.5,0 7.35614,-1.99156 9,-3 -1.27655,1.29886 -4.5,4.5 -4.5,9 0,4.5 5.89023,7.50001 10.5,7.50001 z"
+       sodipodi:nodetypes="szczszcscccsczszczs"
+       inkscape:export-filename="kierki-club.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="club" />
     <path
        id="path131"
        style="display:inline;fill:#313262;fill-opacity:1;stroke-width:0.0380611;stroke-linecap:round;enable-background:new"
@@ -7436,9 +7454,48 @@
        inkscape:export-ydpi="90.099998"
        inkscape:label="club" />
     <path
+       style="display:inline;fill:#313262;fill-opacity:1;stroke:#5b4ffe;stroke-width:0.0849114;stroke-linecap:round;stroke-opacity:1;enable-background:new"
+       d="m 196.23875,18.792398 -14.60296,-2e-6 v 4.493212 10.109742 l 7.86313,1.2e-5 c 0,0 4.49322,-1.2e-5 4.49322,4.493207 0,4.493219 -4.49322,4.493219 -4.49322,4.493219 h -7.86313 v 4.493218 h 7.86313 c 0,0 8.98644,0 8.98644,-8.986437 0,-8.986438 -8.98644,-8.986438 -8.98644,-8.986438 h -3.36991 v -5.616523 h 10.10974 z"
+       id="path36-1"
+       sodipodi:nodetypes="ccccczcccczccccc"
+       inkscape:label="5" />
+    <path
        id="path132"
        style="display:inline;fill:#313262;fill-opacity:1;stroke-width:0.0380611;stroke-linecap:round;enable-background:new"
        d="m 34.316564,284.46294 c 1.5474,0 3.52462,-1.00704 3.52462,-2.51759 0,-1.51055 -1.08204,-2.5851 -1.51055,-3.0211 0.5518,0.33852 1.51055,1.00704 3.0211,1.00704 1.51055,0 2.51758,-1.59694 2.51758,-3.0211 0,-1.42416 -1.00703,-3.0211 -2.51758,-3.0211 -1.51055,0 -2.76222,0.54657 -3.52462,1.00703 -0.37167,-0.51646 -0.85496,-2.02997 -0.50351,-2.51758 0.35144,-0.4876 1.51055,-0.50351 1.51055,-0.50351 h -2.51759 -2.51758 c 0,0 1.15911,0.0159 1.51055,0.50351 0.35144,0.48761 -0.1307,1.99614 -0.50352,2.51758 -0.76016,-0.45822 -2.01406,-1.00703 -3.52461,-1.00703 -1.51055,0 -2.51758,1.59694 -2.51758,3.0211 0,1.42416 1.00703,3.0211 2.51758,3.0211 1.51055,0 2.46929,-0.66852 3.0211,-1.00704 -0.42851,0.436 -1.51055,1.51055 -1.51055,3.0211 0,1.51055 1.97722,2.51759 3.52461,2.51759 z"
+       sodipodi:nodetypes="szczszcscccsczszczs"
+       inkscape:export-filename="kierki-club.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="club" />
+    <path
+       style="display:inline;fill:#313262;fill-opacity:1;stroke:#5b4ffe;stroke-width:0.0849114;stroke-linecap:round;stroke-opacity:1;enable-background:new"
+       d="m 28.138394,318.7501 h 14.60296 v -4.49321 -10.10974 l -7.86313,-2e-5 c 0,0 -4.49322,2e-5 -4.49322,-4.4932 0,-4.49322 4.49322,-4.49322 4.49322,-4.49322 h 7.86313 v -4.49322 h -7.86313 c 0,0 -8.98644,0 -8.98644,8.98644 0,8.98644 8.98644,8.98644 8.98644,8.98644 h 3.36991 v 5.61652 h -10.10974 z"
+       id="path426"
+       sodipodi:nodetypes="ccccczcccczccccc"
+       inkscape:label="5" />
+    <path
+       id="path429"
+       style="display:inline;fill:#313262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 75.000006,75.000016 c -4.60978,0 -10.5,3.00001 -10.5,7.500009 0,4.5 3.22345,7.70115 4.5,9.00001 -1.64386,-1.00844 -4.5,-3 -9.00001,-3 -4.5,0 -7.5,4.75735 -7.5,9 0,4.242635 3,8.999995 7.5,8.999995 4.50001,0 8.22878,-1.62824 10.50001,-3 1.10723,1.53858 2.54696,6.04741 1.5,7.5 -1.04697,1.45258 -4.5,1.5 -4.5,1.5 h 7.5 7.5 c 0,0 -3.45303,-0.0474 -4.5,-1.5 -1.04697,-1.45259 0.38937,-5.94658 1.5,-7.5 2.26457,1.36508 6,3 10.5,3 4.50001,0 7.5,-4.75736 7.5,-8.999995 0,-4.24265 -3,-9 -7.5,-9 -4.5,0 -7.35614,1.99156 -9,3 1.27655,-1.29886 4.5,-4.50001 4.5,-9.00001 0,-4.499999 -5.89023,-7.500009 -10.5,-7.500009 z"
+       sodipodi:nodetypes="szczszcscccsczszczs"
+       inkscape:export-filename="kierki-club.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="club" />
+    <path
+       id="path440"
+       style="display:inline;fill:#313262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 112.50001,150.00003 c -4.60978,0 -10.5,3.00001 -10.5,7.5 0,4.5 3.22345,7.70115 4.5,9.00001 -1.64386,-1.00844 -4.5,-3 -9.00001,-3 -4.5,0 -7.5,4.75735 -7.5,9 0,4.24264 3,9 7.5,9 4.50001,0 8.22878,-1.62824 10.50001,-3 1.10723,1.53858 2.54696,6.04741 1.5,7.5 -1.04697,1.45258 -4.5,1.5 -4.5,1.5 h 7.5 7.5 c 0,0 -3.45303,-0.0474 -4.5,-1.5 -1.04697,-1.45259 0.38937,-5.94658 1.5,-7.5 2.26457,1.36508 6,3 10.5,3 4.50001,0 7.5,-4.75736 7.5,-9 0,-4.24265 -3,-9 -7.5,-9 -4.5,0 -7.35614,1.99156 -9,3 1.27655,-1.29886 4.5,-4.50001 4.5,-9.00001 0,-4.49999 -5.89023,-7.5 -10.5,-7.5 z"
+       sodipodi:nodetypes="szczszcscccsczszczs"
+       inkscape:export-filename="kierki-club.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="club" />
+    <path
+       id="path442"
+       style="display:inline;fill:#313262;fill-opacity:1;stroke-width:0.113386;stroke-linecap:round;enable-background:new"
+       d="m 75.000006,262.50003 c 4.60978,0 10.5,-3.00001 10.5,-7.50001 0,-4.5 -3.22345,-7.70114 -4.5,-9 1.64386,1.00844 4.5,3 9.00001,3 4.5,0 7.5,-4.75735 7.5,-9 0,-4.24264 -3,-9 -7.5,-9 -4.50001,0 -8.22878,1.62824 -10.50001,3 -1.10723,-1.53858 -2.54696,-6.04741 -1.5,-7.5 1.04697,-1.45258 4.5,-1.5 4.5,-1.5 h -7.5 -7.5 c 0,0 3.45303,0.0474 4.5,1.5 1.04697,1.45259 -0.38937,5.94658 -1.5,7.5 -2.26457,-1.36508 -6,-3 -10.5,-3 -4.50001,0 -7.5,4.75736 -7.5,9 0,4.24265 3,9 7.5,9 4.5,0 7.35614,-1.99156 9,-3 -1.27655,1.29886 -4.5,4.5 -4.5,9 0,4.5 5.89023,7.50001 10.5,7.50001 z"
        sodipodi:nodetypes="szczszcscccsczszczs"
        inkscape:export-filename="kierki-club.png"
        inkscape:export-xdpi="90.099998"
