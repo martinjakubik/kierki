@@ -36,11 +36,11 @@
      inkscape:window-width="1424"
      units="px"
      showgrid="true"
-     inkscape:current-layer="layer143"
+     inkscape:current-layer="layer146"
      inkscape:document-units="px"
-     inkscape:cy="180.31223"
-     inkscape:cx="131.16831"
-     inkscape:zoom="2.8284271"
+     inkscape:cy="153.26539"
+     inkscape:cx="85.736697"
+     inkscape:zoom="5.6568542"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -8415,7 +8415,7 @@
      inkscape:groupmode="layer"
      id="layer143"
      inkscape:label="3h"
-     style="display:inline">
+     style="display:none">
     <path
        style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.11811;stroke-linecap:round;enable-background:new"
        d="m 125.00001,75.000026 c 7.8125,0 10.9375,7.81249 10.9375,12.49999 0,4.68751 -3.14505,9.2358 -9.375,12.500004 -5.12211,2.68375 -9.08742,3.0778 -12.5,7.8125 -0.77116,1.06993 -1.5625,4.6875 -1.5625,4.6875 0,0 -0.79134,-3.61757 -1.5625,-4.6875 -3.41331,-4.73573 -7.37416,-5.1268 -12.499999,-7.8125 -6.22636,-3.262324 -9.37499,-7.812494 -9.37499,-12.500004 0,-4.6875 3.125,-12.49999 10.937489,-12.49999 7.8125,0 12.5,6.24999 12.5,6.24999 0,0 4.6875,-6.24999 12.5,-6.24999 z"
@@ -8515,12 +8515,84 @@
        sodipodi:nodetypes="cccccccccccccccc"
        inkscape:label="4"
        transform="translate(11.401337,11.477007)" />
+    <path
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.11811;stroke-linecap:round;enable-background:new"
+       d="m 82.500006,93.750016 c 7.8125,0 10.9375,7.812484 10.9375,12.499984 0,4.68751 -3.14505,9.2358 -9.375,12.50001 -5.12211,2.68375 -9.08742,3.0778 -12.5,7.8125 -0.77116,1.06993 -1.5625,4.6875 -1.5625,4.6875 0,0 -0.79134,-3.61757 -1.5625,-4.6875 -3.41331,-4.73573 -7.37416,-5.1268 -12.499999,-7.8125 -6.22636,-3.26233 -9.37499,-7.8125 -9.37499,-12.50001 0,-4.6875 3.125,-12.499984 10.937489,-12.499984 7.8125,0 12.5,6.249984 12.5,6.249984 0,0 4.6875,-6.249984 12.5,-6.249984 z"
+       id="path814"
+       sodipodi:nodetypes="zzzzczzzzcz"
+       inkscape:export-filename="kierki-heart.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="heart" />
+    <path
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.11811;stroke-linecap:round;enable-background:new"
+       d="m 167.50001,93.750013 c 7.8125,0 10.9375,7.812487 10.9375,12.499987 0,4.68751 -3.14505,9.2358 -9.375,12.5 -5.12211,2.68375 -9.08742,3.0778 -12.5,7.8125 -0.77116,1.06993 -1.5625,4.6875 -1.5625,4.6875 0,0 -0.79134,-3.61757 -1.5625,-4.6875 -3.41331,-4.73573 -7.37416,-5.1268 -12.5,-7.8125 -6.22636,-3.26232 -9.37499,-7.81249 -9.37499,-12.5 0,-4.6875 3.125,-12.499987 10.93749,-12.499987 7.8125,0 12.5,6.249987 12.5,6.249987 0,0 4.6875,-6.249987 12.5,-6.249987 z"
+       id="path816"
+       sodipodi:nodetypes="zzzzczzzzcz"
+       inkscape:export-filename="kierki-heart.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="heart" />
+    <path
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.11811;stroke-linecap:round;enable-background:new"
+       d="m 142.50001,243.75002 c -7.8125,0 -10.9375,-7.81249 -10.9375,-12.49999 0,-4.68752 3.14505,-9.23581 9.375,-12.50001 5.12211,-2.68375 9.08742,-3.0778 12.5,-7.8125 0.77116,-1.06993 1.5625,-4.6875 1.5625,-4.6875 0,0 0.79134,3.61757 1.5625,4.6875 3.41331,4.73573 7.37416,5.1268 12.5,7.8125 6.22636,3.26232 9.37499,7.81249 9.37499,12.50001 0,4.6875 -3.125,12.49999 -10.93749,12.49999 -7.8125,0 -12.5,-6.24999 -12.5,-6.24999 0,0 -4.6875,6.24999 -12.5,6.24999 z"
+       id="path818"
+       sodipodi:nodetypes="zzzzczzzzcz"
+       inkscape:export-filename="kierki-heart.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="heart" />
+    <path
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.11811;stroke-linecap:round;enable-background:new"
+       d="m 57.500006,243.75002 c -7.8125,0 -10.9375,-7.81249 -10.9375,-12.49999 0,-4.68751 3.14505,-9.2358 9.375,-12.5 5.12211,-2.68375 9.08742,-3.0778 12.5,-7.8125 0.77116,-1.06993 1.5625,-4.6875 1.5625,-4.6875 0,0 0.79134,3.61757 1.5625,4.6875 3.41331,4.73573 7.37416,5.1268 12.5,7.8125 6.22636,3.26232 9.37499,7.81249 9.37499,12.5 0,4.6875 -3.125,12.49999 -10.93749,12.49999 -7.8125,0 -12.5,-6.24999 -12.5,-6.24999 0,0 -4.6875,6.24999 -12.5,6.24999 z"
+       id="path824"
+       sodipodi:nodetypes="zzzzczzzzcz"
+       inkscape:export-filename="kierki-heart.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="heart" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer145"
      inkscape:label="5h"
      style="display:none">
+    <path
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.11811;stroke-linecap:round;enable-background:new"
+       d="m 82.500006,75.000019 c 7.8125,0 10.9375,7.812484 10.9375,12.499984 0,4.68751 -3.14505,9.2358 -9.375,12.500007 -5.12211,2.68375 -9.08742,3.0778 -12.5,7.8125 -0.77116,1.06993 -1.5625,4.6875 -1.5625,4.6875 0,0 -0.79134,-3.61757 -1.5625,-4.6875 -3.41331,-4.73573 -7.37416,-5.1268 -12.499999,-7.8125 -6.22636,-3.262327 -9.37499,-7.812497 -9.37499,-12.500007 0,-4.6875 3.125,-12.499984 10.937489,-12.499984 7.8125,0 12.5,6.249984 12.5,6.249984 0,0 4.6875,-6.249984 12.5,-6.249984 z"
+       id="path825"
+       sodipodi:nodetypes="zzzzczzzzcz"
+       inkscape:export-filename="kierki-heart.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="heart" />
+    <path
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.11811;stroke-linecap:round;enable-background:new"
+       d="m 167.50001,75.000016 c 7.8125,0 10.9375,7.812487 10.9375,12.499987 0,4.68751 -3.14505,9.2358 -9.375,12.499997 -5.12211,2.68375 -9.08742,3.0778 -12.5,7.8125 -0.77116,1.06993 -1.5625,4.6875 -1.5625,4.6875 0,0 -0.79134,-3.61757 -1.5625,-4.6875 -3.41331,-4.73573 -7.37416,-5.1268 -12.5,-7.8125 -6.22636,-3.262317 -9.37499,-7.812487 -9.37499,-12.499997 0,-4.6875 3.125,-12.499987 10.93749,-12.499987 7.8125,0 12.5,6.249987 12.5,6.249987 0,0 4.6875,-6.249987 12.5,-6.249987 z"
+       id="path826"
+       sodipodi:nodetypes="zzzzczzzzcz"
+       inkscape:export-filename="kierki-heart.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="heart" />
+    <path
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.11811;stroke-linecap:round;enable-background:new"
+       d="m 142.50001,262.50003 c -7.8125,0 -10.9375,-7.81249 -10.9375,-12.49999 0,-4.68752 3.14505,-9.23581 9.375,-12.50001 5.12211,-2.68375 9.08742,-3.0778 12.5,-7.8125 0.77116,-1.06993 1.5625,-4.6875 1.5625,-4.6875 0,0 0.79134,3.61757 1.5625,4.6875 3.41331,4.73573 7.37416,5.1268 12.5,7.8125 6.22636,3.26232 9.37499,7.81249 9.37499,12.50001 0,4.6875 -3.125,12.49999 -10.93749,12.49999 -7.8125,0 -12.5,-6.24999 -12.5,-6.24999 0,0 -4.6875,6.24999 -12.5,6.24999 z"
+       id="path827"
+       sodipodi:nodetypes="zzzzczzzzcz"
+       inkscape:export-filename="kierki-heart.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="heart" />
+    <path
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.11811;stroke-linecap:round;enable-background:new"
+       d="m 57.500006,262.50003 c -7.8125,0 -10.9375,-7.81249 -10.9375,-12.49999 0,-4.68751 3.14505,-9.2358 9.375,-12.5 5.12211,-2.68375 9.08742,-3.0778 12.5,-7.8125 0.77116,-1.06993 1.5625,-4.6875 1.5625,-4.6875 0,0 0.79134,3.61757 1.5625,4.6875 3.41331,4.73573 7.37416,5.1268 12.5,7.8125 6.22636,3.26232 9.37499,7.81249 9.37499,12.5 0,4.6875 -3.125,12.49999 -10.93749,12.49999 -7.8125,0 -12.5,-6.24999 -12.5,-6.24999 0,0 -4.6875,6.24999 -12.5,6.24999 z"
+       id="path828"
+       sodipodi:nodetypes="zzzzczzzzcz"
+       inkscape:export-filename="kierki-heart.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="heart" />
     <path
        style="display:inline;opacity:1;fill:#c53262;fill-opacity:1;stroke:none;stroke-width:0.0399935;stroke-linecap:round;enable-background:new"
        d="m 182.89187,41.450102 c 2.64539,0 3.70355,2.645398 3.70355,4.232636 0,1.587238 -1.06494,3.127341 -3.17447,4.232634 -1.73441,0.908749 -3.0771,1.042181 -4.23264,2.645399 -0.26112,0.362289 -0.52907,1.587238 -0.52907,1.587238 0,0 -0.26796,-1.224949 -0.52908,-1.587238 -1.15579,-1.603566 -2.49698,-1.735989 -4.23264,-2.645399 -2.10832,-1.104659 -3.17448,-2.645396 -3.17448,-4.232634 0,-1.587238 1.05816,-4.232636 3.70356,-4.232636 2.64539,0 4.23263,2.116316 4.23263,2.116316 0,0 1.58724,-2.116316 4.23264,-2.116316 z"
@@ -8555,12 +8627,58 @@
        sodipodi:nodetypes="ccccczcccczccccc"
        inkscape:label="5"
        transform="translate(11.401337,11.477007)" />
+    <path
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.11811;stroke-linecap:round;enable-background:new"
+       d="m 167.50001,75.000016 c 7.8125,0 10.9375,7.812487 10.9375,12.499987 0,4.68751 -3.14505,9.2358 -9.375,12.499997 -5.12211,2.68375 -9.08742,3.0778 -12.5,7.8125 -0.77116,1.06993 -1.5625,4.6875 -1.5625,4.6875 0,0 -0.79134,-3.61757 -1.5625,-4.6875 -3.41331,-4.73573 -7.37416,-5.1268 -12.5,-7.8125 -6.22636,-3.262317 -9.37499,-7.812487 -9.37499,-12.499997 0,-4.6875 3.125,-12.499987 10.93749,-12.499987 7.8125,0 12.5,6.249987 12.5,6.249987 0,0 4.6875,-6.249987 12.5,-6.249987 z"
+       id="path829"
+       sodipodi:nodetypes="zzzzczzzzcz"
+       inkscape:export-filename="kierki-heart.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="heart"
+       transform="translate(-42.500004,75.00001)" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer146"
      inkscape:label="6h"
-     style="display:none">
+     style="display:inline">
+    <path
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.11811;stroke-linecap:round;enable-background:new"
+       d="m 82.500006,75.000019 c 7.8125,0 10.9375,7.812484 10.9375,12.499984 0,4.68751 -3.14505,9.2358 -9.375,12.500007 -5.12211,2.68375 -9.08742,3.0778 -12.5,7.8125 -0.77116,1.06993 -1.5625,4.6875 -1.5625,4.6875 0,0 -0.79134,-3.61757 -1.5625,-4.6875 -3.41331,-4.73573 -7.37416,-5.1268 -12.499999,-7.8125 -6.22636,-3.262327 -9.37499,-7.812497 -9.37499,-12.500007 0,-4.6875 3.125,-12.499984 10.937489,-12.499984 7.8125,0 12.5,6.249984 12.5,6.249984 0,0 4.6875,-6.249984 12.5,-6.249984 z"
+       id="path830"
+       sodipodi:nodetypes="zzzzczzzzcz"
+       inkscape:export-filename="kierki-heart.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="heart" />
+    <path
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.11811;stroke-linecap:round;enable-background:new"
+       d="m 167.50001,75.000016 c 7.8125,0 10.9375,7.812487 10.9375,12.499987 0,4.68751 -3.14505,9.2358 -9.375,12.499997 -5.12211,2.68375 -9.08742,3.0778 -12.5,7.8125 -0.77116,1.06993 -1.5625,4.6875 -1.5625,4.6875 0,0 -0.79134,-3.61757 -1.5625,-4.6875 -3.41331,-4.73573 -7.37416,-5.1268 -12.5,-7.8125 -6.22636,-3.262317 -9.37499,-7.812487 -9.37499,-12.499997 0,-4.6875 3.125,-12.499987 10.93749,-12.499987 7.8125,0 12.5,6.249987 12.5,6.249987 0,0 4.6875,-6.249987 12.5,-6.249987 z"
+       id="path831"
+       sodipodi:nodetypes="zzzzczzzzcz"
+       inkscape:export-filename="kierki-heart.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="heart" />
+    <path
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.11811;stroke-linecap:round;enable-background:new"
+       d="m 142.50001,262.50003 c -7.8125,0 -10.9375,-7.81249 -10.9375,-12.49999 0,-4.68752 3.14505,-9.23581 9.375,-12.50001 5.12211,-2.68375 9.08742,-3.0778 12.5,-7.8125 0.77116,-1.06993 1.5625,-4.6875 1.5625,-4.6875 0,0 0.79134,3.61757 1.5625,4.6875 3.41331,4.73573 7.37416,5.1268 12.5,7.8125 6.22636,3.26232 9.37499,7.81249 9.37499,12.50001 0,4.6875 -3.125,12.49999 -10.93749,12.49999 -7.8125,0 -12.5,-6.24999 -12.5,-6.24999 0,0 -4.6875,6.24999 -12.5,6.24999 z"
+       id="path832"
+       sodipodi:nodetypes="zzzzczzzzcz"
+       inkscape:export-filename="kierki-heart.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="heart" />
+    <path
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.11811;stroke-linecap:round;enable-background:new"
+       d="m 57.500006,262.50003 c -7.8125,0 -10.9375,-7.81249 -10.9375,-12.49999 0,-4.68751 3.14505,-9.2358 9.375,-12.5 5.12211,-2.68375 9.08742,-3.0778 12.5,-7.8125 0.77116,-1.06993 1.5625,-4.6875 1.5625,-4.6875 0,0 0.79134,3.61757 1.5625,4.6875 3.41331,4.73573 7.37416,5.1268 12.5,7.8125 6.22636,3.26232 9.37499,7.81249 9.37499,12.5 0,4.6875 -3.125,12.49999 -10.93749,12.49999 -7.8125,0 -12.5,-6.24999 -12.5,-6.24999 0,0 -4.6875,6.24999 -12.5,6.24999 z"
+       id="path833"
+       sodipodi:nodetypes="zzzzczzzzcz"
+       inkscape:export-filename="kierki-heart.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="heart" />
     <path
        style="display:inline;opacity:1;fill:#c53262;fill-opacity:1;stroke:none;stroke-width:0.0399935;stroke-linecap:round;enable-background:new"
        d="m 182.89187,41.450102 c 2.64539,0 3.70355,2.645398 3.70355,4.232636 0,1.587238 -1.06494,3.127341 -3.17447,4.232634 -1.73441,0.908749 -3.0771,1.042181 -4.23264,2.645399 -0.26112,0.362289 -0.52907,1.587238 -0.52907,1.587238 0,0 -0.26796,-1.224949 -0.52908,-1.587238 -1.15579,-1.603566 -2.49698,-1.735989 -4.23264,-2.645399 -2.10832,-1.104659 -3.17448,-2.645396 -3.17448,-4.232634 0,-1.587238 1.05816,-4.232636 3.70356,-4.232636 2.64539,0 4.23263,2.116316 4.23263,2.116316 0,0 1.58724,-2.116316 4.23264,-2.116316 z"
@@ -8595,6 +8713,24 @@
        sodipodi:nodetypes="cszsscscczszsz"
        inkscape:label="6"
        transform="translate(11.401337,11.477007)" />
+    <path
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.11811;stroke-linecap:round;enable-background:new"
+       d="m 82.500006,150.00003 c 7.8125,0 10.9375,7.81249 10.9375,12.49999 0,4.68751 -3.14505,9.2358 -9.375,12.50001 -5.12211,2.68375 -9.08742,3.0778 -12.5,7.8125 -0.77116,1.06993 -1.5625,4.6875 -1.5625,4.6875 0,0 -0.79134,-3.61757 -1.5625,-4.6875 -3.41331,-4.73573 -7.37416,-5.1268 -12.499999,-7.8125 -6.22636,-3.26233 -9.37499,-7.8125 -9.37499,-12.50001 0,-4.6875 3.125,-12.49999 10.937489,-12.49999 7.8125,0 12.5,6.24999 12.5,6.24999 0,0 4.6875,-6.24999 12.5,-6.24999 z"
+       id="path834"
+       sodipodi:nodetypes="zzzzczzzzcz"
+       inkscape:export-filename="kierki-heart.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="heart" />
+    <path
+       style="display:inline;fill:#c53262;fill-opacity:1;stroke-width:0.11811;stroke-linecap:round;enable-background:new"
+       d="m 167.50001,150.00003 c 7.8125,0 10.9375,7.81249 10.9375,12.49999 0,4.68751 -3.14505,9.2358 -9.375,12.5 -5.12211,2.68375 -9.08742,3.0778 -12.5,7.8125 -0.77116,1.06993 -1.5625,4.6875 -1.5625,4.6875 0,0 -0.79134,-3.61757 -1.5625,-4.6875 -3.41331,-4.73573 -7.37416,-5.1268 -12.5,-7.8125 -6.22636,-3.26232 -9.37499,-7.81249 -9.37499,-12.5 0,-4.6875 3.125,-12.49999 10.93749,-12.49999 7.8125,0 12.5,6.24999 12.5,6.24999 0,0 4.6875,-6.24999 12.5,-6.24999 z"
+       id="path835"
+       sodipodi:nodetypes="zzzzczzzzcz"
+       inkscape:export-filename="kierki-heart.png"
+       inkscape:export-xdpi="90.099998"
+       inkscape:export-ydpi="90.099998"
+       inkscape:label="heart" />
   </g>
   <g
      inkscape:groupmode="layer"
