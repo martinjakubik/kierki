@@ -102,16 +102,18 @@ done
 # card back
 card_back_layer_ids=( 37 )
 for layerId in "${card_back_layer_ids[@]}" ; do
-    label=card-back
+    label=back
+
+    app_card__for_html_filenames+=(card-kierki-${label}.png)
 
     # exports the card for the html version
-    inkscape resource-src/card.svg -i layer${layerId} -j -C --export-png=build/${label}.png --export-area=11:20:228:358
+    inkscape resource-src/card.svg -i layer${layerId} -j -C --export-png=build/card-kierki-${label}.png --export-area=11:20:228:358
 
     # exports the card drawing scene for the swift version
-    inkscape resource-src/card.svg -i layer${layerId} -j -C --export-png=build/${label}.scene.forswift.png
+    inkscape resource-src/card.svg -i layer${layerId} -j -C --export-png=build/card-kierki-${label}.scene.forswift.png
 
     # adds border and shadow to swift version
-    convert -background none -page +0+0 build/shadow.png -page +0+0 build/border.png -page +0+0 build/${label}.scene.forswift.png -layers merge +repage build/${label}-bo-sh.png
+    convert -background none -page +0+0 build/shadow.png -page +0+0 build/border.png -page +0+0 build/card-kierki-${label}.scene.forswift.png -layers merge +repage build/card-kierki-${label}-bo-sh.png
 done
 
 for appCardForHtmlFilename in "${app_card__for_html_filenames[@]}" ; do
