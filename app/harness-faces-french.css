@@ -1,0 +1,238 @@
+@keyframes moveToTableFromLocalFlip {
+    0% {
+        transform: translateX(198pt) rotateY(-180deg);
+        background-image: url('../../card-kierki-back.png');
+    }
+
+    100% {
+        transform: translateX(0pt) rotateY(0deg);
+    }
+}
+
+@keyframes moveToTableFromRemoteFlip {
+    0% {
+        transform: translateX(-198pt) rotateY(180deg);
+        background-image: url('../../card-kierki-back.png');
+    }
+
+    100% {
+        transform: translateX(0pt) rotateY(0deg);
+    }
+}
+
+.showBack {
+    background-image: url('../../card-kierki-back.png');
+}
+
+/* diamonds carrés d x */
+#card-kierki-ad.showFace {
+    background-image: url('../../card-kierki-ad.png');
+}
+#card-kierki-1x.showFace {
+    background-image: url('../../card-kierki-1x.png');
+}
+#card-kierki-2d.showFace {
+    background-image: url('../../card-kierki-2d.png');
+}
+#card-kierki-3d.showFace {
+    background-image: url('../../card-kierki-3d.png');
+}
+#card-kierki-4d.showFace {
+    background-image: url('../../card-kierki-4d.png');
+}
+#card-kierki-5d.showFace {
+    background-image: url('../../card-kierki-5d.png');
+}
+#card-kierki-6d.showFace {
+    background-image: url('../../card-kierki-6d.png');
+}
+#card-kierki-7d.showFace {
+    background-image: url('../../card-kierki-7d.png');
+}
+#card-kierki-8d.showFace {
+    background-image: url('../../card-kierki-8d.png');
+}
+#card-kierki-9d.showFace {
+    background-image: url('../../card-kierki-9d.png');
+}
+#card-kierki-10d.showFace {
+    background-image: url('../../card-kierki-10d.png');
+}
+#card-kierki-jd.showFace {
+    background-image: url('../../card-kierki-jd.png');
+}
+#card-kierki-vx.showFace {
+    background-image: url('../../card-kierki-vx.png');
+}
+#card-kierki-qd.showFace {
+    background-image: url('../../card-kierki-qd.png');
+}
+#card-kierki-dx.showFace {
+    background-image: url('../../card-kierki-dx.png');
+}
+#card-kierki-kd.showFace {
+    background-image: url('../../card-kierki-kd.png');
+}
+#card-kierki-rx.showFace {
+    background-image: url('../../card-kierki-rx.png');
+}
+
+/* clubs trefles c t */
+#card-kierki-ac.showFace {
+    background-image: url('../../card-kierki-ac.png');
+}
+#card-kierki-1t.showFace {
+    background-image: url('../../card-kierki-1t.png');
+}
+#card-kierki-2c.showFace {
+    background-image: url('../../card-kierki-2c.png');
+}
+#card-kierki-3c.showFace {
+    background-image: url('../../card-kierki-3c.png');
+}
+#card-kierki-4c.showFace {
+    background-image: url('../../card-kierki-4c.png');
+}
+#card-kierki-5c.showFace {
+    background-image: url('../../card-kierki-5c.png');
+}
+#card-kierki-6c.showFace {
+    background-image: url('../../card-kierki-6c.png');
+}
+#card-kierki-7c.showFace {
+    background-image: url('../../card-kierki-7c.png');
+}
+#card-kierki-8c.showFace {
+    background-image: url('../../card-kierki-8c.png');
+}
+#card-kierki-9c.showFace {
+    background-image: url('../../card-kierki-9c.png');
+}
+#card-kierki-10c.showFace {
+    background-image: url('../../card-kierki-10c.png');
+}
+#card-kierki-jc.showFace {
+    background-image: url('../../card-kierki-jc.png');
+}
+#card-kierki-vt.showFace {
+    background-image: url('../../card-kierki-vt.png');
+}
+#card-kierki-qc.showFace {
+    background-image: url('../../card-kierki-qc.png');
+}
+#card-kierki-dt.showFace {
+    background-image: url('../../card-kierki-dt.png');
+}
+#card-kierki-kc.showFace {
+    background-image: url('../../card-kierki-kc.png');
+}
+#card-kierki-rt.showFace {
+    background-image: url('../../card-kierki-rt.png');
+}
+
+/* hearts coeurs h c */
+#card-kierki-ah.showFace {
+    background-image: url('../../card-kierki-ah.png');
+}
+#card-kierki-1c.showFace {
+    background-image: url('../../card-kierki-1c.png');
+}
+#card-kierki-2h.showFace {
+    background-image: url('../../card-kierki-2h.png');
+}
+#card-kierki-3h.showFace {
+    background-image: url('../../card-kierki-3h.png');
+}
+#card-kierki-4h.showFace {
+    background-image: url('../../card-kierki-4h.png');
+}
+#card-kierki-5h.showFace {
+    background-image: url('../../card-kierki-5h.png');
+}
+#card-kierki-6h.showFace {
+    background-image: url('../../card-kierki-6h.png');
+}
+#card-kierki-7h.showFace {
+    background-image: url('../../card-kierki-7h.png');
+}
+#card-kierki-8h.showFace {
+    background-image: url('../../card-kierki-8h.png');
+}
+#card-kierki-9h.showFace {
+    background-image: url('../../card-kierki-9h.png');
+}
+#card-kierki-10h.showFace {
+    background-image: url('../../card-kierki-10h.png');
+}
+#card-kierki-jh.showFace {
+    background-image: url('../../card-kierki-jh.png');
+}
+#card-kierki-vc.showFace {
+    background-image: url('../../card-kierki-vc.png');
+}
+#card-kierki-qh.showFace {
+    background-image: url('../../card-kierki-qh.png');
+}
+#card-kierki-dc.showFace {
+    background-image: url('../../card-kierki-dc.png');
+}
+#card-kierki-kh.showFace {
+    background-image: url('../../card-kierki-kh.png');
+}
+#card-kierki-rc.showFace {
+    background-image: url('../../card-kierki-rc.png');
+}
+
+/* spades piques s p */
+#card-kierki-as.showFace {
+    background-image: url('../../card-kierki-as.png');
+}
+#card-kierki-1p.showFace {
+    background-image: url('../../card-kierki-1p.png');
+}
+#card-kierki-2s.showFace {
+    background-image: url('../../card-kierki-2s.png');
+}
+#card-kierki-3s.showFace {
+    background-image: url('../../card-kierki-3s.png');
+}
+#card-kierki-4s.showFace {
+    background-image: url('../../card-kierki-4s.png');
+}
+#card-kierki-5s.showFace {
+    background-image: url('../../card-kierki-5s.png');
+}
+#card-kierki-6s.showFace {
+    background-image: url('../../card-kierki-6s.png');
+}
+#card-kierki-7s.showFace {
+    background-image: url('../../card-kierki-7s.png');
+}
+#card-kierki-8s.showFace {
+    background-image: url('../../card-kierki-8s.png');
+}
+#card-kierki-9s.showFace {
+    background-image: url('../../card-kierki-9s.png');
+}
+#card-kierki-10s.showFace {
+    background-image: url('../../card-kierki-10s.png');
+}
+#card-kierki-js.showFace {
+    background-image: url('../../card-kierki-js.png');
+}
+#card-kierki-vp.showFace {
+    background-image: url('../../card-kierki-vp.png');
+}
+#card-kierki-qs.showFace {
+    background-image: url('../../card-kierki-qs.png');
+}
+#card-kierki-dp.showFace {
+    background-image: url('../../card-kierki-dp.png');
+}
+#card-kierki-ks.showFace {
+    background-image: url('../../card-kierki-ks.png');
+}
+#card-kierki-rp.showFace {
+    background-image: url('../../card-kierki-rp.png');
+}
+
