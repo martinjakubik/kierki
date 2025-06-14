@@ -37,15 +37,17 @@ body {
 }
 
 .card {
+    display: inline-block;
     margin: 2pt 2pt 2pt 2pt;
     height: 140pt;
-    width: 86pt;
+    width: 93pt;
 
     border: 6pt solid #fff;
     border-radius: 12pt;
 
     background-color: white;
     box-shadow: 1px 1px 3px #333;
+    background-size: cover;
 }
 
 .showBack {
