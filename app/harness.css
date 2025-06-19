@@ -1,8 +1,5 @@
 body {
-    margin: 0 0 0 0;
-    background-image: radial-gradient(transparent 80%, rgb(232,232,230) 150%),
-        url('../../background.png');
-    background-size: cover;
+    margin: 0 0 0 0;;
 }
 
 @keyframes wiggling {
