@@ -1,27 +1,36 @@
-@keyframes moveToTableFromLocalFlip {
+@keyframes flipFaceToBack {
     0% {
-        transform: translateX(198pt) rotateY(-180deg);
-        background-image: url('card-kierki-back.png');
+        transform: rotate3d(0, 1, 0, 180deg);
     }
-
+    
     100% {
-        transform: translateX(0pt) rotateY(0deg);
+        transform: rotate3d(0, 1, 0, 0deg);
+        background-image: url('card-kierki-back.png');
     }
 }
 
-@keyframes moveToTableFromRemoteFlip {
+@keyframes flipBackToFace {
     0% {
-        transform: translateX(-198pt) rotateY(180deg);
         background-image: url('card-kierki-back.png');
+        transform: rotate3d(0, 1, 0, -180deg);
     }
 
     100% {
-        transform: translateX(0pt) rotateY(0deg);
+        transform: rotate3d(0, 1, 0, 0deg);
     }
+}
+
+body>div>div {
+    perspective: 550px;
 }
 
 .showBack {
     background-image: url('card-kierki-back.png');
+    animation: flipFaceToBack 1800ms;
+}
+
+.showFace {
+    animation: flipBackToFace 1800ms;
 }
 
 /* diamonds carrés d x */

@@ -1,22 +1,22 @@
-@keyframes moveToTableFromLocalFlip {
+@keyframes flipFaceToBack {
     0% {
-        transform: translateX(198pt) rotateY(-180deg);
+        transform: rotateY(-180deg);
         background-image: url('../../card-back.png');
     }
 
     100% {
-        transform: translateX(0pt) rotateY(0deg);
+        transform: rotateY(0deg);
     }
 }
 
-@keyframes moveToTableFromRemoteFlip {
+@keyframes flipBackToFace {
     0% {
-        transform: translateX(-198pt) rotateY(180deg);
+        transform: rotateY(180deg);
         background-image: url('../../card-back.png');
     }
 
     100% {
-        transform: translateX(0pt) rotateY(0deg);
+        transform: rotateY(0deg);
     }
 }
 
