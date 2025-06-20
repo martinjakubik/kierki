@@ -2,7 +2,7 @@
     0% {
         transform: rotate3d(0, 1, 0, 180deg);
     }
-    
+
     100% {
         transform: rotate3d(0, 1, 0, 0deg);
         background-image: url('card-kierki-back.png');
@@ -12,16 +12,19 @@
 @keyframes flipBackToFace {
     0% {
         background-image: url('card-kierki-back.png');
-        transform: rotate3d(0, 1, 0, -180deg);
     }
-
+    
+    50% {
+        transform: rotate3d(0, 1, 0, -90deg);
+    }
+    
     100% {
         transform: rotate3d(0, 1, 0, 0deg);
     }
 }
 
 body>div>div {
-    perspective: 550px;
+    perspective: 1000px;
 }
 
 .showBack {
@@ -30,7 +33,7 @@ body>div>div {
 }
 
 .showFace {
-    animation: flipBackToFace 1800ms;
+    animation: flipBackToFace 2800ms;
 }
 
 /* diamonds carrés d x */
