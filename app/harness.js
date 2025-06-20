@@ -25,3 +25,15 @@ const aCards = document.getElementsByClassName(sCardClass);
 for (const oCard of aCards) {
     oCard.onclick = handleCardTapped;
 };
+
+for (const oCard of aCards) {
+    const nRandom = Math.random();
+    if (nRandom > .1) {
+        flipCard(oCard.id);
+    }
+};
+
+if (aCards[10].classList.contains(CSS_CLASS_SHOW_BACK)) {
+    aCards[10].classList.remove(CSS_CLASS_SHOW_BACK);
+    aCards[10].classList.add(CSS_CLASS_SHOW_FACE);
+}
