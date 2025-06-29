@@ -29,11 +29,11 @@ body>div>div {
 
 .showBack {
     background-image: url('card-kierki-back.png');
-    animation: flipFaceToBack 1800ms;
+    animation: flipFaceToBack 180ms;
 }
 
 .showFace {
-    animation: flipBackToFace 2800ms;
+    animation: flipBackToFace 180ms;
 }
 
 /* diamonds carrés d x */
