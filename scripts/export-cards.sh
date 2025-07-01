@@ -76,9 +76,9 @@ card_layer_ids=( \
     176 \
 )
 
-inkscape resource-src/card.svg -i layer2 -j -C --export-png=build/plane.png
-inkscape resource-src/card.svg -i layer38 -j -C --export-png=build/border.png
-inkscape resource-src/card.svg -i layer39 -j -C --export-png=build/shadow.png
+inkscape resource-src/card.svg -i layer2 -j -C -o build/plane.png
+inkscape resource-src/card.svg -i layer38 -j -C -o build/border.png
+inkscape resource-src/card.svg -i layer39 -j -C -o build/shadow.png
 
 app_card__for_html_filenames=()
 for layerId in "${card_layer_ids[@]}"; do
@@ -87,13 +87,13 @@ for layerId in "${card_layer_ids[@]}"; do
     app_card__for_html_filenames+=(card-kierki-${label}.png)
 
     # exports the card for the html version
-    inkscape resource-src/card.svg -i layer${layerId} -j -C --export-png=build/card-${label}.scene.forhtml.png --export-area=11:20:228:358
+    inkscape resource-src/card.svg -i layer${layerId} -j -C -o build/card-${label}.scene.forhtml.png --export-area=11:20:228:358
 
     # adds scene background to the html version
     convert -background none -page +0+0 build/plane.png -page +0+0 build/card-${label}.scene.forhtml.png -layers merge +repage build/card-kierki-${label}.png
 
     # exports the card drawing scene for the swift version
-    inkscape resource-src/card.svg -i layer${layerId} -j -C --export-png=build/card-${label}.scene.forswift.png 
+    inkscape resource-src/card.svg -i layer${layerId} -j -C -o build/card-${label}.scene.forswift.png 
 
     # adds border, shadow and plane to swift version
     convert -background none -page +0+0 build/shadow.png -page +0+0 build/border.png -page +0+0 build/plane.png -page +0+0 build/card-${label}.scene.forswift.png -layers merge +repage build/card-kierki-${label}-bo-sh.png
@@ -107,10 +107,10 @@ for layerId in "${card_back_layer_ids[@]}" ; do
     app_card__for_html_filenames+=(card-kierki-${label}.png)
 
     # exports the card for the html version
-    inkscape resource-src/card.svg -i layer${layerId} -j -C --export-png=build/card-kierki-${label}.png --export-area=11:20:228:358
+    inkscape resource-src/card.svg -i layer${layerId} -j -C -o build/card-kierki-${label}.png --export-area=11:20:228:358
 
     # exports the card drawing scene for the swift version
-    inkscape resource-src/card.svg -i layer${layerId} -j -C --export-png=build/card-kierki-${label}.scene.forswift.png
+    inkscape resource-src/card.svg -i layer${layerId} -j -C -o build/card-kierki-${label}.scene.forswift.png
 
     # adds border and shadow to swift version
     convert -background none -page +0+0 build/shadow.png -page +0+0 build/border.png -page +0+0 build/card-kierki-${label}.scene.forswift.png -layers merge +repage build/card-kierki-${label}-bo-sh.png
