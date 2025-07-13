@@ -51,6 +51,11 @@ body {
     background-image: url('../../card-back.png');
 }
 
+.zoomedIn {
+    height: 280pt;
+    width: 186pt;
+}
+
 .fannedCard {
     margin: 0 0 0 2pt;
     width: 74pt;

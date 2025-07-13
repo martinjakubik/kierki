@@ -1,7 +1,12 @@
 const CSS_CLASS_SHOW_FACE='showFace';
 const CSS_CLASS_SHOW_BACK='showBack';
+const CSS_CLASS_SHOW_ZOOMED_IN='zoomedIn';
 
 const oCard = document.getElementById('card-kierki-ad');
+
+let sTouchStartCard = null;
+let nTouchStartX = -1;
+let nTouchStartY = -1;
 
 function flipCard (sCardId) {
     const oCard = document.getElementById(sCardId);
@@ -14,16 +19,54 @@ function flipCard (sCardId) {
     }
 }
 
+function zoomInCard(sCardId) {
+    const oCard = document.getElementById(sCardId);
+    oCard.classList.add(CSS_CLASS_SHOW_ZOOMED_IN);
+}
+
+function zoomOutCard(sCardId) {
+    const oCard = document.getElementById(sCardId);
+    oCard.classList.remove(CSS_CLASS_SHOW_ZOOMED_IN);
+}
+
 function handleCardTapped (oEvent) {
     const oTarget = oEvent.currentTarget;
     const sCardId = oTarget.id;
     flipCard (sCardId);
 }
 
+function handleCardTouchStart (oEvent) {
+    const oTarget = oEvent.currentTarget;
+    const sCardId = oTarget.id;
+    nTouchStartX = oEvent.screenX;
+    nTouchStartY = oEvent.screenY;
+    sTouchStartCard = sCardId;
+}
+
+function handleCardTouchEnd (oEvent) {
+    if (nTouchStartY < 0) {
+        return;
+    }
+    const oTarget = oEvent.currentTarget;
+    const sCardId = oTarget.id;
+    if (sTouchStartCard === sCardId) {
+        const nTouchEndY = oEvent.screenY;
+        if (nTouchEndY < nTouchStartY) {
+            zoomInCard(sCardId);
+        } else if (nTouchEndY > nTouchStartY) {
+            zoomOutCard(sCardId);
+        }
+    };
+    nTouchEndX = -1;
+    nTouchEndY = -1;
+}
+
 const sCardClass = 'card';
 const aCards = document.getElementsByClassName(sCardClass);
 for (const oCard of aCards) {
     oCard.onclick = handleCardTapped;
+    oCard.onmousedown = handleCardTouchStart;
+    oCard.onmouseup = handleCardTouchEnd;
 };
 
 for (const oCard of aCards) {
