@@ -55,6 +55,7 @@ body {
     position: fixed;
     display: block;
     top: 0;
+    z-index: -1;
     height: 100%;
     width: 100%;
     background-color: transparent;
@@ -62,6 +63,7 @@ body {
 
 #zoomDisplay.on {
     background-color: rgba(0, 0, 100, 0.5);
+    z-index: 0;
 }
 
 .fannedCard {
