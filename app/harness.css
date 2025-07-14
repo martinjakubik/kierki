@@ -56,6 +56,19 @@ body {
     width: 186pt;
 }
 
+#zoomDisplay {
+    position: fixed;
+    display: block;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+}
+
+#zoomDisplay.on {
+    background-color: rgba(0, 0, 100, 0.5);
+}
+
 .fannedCard {
     margin: 0 0 0 2pt;
     width: 74pt;
