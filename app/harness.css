@@ -66,6 +66,11 @@ body {
     z-index: 0;
 }
 
+#zoomDisplay>.card {
+    width: 30em;
+    height: 46em;
+}
+
 .fannedCard {
     margin: 0 0 0 2pt;
     width: 74pt;
@@ -92,4 +97,8 @@ body {
         height: 120pt;
         width: 74pt;
     }
+
+    #zoomDisplay>.card {
+        width: 30em;
+        height: 46em;    }    
 }
