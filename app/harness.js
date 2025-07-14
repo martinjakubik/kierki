@@ -10,6 +10,7 @@ let nTouchStartX = -1;
 let nTouchStartY = -1;
 
 function flipCard (sCardId) {
+    console.log(`flipping card ${sCardId}`)
     const oCard = document.getElementById(sCardId);
     if (oCard.classList.contains(CSS_CLASS_SHOW_FACE)) {
         oCard.classList.remove(CSS_CLASS_SHOW_FACE);
@@ -21,17 +22,26 @@ function flipCard (sCardId) {
 }
 
 function zoomInCard(sCardId) {
+    console.log(`zooming in card ${sCardId}`)
     const oCard = document.getElementById(sCardId);
     const oZoomDisplay = document.getElementById(DOM_ID_ZOOM_DISPLAY);
+    if (oZoomDisplay.classList.contains(CSS_CLASS_ZOOM_DISPLAY_ON)) {
+        return;
+    }
+    oCard.classList.remove(CSS_CLASS_SHOW_BACK);
+    oCard.classList.add(CSS_CLASS_SHOW_FACE)
     oZoomDisplay.classList.add(CSS_CLASS_ZOOM_DISPLAY_ON);
     oZoomDisplay.appendChild(oCard);
 }
 
 function zoomOutCard(sCardId) {
+    console.log(`zooming out card ${sCardId}`)
     const oCard = document.getElementById(sCardId);
     const oZoomDisplay = document.getElementById(DOM_ID_ZOOM_DISPLAY);
-    oZoomDisplay.classList.remove(CSS_CLASS_ZOOM_DISPLAY_ON);
-    document.body.appendChild(oCard);
+    if (oZoomDisplay.classList.contains(CSS_CLASS_ZOOM_DISPLAY_ON)) {
+        oZoomDisplay.classList.remove(CSS_CLASS_ZOOM_DISPLAY_ON);
+        document.body.appendChild(oCard);
+    }
 }
 
 function handleCardTapped (oEvent) {
@@ -41,6 +51,7 @@ function handleCardTapped (oEvent) {
 }
 
 function handleCardTouchStart (oEvent) {
+    oEvent.stopPropagation();
     const oTarget = oEvent.currentTarget;
     const sCardId = oTarget.id;
     nTouchStartX = oEvent.screenX;
@@ -52,6 +63,7 @@ function handleCardTouchEnd (oEvent) {
     if (nTouchStartY < 0) {
         return;
     }
+    oEvent.stopPropagation();
     const oTarget = oEvent.currentTarget;
     const sCardId = oTarget.id;
     if (sTouchStartCard === sCardId) {
@@ -62,8 +74,8 @@ function handleCardTouchEnd (oEvent) {
             zoomOutCard(sCardId);
         }
     };
-    nTouchEndX = -1;
-    nTouchEndY = -1;
+    nTouchStartX = -1;
+    nTouchStartY = -1;
 }
 
 const sCardClass = 'card';
