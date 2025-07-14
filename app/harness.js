@@ -1,6 +1,5 @@
 const CSS_CLASS_SHOW_FACE='showFace';
 const CSS_CLASS_SHOW_BACK='showBack';
-const CSS_CLASS_SHOW_ZOOMED_IN='zoomedIn';
 
 const oCard = document.getElementById('card-kierki-ad');
 
@@ -21,12 +20,10 @@ function flipCard (sCardId) {
 
 function zoomInCard(sCardId) {
     const oCard = document.getElementById(sCardId);
-    oCard.classList.add(CSS_CLASS_SHOW_ZOOMED_IN);
 }
 
 function zoomOutCard(sCardId) {
     const oCard = document.getElementById(sCardId);
-    oCard.classList.remove(CSS_CLASS_SHOW_ZOOMED_IN);
 }
 
 function handleCardTapped (oEvent) {

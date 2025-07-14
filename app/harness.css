@@ -51,11 +51,6 @@ body {
     background-image: url('../../card-back.png');
 }
 
-.zoomedIn {
-    height: 280pt;
-    width: 186pt;
-}
-
 #zoomDisplay {
     position: fixed;
     display: block;
